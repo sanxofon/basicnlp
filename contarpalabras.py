@@ -4,10 +4,10 @@
 """ EJEMPLOS DE USO DESDE LA TERMINAL
 
 	Muestra la lista de palabras del "texto_original.txt" y lo guarda en una copia:
-	>> python contarpalabras.py -f "texto_original.txt" > "texto_palabras.txt"
+	>> python contarpalabras.py -f "texto2.txt" > "texto2_palabras.txt"
 	
 	Muestra frecuencia de conteos, ordena los resultados arfabeticamente, luego por frecuencia y lo guarda en una copia:
-	>> python contarpalabras.py -f "texto.txt" -q -o af > "texto3.txt"
+	>> python contarpalabras.py -f "texto1.txt" -q -o af > "texto1_palabras.txt"
 
 """
 
@@ -22,21 +22,31 @@ def toUnicode(s):
 	else:
 		return s
  
-parser = argparse.ArgumentParser(description=u'Este programa intenta contar la frecuencia de las palabras de un texto.')
-# parser.add_argument("-h", "--help", help=u"Mostrar este mensaje y salir", action="store_true")
-parser.add_argument("-f", "--file", type=argparse.FileType('r'), required=True, help=u"Define el archivo de texto a procesar (REQUERIDO)")
-parser.add_argument("-i", "--interactive", help=u"Contar palabras interactivamente", action="store_true")
-parser.add_argument("-q", "--freq", help=u"Mostrar frecuencia de conteos", action="store_true")
-parser.add_argument("-o", "--ord", help=u"Ordenar contador: a:Alfabéticamente, f:Frecuencia")
+parser = argparse.ArgumentParser(description=u'Este programa intenta contar la frecuencia de las palabras de un texto.\nEjemplo: python contarpalabras.py -f texto1.txt -o aF -i')
+parser.add_argument("-f", "--file", type=argparse.FileType('r'), required=True, help=u"Define el archivo de texto a procesar (REQUERIDO).")
+parser.add_argument("-o", "--ord", help=u"Ordenar contador: a:Alfabéticamente, f:Frecuencia (Mayúscula=Reversa).")
+parser.add_argument("-i", "--interactive", help=u"Contar palabras, consulta interactiva.", action="store_true")
+parser.add_argument("-q", "--freq", help=u"Mostrar frecuencia de conteos.", action="store_true")
+parser.add_argument("-u", "--utf8", help=u"Codificar la salida como UTF-8.", action="store_true")
 
 args = parser.parse_args()
 
+utf8 = False
+if args.utf8:
+	utf8 = True
+
+
 def pru(s):
-	print (u'>> '+s).encode('utf-8')
+	global utf8
+	if utf8:
+		print (u'>> '+s).encode('utf-8')
+	else:
+		print (u'>> '+s)
+	
 # ORDER
 ordena = None
 if args.ord:
-	ordena = args.ord.lower()
+	ordena = args.ord
 else:
 	ordena = ''
 # Contar palabras
@@ -61,7 +71,11 @@ contador = collections.Counter(pals).items()
 for c in xrange(len(ordena)):
 	if ordena[c]=='a':
 		contador = sorted(contador, key=lambda i: i[0]) # ordena alfabeticamente
+	elif ordena[c]=='A':
+		contador = sorted(contador, key=lambda i: i[0], reverse=True) # ordena alfabeticamente
 	elif ordena[c]=='f':
+		contador = sorted(contador, key=lambda i: i[1]) # ordena por frecuencia
+	elif ordena[c]=='F':
 		contador = sorted(contador, key=lambda i: i[1], reverse=True) # ordena por frecuencia
 
 pru(u"Total palabras: "+str(totpals))
@@ -98,7 +112,7 @@ if contint:
 			elif i>=int(m):
 				break
 			cm+=1
-			print i+1,"-",toUnicode(c[0]),c[1]
+			print i+1,"-",toUnicode(c[0]),c[1] # Siempre salida unicode dado que se trabaja en consola
 		print "-------"
 		pru(u"Total resultado: "+str(cm))
 		pru(u"Total diferentes: "+str(len(contador)))
@@ -107,6 +121,9 @@ else:
 	print "-------"
 	print "id\tpal\tfreq"
 	for i,c in enumerate(contador):
-		print str(i+1)+"\t"+c[0].encode('utf-8')+"\t"+str(c[1])
+		if utf8:
+			print str(i+1)+"\t"+c[0].encode('utf-8')+"\t"+str(c[1])
+		else:
+			print str(i+1)+"\t"+c[0]+"\t"+str(c[1])
 
 #"""
