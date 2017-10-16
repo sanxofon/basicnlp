@@ -8,7 +8,18 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 
 ## Archivos incluídos hasta ahora:
 
-## 1. helloWorldUTF8.py
+1. vacio.py
+1. helloWorldUTF8.py
+1. argumentosSimple.py
+1. argumentosParsed.py
+1. limpiarTexto.py
+1. contarPalabras.py
+
+## 1. vacio.py
+
+> Este script muestra las cabeceras "env" y "UTF8" que debe tener todo script de este repo. El archivo ".py" debe editarse con esta codificación.
+
+## 2. helloWorldUTF8.py
 
 > Este programa intenta mostrar un ejemplo clásico pero considerando la codificación (UTF8, UNICODE, TERMINAL). Además muestra como solicitar información al usuario y como codificar/decodificar esta.
 
@@ -21,28 +32,28 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 		¡Hola, Santiago Chávez!
 
 
-## 2. userArgumentsSimple.py
+## 3. argumentosSimple.py
 
 > Este programa muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", considerando la codificación. (Imposible de resolver en Windows 7)
 
 **Ejemplos de uso:**
 
-	$ python userArgumentsSimple.py Santiago Chávez
-	$ python userArgumentsSimple.py "Santiago Chávez"
-	$ python userArgumentsSimple.py "Santiago Chávez" utf8 > test.txt
+	$ python argumentosSimple.py Santiago Chávez
+	$ python argumentosSimple.py "Santiago Chávez"
+	$ python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
 
-## 3. userArgumentsParsed.py
+## 4. argumentosParsed.py
 
 > Este programa también muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", pero usando la librería "argparse" que simplifica el proceso además de que provee un mensaje de ayuda a los usuarios.
 
 **Ayuda:**
 Para desplegar la ayuda en terminal ejecute:
 
-	$ python userArgumentsParsed.py -h
-		usage: userArgumentsParsed.py [-h] -n NAME [-e]
+	$ python argumentosParsed.py -h
+		usage: argumentosParsed.py [-h] -n NAME [-e]
 
 		Este programa muestra como recibir datos del usuario como argumentos Ejemplo:
-		python userArgumentsParsed.py -n "Santiago Chávez"
+		python argumentosParsed.py -n "Santiago Chávez"
 
 		optional arguments:
 		  -h, --help            show this help message and exit
@@ -51,10 +62,10 @@ Para desplegar la ayuda en terminal ejecute:
 
 **Ejemplos de uso:**
 
-	$ python userArgumentsParsed.py -n "Santiago Chávez"
-	$ python userArgumentsParsed.py -n "Santiago Chávez" -e
+	$ python argumentosParsed.py -n "Santiago Chávez"
+	$ python argumentosParsed.py -n "Santiago Chávez" -e
 
-## 4. limpiarTexto.py
+## 5. limpiarTexto.py
 
 > Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.
 
@@ -88,7 +99,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
 	$ python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 
-## 5. contarPalabras.py
+## 6. contarPalabras.py
 
 > Este programa intenta contar la frecuencia de las palabras de un texto.
 

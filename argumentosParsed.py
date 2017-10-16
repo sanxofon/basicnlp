@@ -5,19 +5,19 @@
 	Una manera más eficaz para capurar varios argumentos con beneficios añadidos
 	es usar la librería especial para ese fin: "argparse"
 	Ejemplos de ejecución:
-	>> python userArgumentsParsed.py -n "Santiago Chávez"
-	>> python userArgumentsParsed.py -n "Santiago Chávez" -e
+	>> python argumentosParsed.py -n "Santiago Chávez"
+	>> python argumentosParsed.py -n "Santiago Chávez" -e
 """
 
 # Importamos la librería "argparse" que nos permite acceder de forma ordenada a los argumentos
-# además de generar un texto de ayuda cuando ejecutamos: "python userArgumentsParsed.py -h"
+# además de generar un texto de ayuda cuando ejecutamos: "python argumentosParsed.py -h"
 import argparse
 
 # La librería "sys" no permite acceder a información del sistema
 import sys
 
 # Inicializamos el "parser" de argumentos con la descripción general
-parser = argparse.ArgumentParser(description=u'Este programa muestra como recibir datos del usuario como argumentos\nEjemplo: python userArgumentsParsed.py -n "Santiago Chávez"')
+parser = argparse.ArgumentParser(description=u'Este programa muestra como recibir datos del usuario como argumentos\nEjemplo: python argumentosParsed.py -n "Santiago Chávez"')
 
 # Define la "bandera" de nombre (corta: "-n", larga: "-name") y su texto de ayuda (help=""). Es un argumento obligatorio (required=True)
 parser.add_argument("-n", "--name", help=u"Nombre del usuario", required=True)

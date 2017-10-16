@@ -9,9 +9,9 @@
 	A veces queremos recibir información del usuario desde que EJECUTAMOS el
 	script, es decir, desde un principio.
 	Ejemplos de ejecución:
-	>> python userArgumentsSimple.py Santiago Chávez
-	>> python userArgumentsSimple.py "Santiago Chávez"
-	>> python userArgumentsSimple.py "Santiago Chávez" utf8 > test.txt
+	>> python argumentosSimple.py Santiago Chávez
+	>> python argumentosSimple.py "Santiago Chávez"
+	>> python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
 """
 
 # Importamos una librería para poder usar sus funcionalidades
@@ -19,7 +19,7 @@
 import sys
 
 # La librería "sys" nos permite acceder a los "argumentos" que fueron invocados al ejecutar este script
-nombreScript = sys.argv[0] # El índice "0" siempre contiene el nombre del script actual: "userArgumentsSimple.py"
+nombreScript = sys.argv[0] # El índice "0" siempre contiene el nombre del script actual: "argumentosSimple.py"
 # Decodificamos los argumentos a UNICODE con ".decode(sys.stdin.encoding)"
 argumentos = [] # Definimos la variable "argumentos" como una "lista vacía"
 # Recorremos los argumentos del 1 al total de argumentos
