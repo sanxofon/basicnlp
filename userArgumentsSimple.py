@@ -8,8 +8,10 @@
 	como se puede ver en el script: "helloWorldUTF8.py"
 	A veces queremos recibir información del usuario desde que EJECUTAMOS el
 	script, es decir, desde un principio.
-	El usuario deberá de ejecutar el script con "argumentos" de la siguiente forma:
-	>> python userInputUTF8.py argumento1 "Argumento 2"
+	Ejemplos de ejecución:
+	>> python userArgumentsSimple.py Santiago Chávez
+	>> python userArgumentsSimple.py "Santiago Chávez"
+	>> python userArgumentsSimple.py "Santiago Chávez" utf8 > test.txt
 """
 
 # Importamos una librería para poder usar sus funcionalidades
@@ -17,7 +19,7 @@
 import sys
 
 # La librería "sys" nos permite acceder a los "argumentos" que fueron invocados al ejecutar este script
-nombreScript = sys.argv[0] # El índice "0" siempre contiene el nombre del script actual: "userInputUTF8.py"
+nombreScript = sys.argv[0] # El índice "0" siempre contiene el nombre del script actual: "userArgumentsSimple.py"
 # Decodificamos los argumentos a UNICODE con ".decode(sys.stdin.encoding)"
 argumentos = [] # Definimos la variable "argumentos" como una "lista vacía"
 # Recorremos los argumentos del 1 al total de argumentos
@@ -29,6 +31,7 @@ for i in range(1,len(sys.argv)):
 utf8 = False
 if "utf8" in argumentos:
 	utf8 = True
+	argumentos.remove("utf8") # Elimina el argumento "utf8" de la lista
 
 # Por último imprimimos los argumentos invocados por el usuario
 print u"Argumentos recibidos:"
