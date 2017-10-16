@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Este es un comentario de una sola línea
-
 """
-	Este es un comentario
-	de varias líneas
+	Este programa intenta mostrar un ejemplo clásico pero considerando 
+	la codificación (UTF8, UNICODE, TERMINAL). Además muestra como 
+	solicitar información al usuario y como codificar/decodificar esta.
+	Ejemplos de ejecución:
+	>> python helloWorldUTF8.py
 """
 
 # Importamos una librería para poder usar sus funcionalidades

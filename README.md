@@ -15,11 +15,11 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 1. limpiarTexto.py
 1. contarPalabras.py
 
-## 1. vacio.py
+### 1. vacio.py
 
 > Este script muestra las cabeceras "env" y "UTF8" que debe tener todo script de este repo. El archivo ".py" debe editarse con esta codificación.
 
-## 2. helloWorldUTF8.py
+### 2. helloWorldUTF8.py
 
 > Este programa intenta mostrar un ejemplo clásico pero considerando la codificación (UTF8, UNICODE, TERMINAL). Además muestra como solicitar información al usuario y como codificar/decodificar esta.
 
@@ -32,7 +32,7 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 		¡Hola, Santiago Chávez!
 
 
-## 3. argumentosSimple.py
+### 3. argumentosSimple.py
 
 > Este programa muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", considerando la codificación. (Imposible de resolver en Windows 7)
 
@@ -42,7 +42,7 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 	$ python argumentosSimple.py "Santiago Chávez"
 	$ python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
 
-## 4. argumentosParsed.py
+### 4. argumentosParsed.py
 
 > Este programa también muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", pero usando la librería "argparse" que simplifica el proceso además de que provee un mensaje de ayuda a los usuarios.
 
@@ -50,22 +50,23 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 Para desplegar la ayuda en terminal ejecute:
 
 	$ python argumentosParsed.py -h
-		usage: argumentosParsed.py [-h] -n NAME [-e]
-
+		usage: argumentosParsed.py [-h] -a ARG [-m] [-M]
+		
 		Este programa muestra como recibir datos del usuario como argumentos Ejemplo:
 		python argumentosParsed.py -n "Santiago Chávez"
-
+		
 		optional arguments:
-		  -h, --help            show this help message and exit
-		  -n NAME, --name NAME  Nombre del usuario
-		  -e, --extra           Extra: Booleano, no recibe valor
+		  -h, --help         show this help message and exit
+		  -a ARG, --arg ARG  Argumento, acepta una cadena de texto
+		  -m, --min          Convertir a minúsculas: Booleano, no recibe valor
+		  -M, --may          Convertir a MAYÚSCULAS: Booleano, no recibe valor
 
 **Ejemplos de uso:**
 
 	$ python argumentosParsed.py -n "Santiago Chávez"
 	$ python argumentosParsed.py -n "Santiago Chávez" -e
 
-## 5. limpiarTexto.py
+### 5. limpiarTexto.py
 
 > Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.
 
@@ -99,7 +100,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
 	$ python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 
-## 6. contarPalabras.py
+### 6. contarPalabras.py
 
 > Este programa intenta contar la frecuencia de las palabras de un texto.
 
@@ -128,12 +129,33 @@ Para desplegar la ayuda en terminal ejecute:
  
 ***
 
-## TESTING
+## Testing
 
+Se puede guardar este script en un archivo .sh o .bat y ejecutar el testeo de un jalón. En Linux/Mac guardamos con el nombre "**testeo.sh**" y el Windows con el nombre "**testeo.bat**".
+Para ejecutar el testeo desde la terminal, ya estando en el mismo directorio:
+
+	$ testeo.bat
+
+**testeo.sh** ó **testeo.bat**
+
+	echo Testing "helloWorldUTF8"
+	python helloWorldUTF8.py
+	echo Testing "argumentosSimple"
+	python argumentosSimple.py Santiago Chávez
+	python argumentosSimple.py "Santiago Chávez"
+	python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
+	echo Testing "argumentosParsed"
+	python argumentosParsed.py -a "Santiago Chávez"
+	python argumentosParsed.py -a "Santiago Chávez" -m
+	python argumentosParsed.py -a "Santiago Chávez" -M
+	echo Este ejemplo debe mostrar error de codificación en Windows, la linea esta comentada con "rem"
+	rem python argumentosParsed.py -a "Santiago Chávez" -M > test.txt
+	echo Testing "limpiarTexto"
 	python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
 	python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 	python limpiarTexto.py -f "texto1.txt" -n -u -m 1 -e > "texto1_enunciados.txt"
 	python limpiarTexto.py -f "texto2.txt" -n -u -m 1 -j -e -s "(\-\-)" -r "—" > "texto2_enunciados.txt"
+	echo Testing "contarPalabras"
 	python contarPalabras.py -f "texto1.txt" -q -o af -u > "texto1_palabras.txt"
 	python contarPalabras.py -f "texto2.txt" -q -o af -u > "texto2_palabras.txt"
 ***
