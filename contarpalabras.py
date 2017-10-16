@@ -4,10 +4,10 @@
 """ EJEMPLOS DE USO DESDE LA TERMINAL
 
 	Muestra la lista de palabras del "texto_original.txt" y lo guarda en una copia:
-	>> python contarpalabras.py -f "texto2.txt" > "texto2_palabras.txt"
+	>> python contarPalabras.py -f "texto2.txt" > "texto2_palabras.txt"
 	
 	Muestra frecuencia de conteos, ordena los resultados arfabeticamente, luego por frecuencia y lo guarda en una copia:
-	>> python contarpalabras.py -f "texto1.txt" -q -o af > "texto1_palabras.txt"
+	>> python contarPalabras.py -f "texto1.txt" -q -o af > "texto1_palabras.txt"
 
 """
 
@@ -22,7 +22,7 @@ def toUnicode(s):
 	else:
 		return s
  
-parser = argparse.ArgumentParser(description=u'Este programa intenta contar la frecuencia de las palabras de un texto.\nEjemplo: python contarpalabras.py -f texto1.txt -o aF -i')
+parser = argparse.ArgumentParser(description=u'Este programa intenta contar la frecuencia de las palabras de un texto.\nEjemplo: python contarPalabras.py -f texto1.txt -o aF -i')
 parser.add_argument("-f", "--file", type=argparse.FileType('r'), required=True, help=u"Define el archivo de texto a procesar (REQUERIDO).")
 parser.add_argument("-o", "--ord", help=u"Ordenar contador: a:Alfabéticamente, f:Frecuencia (Mayúscula=Reversa).")
 parser.add_argument("-i", "--interactive", help=u"Contar palabras, consulta interactiva.", action="store_true")

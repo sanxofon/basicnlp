@@ -8,20 +8,20 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 
 ## Archivos incluídos hasta ahora:
 
-## limpiartexto.py
+## limpiarTexto.py
 
 > Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.
 
 **Ayuda:**
 Para desplegar la ayuda en terminal ejecute:
 
-	>> python limpiartexto.py -h
-	usage: limpiartexto.py [-h] -f FILE [-n] [-s SEARCH [SEARCH ...]]
+	>> python limpiarTexto.py -h
+	usage: limpiarTexto.py [-h] -f FILE [-n] [-s SEARCH [SEARCH ...]]
 		               [-r REPLACE [REPLACE ...]] [-j] [-m MAXLN] [-e] [-u]
 
 	Este programa intenta rectificar los saltos de línea de un texto mal
 	formateado y/o aplica un reemplazo regex definido por el usuario. Ejemplo:
-	python limpiartexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
+	python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
 
 	optional arguments:
 	  -h, --help            show this help message and exit
@@ -39,22 +39,22 @@ Para desplegar la ayuda en terminal ejecute:
 
 **Ejemplos de uso:**
 
-	python limpiartexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
+	python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
         
-	python limpiartexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
+	python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 
-## contarpalabras.py
+## contarPalabras.py
 
 > Este programa intenta contar la frecuencia de las palabras de un texto.
 
 **Ayuda:**
 Para desplegar la ayuda en terminal ejecute:
 
-	>> python contarpalabras.py -h
-	usage: contarpalabras.py [-h] -f FILE [-o ORD] [-i] [-q] [-u]
+	>> python contarPalabras.py -h
+	usage: contarPalabras.py [-h] -f FILE [-o ORD] [-i] [-q] [-u]
 
 	Este programa intenta contar la frecuencia de las palabras de un texto.
-	Ejemplo: python contarpalabras.py -f texto1.txt -o aF -i
+	Ejemplo: python contarPalabras.py -f texto1.txt -o aF -i
 
 	optional arguments:
 	  -h, --help            show this help message and exit
@@ -67,20 +67,20 @@ Para desplegar la ayuda en terminal ejecute:
 
 **Ejemplos de uso:**
 
-	python contarpalabras.py -f "texto2.txt" > "texto2_palabras.txt"
+	python contarPalabras.py -f "texto2.txt" > "texto2_palabras.txt"
         
-	python contarpalabras.py -f "text1o.txt" -q -o af > "texto1_palabras.txt"
+	python contarPalabras.py -f "text1o.txt" -q -o af > "texto1_palabras.txt"
  
 ***
 
 ## Ejemplos
 
-	python limpiartexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
-	python limpiartexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
-	python limpiartexto.py -f "texto1.txt" -n -u -m 1 -e > "texto1_enunciados.txt"
-	python limpiartexto.py -f "texto2.txt" -n -u -m 1 -j -e -s "(\-\-)" -r "—" > "texto2_enunciados.txt"
-	python contarpalabras.py -f "texto1.txt" -q -o af -u > "texto1_palabras.txt"
-	python contarpalabras.py -f "texto2.txt" -q -o af -u > "texto2_palabras.txt"
+	python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
+	python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
+	python limpiarTexto.py -f "texto1.txt" -n -u -m 1 -e > "texto1_enunciados.txt"
+	python limpiarTexto.py -f "texto2.txt" -n -u -m 1 -j -e -s "(\-\-)" -r "—" > "texto2_enunciados.txt"
+	python contarPalabras.py -f "texto1.txt" -q -o af -u > "texto1_palabras.txt"
+	python contarPalabras.py -f "texto2.txt" -q -o af -u > "texto2_palabras.txt"
 ***
 
 ## License

@@ -4,15 +4,15 @@
 """ EJEMPLOS DE USO DESDE LA TERMINAL
 
 	Muestra la lista de palabras del "texto_original.txt":
-	>> python limpiartexto.py -f "texto2.txt" -n -m 1 -s "[^\w]" -r "\n"
+	>> python limpiarTexto.py -f "texto2.txt" -n -m 1 -s "[^\w]" -r "\n"
 	
 	Corrije el formato de saltos de linea de un texto en una copia (variantes):
-	>> python limpiartexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
-	>> python limpiartexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
+	>> python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
+	>> python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 	
 	Separa todos los enunciados de un texto por lineas (variantes):
-	>> python limpiartexto.py -f "texto1.txt" -n -u -m 1 -e -u > "texto1_enunciados.txt"
-	>> python limpiartexto.py -f "texto2.txt" -n -u -m 1 -j -e -u -s "(\-\-)" -r "—" > "texto2_enunciados.txt"
+	>> python limpiarTexto.py -f "texto1.txt" -n -u -m 1 -e -u > "texto1_enunciados.txt"
+	>> python limpiarTexto.py -f "texto2.txt" -n -u -m 1 -j -e -u -s "(\-\-)" -r "—" > "texto2_enunciados.txt"
 
 """
 
@@ -21,7 +21,7 @@ import re
 import argparse
 
 # Define los argumentos de usuario y la ayuda
-parser = argparse.ArgumentParser(description=u'Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.\nEjemplo: python limpiartexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"')
+parser = argparse.ArgumentParser(description=u'Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.\nEjemplo: python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"')
 parser.add_argument("-f", "--file", type=argparse.FileType('r'), required=True, help=u"Define el archivo de texto a procesar (REQUERIDO).")
 parser.add_argument("-n", "--newline", help=u"Rectificar saltos de línea de un texto.", action="store_true")
 parser.add_argument("-s", "--search", nargs='+', help=u"Cadena(s) de búsqueda REGEX definidas por el usuario.")
