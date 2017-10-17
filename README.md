@@ -1,4 +1,4 @@
-# Ejemplos básicos de PYTHON para NLP
+# Ejemplos básicos en PYTHON de REGEX y NLP en español
 
 En este REPO incluímos varios scripts básicos que sirven como introducción al uso de PYTHON para el Procesamiento de Lenguaje Natural.
 
