@@ -1,0 +1,138 @@
+Para mostrar esta lista (una vez instalado NLTK) podemos ejecutar desde terminal:
+
+    $ python
+
+Así, solito. Se mostrará la interfaz de comandos de Python. Ahi debemos importar 
+la librería y luego ejecutar un download() con ella:
+
+    >>> import nltk
+    >>> nltk.download()
+
+Aparecerá la siguiente interfaz:
+
+---------------------------------------------------------------------------
+    d) Download   l) List    u) Update   c) Config   h) Help   q) Quit
+---------------------------------------------------------------------------
+
+Cuando apretamos la tecla "l" (list) aparece:
+
+- - - -
+
+NLTK Packages:
+  [ ] abc................. Australian Broadcasting Commission 2006
+  [ ] alpino.............. Alpino Dutch Treebank
+  [ ] averaged_perceptron_tagger Averaged Perceptron Tagger
+  [ ] averaged_perceptron_tagger_ru Averaged Perceptron Tagger (Russian)
+  [ ] basque_grammars..... Grammars for Basque
+  [ ] biocreative_ppi..... BioCreAtIvE (Critical Assessment of Information Extraction Systems in Biology)
+  [ ] bllip_wsj_no_aux.... BLLIP Parser: WSJ Model
+  [ ] book_grammars....... Grammars from NLTK Book
+  [ ] brown............... Brown Corpus
+  [ ] brown_tei........... Brown Corpus (TEI XML Version)
+  [ ] cess_cat............ CESS-CAT Treebank
+  [ ] cess_esp............ CESS-ESP Treebank
+  [ ] chat80.............. Chat-80 Data Files
+  [ ] city_database....... City Database
+  [ ] cmudict............. The Carnegie Mellon Pronouncing Dictionary (0.6)
+  [ ] comparative_sentences Comparative Sentence Dataset
+  [ ] comtrans............ ComTrans Corpus Sample
+  [ ] conll2000........... CONLL 2000 Chunking Corpus
+  [ ] conll2002........... CONLL 2002 Named Entity Recognition Corpus
+  [ ] conll2007........... Dependency Treebanks from CoNLL 2007 (Catalan and Basque Subset)
+  [ ] crubadan............ Crubadan Corpus
+  [ ] dependency_treebank. Dependency Parsed Treebank
+  [ ] dolch............... Dolch Word List
+  [ ] europarl_raw........ Sample European Parliament Proceedings Parallel Corpus
+  [ ] floresta............ Portuguese Treebank
+  [ ] framenet_v15........ FrameNet 1.5
+  [ ] framenet_v17........ FrameNet 1.7
+  [ ] gazetteers.......... Gazeteer Lists
+  [ ] genesis............. Genesis Corpus
+  [ ] gutenberg........... Project Gutenberg Selections
+  [ ] hmm_treebank_pos_tagger Treebank Part of Speech Tagger (HMM)
+  [ ] ieer................ NIST IE-ER DATA SAMPLE
+  [ ] inaugural........... C-Span Inaugural Address Corpus
+  [ ] indian.............. Indian Language POS-Tagged Corpus
+  [ ] jeita............... JEITA Public Morphologically Tagged Corpus (in ChaSen format)
+  [ ] kimmo............... PC-KIMMO Data Files
+  [ ] knbc................ KNB Corpus (Annotated blog corpus)
+  [ ] large_grammars...... Large context-free and feature-based grammars for parser comparison
+  [ ] lin_thesaurus....... Lin's Dependency Thesaurus
+  [ ] mac_morpho.......... MAC-MORPHO: Brazilian Portuguese news text with part-of-speech tags
+  [ ] machado............. Machado de Assis -- Obra Completa
+  [ ] masc_tagged......... MASC Tagged Corpus
+  [ ] maxent_ne_chunker... ACE Named Entity Chunker (Maximum entropy)
+  [ ] maxent_treebank_pos_tagger Treebank Part of Speech Tagger (Maximum entropy)
+  [ ] moses_sample........ Moses Sample Models
+  [ ] movie_reviews....... Sentiment Polarity Dataset Version 2.0
+  [ ] mte_teip5........... MULTEXT-East 1984 annotated corpus 4.0
+  [ ] mwa_ppdb............ The monolingual word aligner (Sultan et al. 2015) subset of the Paraphrase Database.
+  [ ] names............... Names Corpus, Version 1.3 (1994-03-29)
+  [ ] nombank.1.0......... NomBank Corpus 1.0
+  [ ] nonbreaking_prefixes Non-Breaking Prefixes (Moses Decoder)
+  [ ] nps_chat............ NPS Chat
+  [ ] omw................. Open Multilingual Wordnet
+  [ ] opinion_lexicon..... Opinion Lexicon
+  [ ] panlex_swadesh...... PanLex Swadesh Corpora
+  [ ] paradigms........... Paradigm Corpus
+  [ ] pe08................ Cross-Framework and Cross-Domain Parser Evaluation Shared Task
+  [ ] perluniprops........ perluniprops: Index of Unicode Version 7.0.0 character properties in Perl
+  [ ] pil................. The Patient Information Leaflet (PIL) Corpus
+  [ ] pl196x.............. Polish language of the XX century sixties
+  [ ] porter_test......... Porter Stemmer Test Files
+  [ ] ppattach............ Prepositional Phrase Attachment Corpus
+  [ ] problem_reports..... Problem Report Corpus
+  [ ] product_reviews_1... Product Reviews (5 Products)
+  [ ] product_reviews_2... Product Reviews (9 Products)
+  [ ] propbank............ Proposition Bank Corpus 1.0
+  [ ] pros_cons........... Pros and Cons
+  [ ] ptb................. Penn Treebank
+  [ ] punkt............... Punkt Tokenizer Models
+  [ ] qc.................. Experimental Data for Question Classification
+  [ ] reuters............. The Reuters-21578 benchmark corpus, ApteMod version
+  [ ] rslp................ RSLP Stemmer (Removedor de Sufixos da Lingua Portuguesa)
+  [ ] rte................. PASCAL RTE Challenges 1, 2, and 3
+  [ ] sample_grammars..... Sample Grammars
+  [ ] semcor.............. SemCor 3.0
+  [ ] senseval............ SENSEVAL 2 Corpus: Sense Tagged Text
+  [ ] sentence_polarity... Sentence Polarity Dataset v1.0
+  [ ] sentiwordnet........ SentiWordNet
+  [ ] shakespeare......... Shakespeare XML Corpus Sample
+  [ ] sinica_treebank..... Sinica Treebank Corpus Sample
+  [ ] smultron............ SMULTRON Corpus Sample
+  [ ] snowball_data....... Snowball Data
+  [ ] spanish_grammars.... Grammars for Spanish
+  [ ] state_union......... C-Span State of the Union Address Corpus
+  [ ] stopwords........... Stopwords Corpus
+  [ ] subjectivity........ Subjectivity Dataset v1.0
+  [ ] swadesh............. Swadesh Wordlists
+  [ ] switchboard......... Switchboard Corpus Sample
+  [ ] tagsets............. Help on Tagsets
+  [ ] timit............... TIMIT Corpus Sample
+  [ ] toolbox............. Toolbox Sample Files
+  [ ] treebank............ Penn Treebank Sample
+  [ ] twitter_samples..... Twitter Samples
+  [ ] udhr2............... Universal Declaration of Human Rights Corpus (Unicode Version)
+  [ ] udhr................ Universal Declaration of Human Rights Corpus
+  [ ] unicode_samples..... Unicode Samples
+  [ ] universal_tagset.... Mappings to the Universal Part-of-Speech Tagset
+  [ ] universal_treebanks_v20 Universal Treebanks Version 2.0
+  [ ] vader_lexicon....... VADER Sentiment Lexicon
+  [ ] verbnet............. VerbNet Lexicon, Version 2.1
+  [ ] webtext............. Web Text Corpus
+  [ ] wmt15_eval.......... Evaluation data from WMT15
+  [ ] word2vec_sample..... Word2Vec Sample
+  [ ] wordnet............. WordNet
+  [ ] wordnet_ic.......... WordNet-InfoContent
+  [ ] words............... Word Lists
+  [ ] ycoe................ York-Toronto-Helsinki Parsed Corpus of Old English Prose
+
+Collections:
+  [ ] all-corpora......... All the corpora
+  [ ] all-nltk............ All packages available on nltk_data gh-pages branch
+  [ ] all................. All packages
+  [ ] book................ Everything used in the NLTK Book
+  [ ] popular............. Popular packages
+  [ ] third-party......... Third-party data packages
+
+([*] marks installed packages)

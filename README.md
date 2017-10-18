@@ -10,10 +10,13 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 
 1. vacio.py
 1. helloWorldUTF8.py
+1. simpleEncodingUTF8.py / simpleEncodingCP1252.py
+1. simpleRegexUTF8.py
 1. argumentosSimple.py
 1. argumentosParsed.py
 1. limpiarTexto.py
 1. contarPalabras.py
+1. contarCaracteres.py
 
 ### 1. vacio.py
 
@@ -31,8 +34,26 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 		>> Santiago Chávez
 		¡Hola, Santiago Chávez!
 
+### 3. simpleEncodingUTF8.py / simpleEncodingCP1252.py
 
-### 3. argumentosSimple.py
+> El script **simpleEncodingUTF8.py** como trabajar con las distintas codificaciones de texto (UTF8, UNICODE, cp1250, etc.). Además muestra como "decodificar" y como detectar la codificación de las cadenas de texto.
+El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF pero el archivo está guardado con codificación típica de windows-1252. Se pueden apreciar los errores que el mismo código genera.
+
+**Ejemplos de uso:**
+
+	$ python simpleEncodingUTF8.py
+
+### 4. simpleRegexUTF8.py
+
+> Este script muestra como realizar búsquedas y reemplazos 
+	de cadenas de texto mediante Expresiones Regulares (REGEX)
+	utilizando caracteres Unicode.
+
+**Ejemplos de uso:**
+
+	$ python simpleRegexUTF8.py
+
+### 5. argumentosSimple.py
 
 > Este programa muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", considerando la codificación. (Imposible de resolver en Windows 7)
 
@@ -42,7 +63,7 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 	$ python argumentosSimple.py "Santiago Chávez"
 	$ python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
 
-### 4. argumentosParsed.py
+### 6. argumentosParsed.py
 
 > Este programa también muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", pero usando la librería "argparse" que simplifica el proceso además de que provee un mensaje de ayuda a los usuarios.
 
@@ -66,7 +87,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python argumentosParsed.py -n "Santiago Chávez"
 	$ python argumentosParsed.py -n "Santiago Chávez" -e
 
-### 5. limpiarTexto.py
+### 7. limpiarTexto.py
 
 > Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.
 
@@ -100,7 +121,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
 	$ python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 
-### 6. contarPalabras.py
+### 8. contarPalabras.py
 
 > Este programa intenta contar la frecuencia de las palabras de un texto.
 
@@ -126,38 +147,68 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python contarPalabras.py -f "texto2.txt" > "texto2_palabras.txt"
 	$ python contarPalabras.py -f "text1o.txt" -q -o af > "texto1_palabras.txt"
+
+### 9. contarCaracteres.py
+
+> Este programa intenta contar la frecuencia de las caracteres de un texto.
+
+**Ayuda:**
+Para desplegar la ayuda en terminal ejecute:
+
+	$ python contarCaracteres.py -h
+		usage: contarCaracteres.py [-h] -f FILE [-o ORD] [-q] [-u]
+
+		Este programa intenta contar la frecuencia de las caracteres de un texto.
+		Ejemplo: python contarCaracteres.py -f texto1.txt -o aF -i
+
+		optional arguments:
+		  -h, --help            show this help message and exit
+		  -f FILE, --file FILE  Define el archivo de texto a procesar (REQUERIDO).
+		  -o ORD, --ord ORD     Ordenar contador: a:Alfabéticamente, f:Frecuencia
+				        (Mayúscula=Reversa).
+		  -q, --freq            Mostrar frecuencia de conteos.
+		  -u, --utf8            Codificar la salida como UTF-8.
+
+**Ejemplos de uso:**
+
+	$ python contarCaracteres.py -f "texto2.txt" > "texto2_caracteres.txt"
+	$ python contarCaracteres.py -f "text1o.txt" -q -o af > "texto1_caracteres.txt"
  
 ***
 
 ## Testing
 
-Se puede guardar este script en un archivo .sh o .bat y ejecutar el testeo de un jalón. En Linux/Mac guardamos con el nombre "**testeo.sh**" y el Windows con el nombre "**testeo.bat**".
-Para ejecutar el testeo desde la terminal, ya estando en el mismo directorio:
-
-	$ testeo.bat
-
-**testeo.sh** ó **testeo.bat**
-
 	echo Testing "helloWorldUTF8"
 	python helloWorldUTF8.py
+	
+	echo Testing "simpleEncodingUTF8"
+	python simpleEncodingUTF8.py
+	echo Testing "simpleEncodingCP1252"
+	python simpleEncodingCP1252.py
+	echo Testing "simpleRegexUTF8"
+	python simpleRegexUTF8.py
 	echo Testing "argumentosSimple"
 	python argumentosSimple.py Santiago Chávez
 	python argumentosSimple.py "Santiago Chávez"
-	python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
+	python argumentosSimple.py "Santiago Chávez" utf8 > "test/test_argumentosSimple.txt"
 	echo Testing "argumentosParsed"
 	python argumentosParsed.py -a "Santiago Chávez"
 	python argumentosParsed.py -a "Santiago Chávez" -m
 	python argumentosParsed.py -a "Santiago Chávez" -M
-	echo Este ejemplo debe mostrar error de codificación en Windows, la linea esta comentada con "rem"
-	rem python argumentosParsed.py -a "Santiago Chávez" -M > test.txt
+	echo Este ejemplo debe mostrar error de codificación
+	python argumentosParsed.py -a "Santiago Chávez" -M > "test/test_argumentosParsed.txt"
 	echo Testing "limpiarTexto"
-	python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
-	python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
-	python limpiarTexto.py -f "texto1.txt" -n -u -m 1 -e > "texto1_enunciados.txt"
-	python limpiarTexto.py -f "texto2.txt" -n -u -m 1 -j -e -s "(\-\-)" -r "—" > "texto2_enunciados.txt"
+	python limpiarTexto.py -f "test/texto1.txt" -n -u -m 2 > "test/texto1_limpio.txt"
+	python limpiarTexto.py -f "test/texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "test/texto2_limpio.txt"
+	python limpiarTexto.py -f "test/texto1.txt" -n -u -m 1 -e > "test/texto1_enunciados.txt"
+	python limpiarTexto.py -f "test/texto2.txt" -n -u -m 1 -j -e -s "(\-\-)" -r "—" > "test/texto2_enunciados.txt"
 	echo Testing "contarPalabras"
-	python contarPalabras.py -f "texto1.txt" -q -o af -u > "texto1_palabras.txt"
-	python contarPalabras.py -f "texto2.txt" -q -o af -u > "texto2_palabras.txt"
+	python contarPalabras.py -f "test/texto1.txt" -q -o af -u > "test/texto1_palabras.txt"
+	python contarPalabras.py -f "test/texto2.txt" -q -o af -u > "test/texto2_palabras.txt"
+	echo Testing "contarCaracteres"
+	python contarCaracteres.py -f "test/texto2.txt" -o aF -u > "test/texto2_caracteres.txt"
+	python contarCaracteres.py -f "test/texto1.txt" -o aF -u > "test/texto1_caracteres.txt"
+
 ***
 
 ## License
