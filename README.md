@@ -151,15 +151,9 @@ Para desplegar la ayuda en terminal ejecute:
 
 ## Testing
 
-Se puede guardar este script en un archivo .sh o .bat y ejecutar el testeo de un jalón. En Linux/Mac guardamos con el nombre "**testeo.sh**" y el Windows con el nombre "**testeo.bat**".
-Para ejecutar el testeo desde la terminal, ya estando en el mismo directorio:
-
-	$ testeo.bat
-
-**testeo.sh** ó **testeo.bat**
-
 	echo Testing "helloWorldUTF8"
 	python helloWorldUTF8.py
+	
 	echo Testing "simpleEncodingUTF8"
 	python simpleEncodingUTF8.py
 	echo Testing "simpleEncodingCP1252"
@@ -174,7 +168,7 @@ Para ejecutar el testeo desde la terminal, ya estando en el mismo directorio:
 	python argumentosParsed.py -a "Santiago Chávez"
 	python argumentosParsed.py -a "Santiago Chávez" -m
 	python argumentosParsed.py -a "Santiago Chávez" -M
-	echo Este ejemplo debe mostrar error de codificación en Windows
+	echo Este ejemplo debe mostrar error de codificación
 	python argumentosParsed.py -a "Santiago Chávez" -M > "test/test_argumentosParsed.txt"
 	echo Testing "limpiarTexto"
 	python limpiarTexto.py -f "test/texto1.txt" -n -u -m 2 > "test/texto1_limpio.txt"

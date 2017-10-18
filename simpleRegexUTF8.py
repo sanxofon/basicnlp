@@ -5,6 +5,8 @@
 	Este script muestra como realizar búsquedas y reemplazos 
 	de cadenas de texto mediante Expresiones Regulares (REGEX)
 	utilizando caracteres Unicode.
+
+	>> python simpleRegexUTF8.py
 """
 
 # La librería "sys" no permite acceder a información del sistema
@@ -113,3 +115,37 @@ print u"Resultado:", "\t", cadena_resultado
 
 #Imprimimos "cadena_resultado"
 print u"Unicode:", "\t",cadena_resultado_unicode
+
+
+"""
+Compilar patrones de búsqueda
+
+	En Python, crear un nuevo patrón de expresión regular para que coincida con muchas cadenas puede ser lento, 
+	por lo que se recomienda compilarlos si necesita probar o extraer información de muchas cadenas de entrada 
+	utilizando la misma expresión. Este método devuelve un "re.RegexObject".
+
+	>> regexObject = re.compile(pattern, flags=0)
+
+	El objeto devuelto tiene exactamente los mismos métodos que los anteriores, 
+	excepto que ya no requieren el patrón ni las banderas para cada llamada.
+"""
+
+print
+print u">> RE.COMPILE"
+# Compilamos el patrón de búsqueda
+patron_compilado = re.compile(patron)
+
+print "search:"
+# Usamos el objeto "patron_compilado" para buscar (search)
+match = patron_compilado.search(cadena)
+if match:
+    print "\t", match.start(), match.end()
+
+print "findall:"
+# Usamos el objeto "patron_compilado" para encontrar todos las coincidencias (findall)
+for m in patron_compilado.findall(cadena):
+    print "\t", " ".join(m)
+    
+print "sub:"
+# Usamos el objeto "patron_compilado" para reemplazar "patron" por "patron_reemplazo" en "cadena" (sub)
+print "\t", patron_compilado.sub(patron_reemplazo, cadena)

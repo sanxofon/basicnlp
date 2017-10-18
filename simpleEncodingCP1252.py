@@ -21,13 +21,13 @@ texto_normal = [
 	"???????????",
 	"\u1639\u1640\u1641\u1642\u1643\u1644\u1645\u1646\u1647\u1648\u1649",
 ]
-print "IMPRIMIMOS CADENAS DE TEXTO NORMAL DIRECTAMENTE"
+print ">> IMPRIMIMOS CADENAS DE TEXTO NORMAL DIRECTAMENTE"
 # Imprimimos estas cadenas a la consola directamente
 for t in texto_normal:
 	print t
 
 print
-print "IMPRIMIMOS CADENAS DE TEXTO NORMAL DECODIFICADAS (UTF-8)"
+print ">> IMPRIMIMOS CADENAS DE TEXTO NORMAL DECODIFICADAS (UTF-8)"
 # Imprimimos estas cadenas a la consola decodificadas (utf-8)
 for t in texto_normal:
 	print t.decode("cp1252")
@@ -45,7 +45,7 @@ texto_unicode = [
 ]
 
 print
-print "IMPRIMIMOS CADENAS DE TEXTO UNICODE"
+print ">> IMPRIMIMOS CADENAS DE TEXTO UNICODE"
 # Imprimimos estas cadenas a la consola directamente
 for t in texto_unicode:
 	print t
@@ -63,7 +63,7 @@ texto_raw_unicode = [
 ]
 
 print
-print "IMPRIMIMOS CADENAS DE TEXTO RAW-UNICODE"
+print ">> IMPRIMIMOS CADENAS DE TEXTO RAW-UNICODE"
 # Imprimimos estas cadenas a la consola directamente
 for t in texto_raw_unicode:
 	print t
