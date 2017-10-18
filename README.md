@@ -16,6 +16,7 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 1. argumentosParsed.py
 1. limpiarTexto.py
 1. contarPalabras.py
+1. contarCaracteres.py
 
 ### 1. vacio.py
 
@@ -146,6 +147,32 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python contarPalabras.py -f "texto2.txt" > "texto2_palabras.txt"
 	$ python contarPalabras.py -f "text1o.txt" -q -o af > "texto1_palabras.txt"
+
+### 9. contarCaracteres.py
+
+> Este programa intenta contar la frecuencia de las caracteres de un texto.
+
+**Ayuda:**
+Para desplegar la ayuda en terminal ejecute:
+
+	$ python contarCaracteres.py -h
+		usage: contarCaracteres.py [-h] -f FILE [-o ORD] [-q] [-u]
+
+		Este programa intenta contar la frecuencia de las caracteres de un texto.
+		Ejemplo: python contarCaracteres.py -f texto1.txt -o aF -i
+
+		optional arguments:
+		  -h, --help            show this help message and exit
+		  -f FILE, --file FILE  Define el archivo de texto a procesar (REQUERIDO).
+		  -o ORD, --ord ORD     Ordenar contador: a:Alfabéticamente, f:Frecuencia
+				        (Mayúscula=Reversa).
+		  -q, --freq            Mostrar frecuencia de conteos.
+		  -u, --utf8            Codificar la salida como UTF-8.
+
+**Ejemplos de uso:**
+
+	$ python contarCaracteres.py -f "texto2.txt" > "texto2_caracteres.txt"
+	$ python contarCaracteres.py -f "text1o.txt" -q -o af > "texto1_caracteres.txt"
  
 ***
 
@@ -178,6 +205,10 @@ Para desplegar la ayuda en terminal ejecute:
 	echo Testing "contarPalabras"
 	python contarPalabras.py -f "test/texto1.txt" -q -o af -u > "test/texto1_palabras.txt"
 	python contarPalabras.py -f "test/texto2.txt" -q -o af -u > "test/texto2_palabras.txt"
+	echo Testing "contarCaracteres"
+	python contarCaracteres.py -f "test/texto2.txt" -o aF -u > "test/texto2_caracteres.txt"
+	python contarCaracteres.py -f "test/texto1.txt" -o aF -u > "test/texto1_caracteres.txt"
+
 ***
 
 ## License

@@ -119,11 +119,11 @@ if contint:
 		pru(u"Total palabras: "+str(totpals))
 else:
 	print "-------"
-	print "id\tpal\tfreq"
+	print "id\tfreq\tpal"
 	for i,c in enumerate(contador):
 		if utf8:
-			print str(i+1)+"\t"+c[0].encode('utf-8')+"\t"+str(c[1])
+			print str(i+1)+"\t"+str(c[1])+"\t"+c[0].encode('utf-8')
 		else:
-			print str(i+1)+"\t"+c[0]+"\t"+str(c[1])
+			print str(i+1)+"\t"+str(c[1])+"\t"+c[0]
 
 #"""
