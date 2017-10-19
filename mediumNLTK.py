@@ -171,19 +171,95 @@ print "\t",cadena
 from nltk.tokenize import TreebankWordTokenizer
 tokenizer = TreebankWordTokenizer()
 tokens = tokenizer.tokenize(cadena)
-print u"\nPalabras:"
-print "\t","\n\t".join([addslashes(t) for t in tokens])
+# print u"\nPalabras:"
+# print "\t","\n\t".join([addslashes(t) for t in tokens])
 
 # Tokenizador que separa las palabras y luego los signos de puntuación
 from nltk.tokenize import WordPunctTokenizer
 word_punct_tokenizer = WordPunctTokenizer()
 palabras = word_punct_tokenizer.tokenize(cadena)
-print u"\nPalabras/Puntuación:"
-print "\t","\n\t".join([addslashes(t) for t in palabras])
+# print u"\nPalabras/Puntuación:"
+# print "\t","\n\t".join([addslashes(t) for t in palabras])
 
 # Versión en español del tokenizador por frases
 import nltk.data
 spanish_tokenizer = nltk.data.load("tokenizers/punkt/spanish.pickle")
 frases = spanish_tokenizer.tokenize(cadena)
-print u"\nFrases:"
-print "\t","\n\t".join([addslashes(t) for t in frases])
+# print u"\nFrases:"
+# print "\t","\n\t".join([addslashes(t) for t in frases])
+
+# POS-Tagging (en ingés, no funciona en español)
+# tagged = nltk.pos_tag(tokens)
+# print "Tagged:"
+# for t in tagged:
+#     print "\t", "\t".join(t)
+
+# POS-Tagging sencillo (en español)
+# Para poder taggear en español necesitamos primero entrenar 
+# al tagger con un corpus de frases ya calificadas.
+from nltk.corpus import cess_esp as cess # El corpus
+from nltk import UnigramTagger as ut # El tagger (de una palabra)
+from nltk import BigramTagger as bt # El tagger (de a dos palabras)
+
+# Leemos el corpus a una lista
+# Cada entrada de la lista es una frase
+cess_sents = cess.tagged_sents()
+
+# Dividimos el corpus en dos partes: entrenamiento y testeo
+train = int(len(cess_sents)*90/100) # 90% entrenamiento
+
+import pickle
+crear_taggers = True
+if crear_taggers:
+    # Entrenamos el tagger de unigramas (no tiene caso el testeo con unigramas)
+    uni_tag = ut(cess_sents)
+    # Entramos el tagger de bigramas con sólamente la data de entrenamiento
+    bi_tag = bt(cess_sents[:train])
+
+    # Guardamos los taggers en archivos para ahorrar tiempo la siguiente vez
+    with open('cess_unigram.tagger.pkl', 'wb') as output:
+        pickle.dump(uni_tag, output, pickle.HIGHEST_PROTOCOL)
+    with open('cess_bigram.tagger.pkl', 'wb') as output:
+        pickle.dump(bi_tag, output, pickle.HIGHEST_PROTOCOL)
+
+    # Evaluamos en los datos de testeo, el 10% restante
+    evaluacion = bi_tag.evaluate(cess_sents[train+1:])
+    print u"\nEvaluación:"
+    print evaluacion
+else:
+    # Si ya están generados los taggers podemos simplemente abrirlos
+    with open('cess_unigram.tagger.pkl', 'rb') as input:
+        uni_tag = pickle.load(input)
+    with open('cess_bigram.tagger.pkl', 'rb') as input:
+        bi_tag = pickle.load(input)
+
+
+# Tagger lee una lista de tokens: las "palabras" de "cadena"
+tagged1 = uni_tag.tag(palabras)
+
+# Tagger lee una lista de tokens: las "palabras" de "cadena"
+tagged2 = bi_tag.tag(palabras)
+
+# Imprimimos
+print u"\nTagged Unigram:"
+for t in tagged1:
+    print "\t",t[1], t[0]
+print u"\nTagged Bigram:"
+for t in tagged2:
+    print "\t",t[1], t[0]
+
+
+
+
+
+
+
+# Identificamos las entidades por nombre:
+# entities = nltk.chunk.ne_chunk(tagged)
+# print "Entities:",entities
+
+# Display a parse tree:
+# from nltk.corpus import treebank
+# t = treebank.parsed_sents('wsj_0001.mrg')[0]
+# t.draw()
+##############################################################
