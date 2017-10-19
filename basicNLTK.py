@@ -1,6 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Función de ayuda de impresión (no le hagan caso)
+def addslashes(s):
+    ech = [
+        ("\r","\\r"),
+        ("\n","\\n"),
+        ("\t","\\t"),
+    ]
+    for e in ech:
+        if e[0] in s:
+            s = s.replace(e[0], e[1])
+    return s
+
 """
 	Este script muestra los primeros pasos de uso de la 
 	librería "nltk" (Natural Language Toolkit) para procesamiento de 
@@ -97,7 +109,7 @@ import nltk
 	  [ ] cess_esp............ CESS-ESP Treebank
 	  [ ] spanish_grammars.... Grammars for Spanish
 
-	Y otros que son multidioma e incluyen elementos en español:
+	Otros que son multidioma e incluyen elementos en español:
 
 	  [ ] crubadan............ Crubadan Corpus
 	  [ ] conll2002........... CONLL 2002 Named Entity Recognition Corpus
@@ -107,6 +119,11 @@ import nltk
 	  [ ] universal_tagset.... Mappings to the Universal Part-of-Speech Tagset
 	  [ ] universal_treebanks_v20 Universal Treebanks Version 2.0
 	  [ ] words............... Word Lists
+
+	Otros generales:
+	  [ ] punkt............... Punkt Tokenizer Models
+	  [ ] averaged_perceptron_tagger Averaged Perceptron Tagger
+	  [ ] maxent_ne_chunker... ACE Named Entity Chunker (Maximum entropy)
 
 	Para salir de la interfaz de NLTK apretamos la letra "q".
 	Para salir del intérprete de Pythos escribimos:
@@ -129,32 +146,53 @@ import nltk
 # de NLTK (nltk.org) pero "traducido" al español.
 ##############################################################
 # "Tokenizar" y "taggear" un texto:
+# nltk.download("maxent_ne_chunker")
+# Siempre que definamos una cadena en código lo haremos con el prefijo (u)
+cadena = u"—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!\nEl veloz murciélago hindú comía feliz cardillo y kiwi.\nLa cigüena tocaba el saxofón detrás del palenque de paja.\nEl pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.\nExhíbanse politiquillos zafios,\ncon orejas kilométricas\n\ty unas de gavilán."
 
-import nltk
-sentence = """At eight o'clock on Thursday morning
-... Arthur didn't feel very good."""
-tokens = nltk.word_tokenize(sentence)
-tokens
-['At', 'eight', "o'clock", 'on', 'Thursday', 'morning',
-'Arthur', 'did', "n't", 'feel', 'very', 'good', '.']
-tagged = nltk.pos_tag(tokens)
-tagged[0:6]
-[('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'), ('on', 'IN'),
-('Thursday', 'NNP'), ('morning', 'NN')]
+print "Cadena:"
+print "\t",cadena
 
-# Identify named entities:
+# Ejemplo normal de tokenizador por palabras (las palabras se capturan con los signos de puntuación adyacentes)
+from nltk.tokenize import TreebankWordTokenizer
+tokenizer = TreebankWordTokenizer()
+tokens = tokenizer.tokenize(cadena)
+print "Palabras:"
+print "\t","\n\t".join([addslashes(t) for t in tokens])
 
-entities = nltk.chunk.ne_chunk(tagged)
-entities
-Tree('S', [('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'),
-           ('on', 'IN'), ('Thursday', 'NNP'), ('morning', 'NN'),
-       Tree('PERSON', [('Arthur', 'NNP')]),
-           ('did', 'VBD'), ("n't", 'RB'), ('feel', 'VB'),
-           ('very', 'RB'), ('good', 'JJ'), ('.', '.')])
+# Tokenizador que separa las palabras y luego los signos de puntuación
+from nltk.tokenize import WordPunctTokenizer
+word_punct_tokenizer = WordPunctTokenizer()
+tokens = word_punct_tokenizer.tokenize(cadena)
+print "Palabras/Puntuación:"
+print "\t","\n\t".join([addslashes(t) for t in tokens])
+
+# Versión en español del tokenizador por frases
+import nltk.data
+spanish_tokenizer = nltk.data.load("tokenizers/punkt/spanish.pickle")
+tokens = spanish_tokenizer.tokenize(cadena)
+print "Frases:"
+print "\t","\n\t".join([addslashes(t) for t in tokens])
+
+# POS-Tagging sencillo (en ingés, no funciona en español)
+# tagged = nltk.pos_tag(tokens)
+# print "Tagged:"
+# for t in tagged:
+# 	print "\t", "\t".join(t)
+
+from nltk.tag import HunposTagger
+ht = HunposTagger('es_wsj.model')
+tokens = ht.tag('What is the airspeed of an unladen swallow ?'.split())
+print "POS-Tagged:"
+print "\t","\n\t".join([addslashes(t) for t in tokens])
+ht.close()
+
+# Identificamos las entidades por nombre:
+# entities = nltk.chunk.ne_chunk(tagged)
+# print "Entities:",entities
 
 # Display a parse tree:
-
-from nltk.corpus import treebank
-t = treebank.parsed_sents('wsj_0001.mrg')[0]
-t.draw()
+# from nltk.corpus import treebank
+# t = treebank.parsed_sents('wsj_0001.mrg')[0]
+# t.draw()
 ##############################################################
