@@ -17,6 +17,15 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 1. limpiarTexto.py
 1. contarPalabras.py
 1. contarCaracteres.py
+1. basicNLTK.py
+    1. get-pip.py
+    1. instalar_nltk_data.py
+1. mediumNLTK.py
+1. stanford-postaggerNLTK.py
+1. simple-stanford-corenlp.py
+1. medium-stanford-corenlp.py
+1. basicFreeling.py
+   1. freelingwrapper.py
 
 ### 1. vacio.py
 
