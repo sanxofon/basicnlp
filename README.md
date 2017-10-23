@@ -2,6 +2,8 @@
 
 En este REPO incluímos varios scripts básicos que sirven como introducción al uso de PYTHON para el Procesamiento de Lenguaje Natural.
 
+Los archivos están ordenados como un curso y ampliamente comentados. En los comentarios dentro del código se explica como instalar, cofigurar y ejecutar las librerías desde python, siempre tomando en cuenta las consideraciones especiales para el idioma español, si bien se puede usar de guía para otros idioma.
+
 *All comments and examples are in spanish*
 
 ***
@@ -17,6 +19,16 @@ En este REPO incluímos varios scripts básicos que sirven como introducción al
 1. limpiarTexto.py
 1. contarPalabras.py
 1. contarCaracteres.py
+1. basicNLTK.py
+    1. get-pip.py
+    1. nltk_packages.txt
+    1. instalar_nltk_data.py
+1. mediumNLTK.py
+1. stanford-postaggerNLTK.py
+1. simple-stanford-corenlp.py
+1. medium-stanford-corenlp.py
+1. basicFreeling.py
+   1. freelingwrapper.py
 
 ### 1. vacio.py
 
@@ -173,6 +185,84 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python contarCaracteres.py -f "texto2.txt" > "texto2_caracteres.txt"
 	$ python contarCaracteres.py -f "text1o.txt" -q -o af > "texto1_caracteres.txt"
+
+### 10. basicNLTK.py
+
+> Este script muestra los primeros pasos de uso de la librería "nltk" (Natural Language Toolkit) para procesamiento de lenguaje natural. Incluye instrucciones básicas de instalación, configuración y descarga de Corpora, Diccionarios, etc.
+> 
+> En los comentarios dentro del código se muestran los usos de los archivos incluídos:
+
+> 1. get-pip.py
+> 1. nltk_packages.txt
+> 1. instalar_nltk_data.py
+
+**Ejemplos de uso:**
+
+	$ python basicNLTK.py
+
+	$ python basicNLTK.py -u > basicNLTK_test.txt
+
+### 11. mediumNLTK.py
+
+> Este script muestra es una versión un poco más avanzada de uso de NLTK, utilizando el corpus CESS.
+
+**Ejemplos de uso:**
+
+	$ python mediumNLTK.py
+
+	$ python mediumNLTK.py -u > mediumNLTK_test.txt
+
+### 12. stanford-postaggerNLTK.py
+
+> En este script mostraré cómo usar NLTK con un programa externo (Stanford POS-Tagger) para "etiquetar" 
+las palabras de una frase en español con mejores resultados que los logrados con los ejemplos anteriores.
+
+**Ejemplos de uso:**
+
+	$ python stanford-postaggerNLTK.py
+
+	$ python stanford-postaggerNLTK.py -u > stanford-postaggerNLTK_test.txt
+
+### 13. simple-stanford-corenlp.py
+
+> En este script se muestra cómo usar el software Stanford CoreNLP. CoreNLP es un programa escrito en leguaje JAVA, sin embargo podemos usar CoreNLP desde Python usando un programa intermedio del tipo "wrapper".
+
+**Ejemplos de uso:**
+
+	$ python simple-stanford-corenlp.py
+
+	$ python simple-stanford-corenlp.py -u > simple-stanford-corenlp_test.txt
+
+### 14. medium-stanford-corenlp.py
+
+> En este script se muestra cómo usar la API del software Stanford CoreNLP para "anotar" textos en español,
+haciendo un us más avanzado de este poderoso sofware de procesamiento de lenguaje natural.
+
+**Ejemplos de uso:**
+
+	$ python medium-stanford-corenlp.py
+
+	$ python medium-stanford-corenlp.py -u > medium-stanford-corenlp.xml
+
+### 15. basicFreeling.py
+
+**EN DESARROLLO...**
+
+> Este script necesita del archivo incluído:
+> 
+> 1. freelingwrapper.py
+
+***
+
+## License
+
+- [**MIT License**](LICENSE.md)
+
+***
+
+## Manteiner
+
+- [**Santiago Chávez** (@sanxofon)](http://lengua.la/sanx.php)
  
 ***
 
@@ -208,15 +298,13 @@ Para desplegar la ayuda en terminal ejecute:
 	echo Testing "contarCaracteres"
 	python contarCaracteres.py -f "test/texto2.txt" -o aF -u > "test/texto2_caracteres.txt"
 	python contarCaracteres.py -f "test/texto1.txt" -o aF -u > "test/texto1_caracteres.txt"
-
-***
-
-## License
-
-- [**MIT License**](LICENSE.md)
-
-***
-
-## Manteiner
-
-- [**Santiago Chávez** (@sanxofon)](http://lengua.la/sanx.php)
+	echo Testing "basicNLTK"
+	python basicNLTK.py
+	echo Testing "mediumNLTK"
+	python mediumNLTK.py
+	echo Testing "stanford-postaggerNLTK"
+	python stanford-postaggerNLTK.py
+	echo Testing "simple-stanford-corenlp"
+	python simple-stanford-corenlp.py
+	echo Testing "medium-stanford-corenlp"
+	python medium-stanford-corenlp.py
