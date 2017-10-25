@@ -21,6 +21,7 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 1. contarCaracteres.py
 1. basicNLTK.py
     1. get-pip.py
+    1. nltk_packages.txt
     1. instalar_nltk_data.py
 1. mediumNLTK.py
 1. stanford-postaggerNLTK.py
@@ -188,6 +189,12 @@ Para desplegar la ayuda en terminal ejecute:
 ### 10. basicNLTK.py
 
 > Este script muestra los primeros pasos de uso de la librería "nltk" (Natural Language Toolkit) para procesamiento de lenguaje natural. Incluye instrucciones básicas de instalación, configuración y descarga de Corpora, Diccionarios, etc.
+> 
+> En los comentarios dentro del código se muestran los usos de los archivos incluídos:
+
+> 1. get-pip.py
+> 1. nltk_packages.txt
+> 1. instalar_nltk_data.py
 
 **Ejemplos de uso:**
 
@@ -236,6 +243,14 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	$ python medium-stanford-corenlp.py
 
 	$ python medium-stanford-corenlp.py -u > medium-stanford-corenlp.xml
+
+### 15. basicFreeling.py
+
+**EN DESARROLLO...**
+
+> Este script necesita del archivo incluído:
+> 
+> 1. freelingwrapper.py
 
 ***
 
