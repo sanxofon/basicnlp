@@ -1,10 +1,14 @@
-# Ejemplos básicos en PYTHON de REGEX y NLP en español
+# Curso básico de Expresiones Regulares (REGEX) y Procesamiento de Lenguaje Natural (NLP) en español con ejemplos.
+
+### Lenguaje de programación utilizado en este curso: PYTHON 2.7
+
+**ENGLISH READERS: This repo, README, code comments and examples are in spanish*
 
 En este REPO incluímos varios scripts básicos que sirven como introducción al uso de PYTHON para el Procesamiento de Lenguaje Natural.
 
 Los archivos están ordenados como un curso y ampliamente comentados. En los comentarios dentro del código se explica como instalar, cofigurar y ejecutar las librerías desde python, siempre tomando en cuenta las consideraciones especiales para el idioma español, si bien se puede usar de guía para otros idioma.
 
-*All comments and examples are in spanish*
+#### En los comentarios del código de cada ejemplo encontrarás instrucciones detalladas para entender el código, además de guías paso a paso para descargar gratuitamente e instalar todos los programas que puedas necesitar en cada caso.
 
 ***
 
@@ -32,7 +36,7 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 ### 1. vacio.py
 
-> Este script muestra las cabeceras "env" y "UTF8" que debe tener todo script de este repo. El archivo ".py" debe editarse con esta codificación.
+> Este script muestra las cabeceras "env" y "UTF8" que debe tener todo script de este repo. El archivo ".py" debe editarse con esta codificación. Además muestra cómo hacer comentarios dentro del código.
 
 ### 2. helloWorldUTF8.py
 
