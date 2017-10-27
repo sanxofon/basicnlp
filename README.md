@@ -45,6 +45,12 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 **Ejemplo de uso:**
 
 	$ python helloWorldUTF8.py
+```Diff
++	Hola, Anónimo
++	¿Cómo te llamas?
+-	>> Santiago Chávez
++	¡Hola, Santiago Chávez!
+```
 
 ### 3. [simpleEncodingUTF8.py](https://github.com/sanxofon/basicnlp/blob/master/simpleEncodingUTF8.py) / [simpleEncodingCP1252.py](https://github.com/sanxofon/basicnlp/blob/master/simpleEncodingCP1252.py)
 
@@ -54,6 +60,56 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 **Ejemplos de uso:**
 
 	$ python simpleEncodingUTF8.py
+```Diff
++		>> IMPRIMIMOS CADENAS DE TEXTO NORMAL DIRECTAMENTE
++		El veloz murciélago hindú comía feliz cardillo y kiwi.
++		La cigüena tocaba el saxofón detrás del palenque de paja.
++		El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
++		Exhíbanse politiquillos zafios,
++		con orejas kilométricas
++			y unas de gavilán.
++		—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
++		عـفقكلمنهوى
++		\u0639\u0640\u0641\u0642\u0643\u0644\u0645\u0646\u0647\u0648\u0649
++		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
++		\u1639\u1640\u1641\u1642\u1643\u1644\u1645\u1646\u1647\u1648\u1649
+
++		>> IMPRIMIMOS CADENAS DE TEXTO NORMAL DECODIFICADAS (UTF-8)
++		El veloz murciélago hindú comía feliz cardillo y kiwi.
++		La cigüena tocaba el saxofón detrás del palenque de paja.
++		El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
++		Exhíbanse politiquillos zafios,
++		con orejas kilométricas
++			y unas de gavilán.
++		—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
++		عـفقكلمنهوى
++		\u0639\u0640\u0641\u0642\u0643\u0644\u0645\u0646\u0647\u0648\u0649
++		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
++		\u1639\u1640\u1641\u1642\u1643\u1644\u1645\u1646\u1647\u1648\u1649
+
++		>> IMPRIMIMOS CADENAS DE TEXTO UNICODE
++		El veloz murciélago hindú comía feliz cardillo y kiwi.
++		La cigüena tocaba el saxofón detrás del palenque de paja.
++		El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
++		Exhíbanse politiquillos zafios,
++		con orejas kilométricas
++			y unas de gavilán.
++		—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
++		عـفقكلمنهوى
++		عـفقكلمنهوى
++		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
++		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
+
++		>> IMPRIMIMOS CADENAS DE TEXTO RAW-UNICODE
++		El veloz murciélago hindú comía feliz cardillo y kiwi.\nLa cigüena tocaba el saxofón detrás del palenque de paja.
++		El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
++		Exhíbanse politiquillos zafios,\ncon orejas kilométricas\n\ty unas de gavilán.
++		—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
++		عـفقكلمنهوى
++		عـفقكلمنهوى
++		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
++		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
+```
 
 ### 4. [simpleRegexUTF8.py](https://github.com/sanxofon/basicnlp/blob/master/simpleRegexUTF8.py)
 
@@ -64,6 +120,36 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 **Ejemplos de uso:**
 
 	$ python simpleRegexUTF8.py
+```Diff
++		>> RE.SEARCH
++		Coincidencia en el índice 22, 28
++		Grupos:
++			con
++			el
+
++		>> RE.FINDALL
++		Coincidencias:
++			con el
++			te aguarda
++		Coincidencias Unicode:
++			con el
++			qué fin
++			te aguarda
+
++		>> RE.SUB
++		Original: 	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
++		Resultado: 	—¡Joven «emponzoñado» el con whisky, qué fin… aguarda te exhibir!
++		Unicode: 	—¡Joven «emponzoñado» el con whisky, fin qué… aguarda te exhibir!
+
++		>> RE.COMPILE
++		search:
++			22 28
++		findall:
++			con el
++			te aguarda
++		sub:
++			—¡Joven «emponzoñado» el con whisky, qué fin… aguarda te exhibir!
+```
 
 ### 5. [argumentosSimple.py](https://github.com/sanxofon/basicnlp/blob/master/argumentosSimple.py)
 
@@ -72,8 +158,20 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 **Ejemplos de uso:**
 
 	$ python argumentosSimple.py Santiago Chávez
+```Diff
++		Argumentos recibidos:
++			1 . Santiago
++			2 . Chávez
+```
 	$ python argumentosSimple.py "Santiago Chávez"
+```Diff
++		Argumentos recibidos:
++			1 . Santiago Chávez
+```
 	$ python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
+```Python
+		# No devuelve nada, los resultados se guardan en el archivo "test.txt"
+```
 
 ### 6. [argumentosParsed.py](https://github.com/sanxofon/basicnlp/blob/master/argumentosParsed.py)
 
