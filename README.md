@@ -260,7 +260,7 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 
 ## License
 
-- [**MIT License**](LICENSE.md)
+- [**MIT License**](https://github.com/sanxofon/basicnlp/blob/master/LICENSE.md)
 
 ***
 
