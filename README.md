@@ -44,7 +44,7 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 **Ejemplo de uso:**
 
-	python helloWorldUTF8.py
+	$ python helloWorldUTF8.py
 
 ### 3. [simpleEncodingUTF8.py](https://github.com/sanxofon/basicnlp/blob/master/simpleEncodingUTF8.py) / [simpleEncodingCP1252.py](https://github.com/sanxofon/basicnlp/blob/master/simpleEncodingCP1252.py)
 
@@ -83,16 +83,18 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 Para desplegar la ayuda en terminal ejecute:
 
 	$ python argumentosParsed.py -h
-		usage: argumentosParsed.py [-h] -a ARG [-m] [-M]
-		
-		Este programa muestra como recibir datos del usuario como argumentos Ejemplo:
-		python argumentosParsed.py -n "Santiago Chávez"
-		
-		optional arguments:
-		  -h, --help         show this help message and exit
-		  -a ARG, --arg ARG  Argumento, acepta una cadena de texto
-		  -m, --min          Convertir a minúsculas: Booleano, no recibe valor
-		  -M, --may          Convertir a MAYÚSCULAS: Booleano, no recibe valor
+```Diff
++		usage: argumentosParsed.py [-h] -a ARG [-m] [-M]
++		
++		Este programa muestra como recibir datos del usuario como argumentos Ejemplo:
++		python argumentosParsed.py -n "Santiago Chávez"
++		
++		optional arguments:
++		  -h, --help         show this help message and exit
++		  -a ARG, --arg ARG  Argumento, acepta una cadena de texto
++		  -m, --min          Convertir a minúsculas: Booleano, no recibe valor
++		  -M, --may          Convertir a MAYÚSCULAS: Booleano, no recibe valor
+```
 
 **Ejemplos de uso:**
 
