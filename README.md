@@ -16,7 +16,7 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 1. [vacio.py](#1-vaciopy)
 1. [helloWorldUTF8.py](#2-helloworldutf8py)
-1. [simpleEncodingUTF8.py / simpleEncodingCP1252.py](3-simpleencodingutf8py--simpleencodingcp1252py)
+1. [simpleEncodingUTF8.py / simpleEncodingCP1252.py](#3-simpleencodingutf8py--simpleencodingcp1252py)
 1. [simpleRegexUTF8.py](#4-simpleregexutf8py)
 1. [argumentosSimple.py](#5-argumentossimplepy)
 1. [argumentosParsed.py](#6-argumentosparsedpy)
