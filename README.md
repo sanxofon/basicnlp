@@ -14,7 +14,7 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 ## Archivos incluídos hasta ahora:
 
-1. vacio.py
+1. [vacio.py](vacio.py)
 1. helloWorldUTF8.py
 1. simpleEncodingUTF8.py / simpleEncodingCP1252.py
 1. simpleRegexUTF8.py
