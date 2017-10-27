@@ -15,24 +15,25 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 ## Archivos incluídos hasta ahora:
 
 1. [vacio.py](#1-vaciopy)
-1. [helloWorldUTF8.py](helloWorldUTF8.py)
-1. [simpleEncodingUTF8.py](simpleEncodingUTF8.py) / [simpleEncodingCP1252.py](simpleEncodingCP1252.py)
-1. [simpleRegexUTF8.py](simpleRegexUTF8.py)
-1. [argumentosSimple.py](argumentosSimple.py)
-1. [argumentosParsed.py](argumentosParsed.py)
-1. [limpiarTexto.py](limpiarTexto.py)
-1. [contarPalabras.py](contarPalabras.py)
-1. [contarCaracteres.py](contarCaracteres.py)
-1. [basicNLTK.py](basicNLTK.py)
-    1. [get-pip.py](get-pip.py)
-    1. [nltk_packages.txt](nltk_packages.txt)
-    1. [instalar_nltk_data.py](instalar_nltk_data.py)
-1. [mediumNLTK.py](mediumNLTK.py)
-1. [stanford-postaggerNLTK.py](stanford-postaggerNLTK.py)
-1. [simple-stanford-corenlp.py](simple-stanford-corenlp.py)
-1. [medium-stanford-corenlp.py](medium-stanford-corenlp.py)
-1. [basicFreeling.py](basicFreeling.py)
-   1. [freelingwrapper.py](freelingwrapper.py)
+1. [helloWorldUTF8.py](#1-helloWorldUTF8py)
+1. [simpleEncodingUTF8.py](#1-simpleEncodingUTF8py)
+1. [simpleEncodingCP1252.py](#1-simpleEncodingCP1252py)
+1. [simpleRegexUTF8.py](#1-simpleRegexUTF8py)
+1. [argumentosSimple.py](#1-argumentosSimplepy)
+1. [argumentosParsed.py](#1-argumentosParsedpy)
+1. [limpiarTexto.py](#1-limpiarTextopy)
+1. [contarPalabras.py](#1-contarPalabraspy)
+1. [contarCaracteres.py](#1-contarCaracterespy)
+1. [basicNLTK.py](#1-basicNLTKpy)
+    1. get-pip.py
+    1. nltk_packages.txt
+    1. instalar_nltk_data.py
+1. [mediumNLTK.py](#1-mediumNLTKpy)
+1. [stanford-postaggerNLTK.py](#1-stanford-postaggerNLTKpy)
+1. [simple-stanford-corenlp.py](#1-simple-stanford-corenlppy)
+1. [medium-stanford-corenlp.py](#1-medium-stanford-corenlppy)
+1. [basicFreeling.py](#1-basicFreelingpy)
+   1. freelingwrapper.py
 
 ### 1. vacio.py
 
