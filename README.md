@@ -42,13 +42,9 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 > Este programa intenta mostrar un ejemplo clásico pero considerando la codificación (UTF8, UNICODE, TERMINAL). Además muestra como solicitar información al usuario y como codificar/decodificar esta.
 
-**Ejemplos de uso:**
+**Ejemplo de uso:**
 
 	$ python helloWorldUTF8.py
-		Hola, Anónimo
-		¿Cómo te llamas?
-		>> Santiago Chávez
-		¡Hola, Santiago Chávez!
 
 ### 3. [simpleEncodingUTF8.py](https://github.com/sanxofon/basicnlp/blob/master/simpleEncodingUTF8.py) / [simpleEncodingCP1252.py](https://github.com/sanxofon/basicnlp/blob/master/simpleEncodingCP1252.py)
 
