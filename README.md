@@ -35,11 +35,11 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 1. [basicFreeling.py](#1-basicFreelingpy)
    1. freelingwrapper.py
 
-### 1. vacio.py
+### 1. [vacio.py](vacio.py)
 
 > Este script muestra las cabeceras "env" y "UTF8" que debe tener todo script de este repo. El archivo ".py" debe editarse con esta codificación. Además muestra cómo hacer comentarios dentro del código.
 
-### 2. helloWorldUTF8.py
+### 2. [helloWorldUTF8.py]()
 
 > Este programa intenta mostrar un ejemplo clásico pero considerando la codificación (UTF8, UNICODE, TERMINAL). Además muestra como solicitar información al usuario y como codificar/decodificar esta.
 
@@ -51,7 +51,7 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 		>> Santiago Chávez
 		¡Hola, Santiago Chávez!
 
-### 3. simpleEncodingUTF8.py / simpleEncodingCP1252.py
+### 3. [simpleEncodingUTF8.py]() / [simpleEncodingCP1252.py]()
 
 > El script **simpleEncodingUTF8.py** como trabajar con las distintas codificaciones de texto (UTF8, UNICODE, cp1250, etc.). Además muestra como "decodificar" y como detectar la codificación de las cadenas de texto.
 El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF pero el archivo está guardado con codificación típica de windows-1252. Se pueden apreciar los errores que el mismo código genera.
@@ -60,7 +60,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 
 	$ python simpleEncodingUTF8.py
 
-### 4. simpleRegexUTF8.py
+### 4. [simpleRegexUTF8.py]()
 
 > Este script muestra como realizar búsquedas y reemplazos 
 	de cadenas de texto mediante Expresiones Regulares (REGEX)
@@ -70,7 +70,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 
 	$ python simpleRegexUTF8.py
 
-### 5. argumentosSimple.py
+### 5. [argumentosSimple.py]()
 
 > Este programa muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", considerando la codificación. (Imposible de resolver en Windows 7)
 
@@ -80,7 +80,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 	$ python argumentosSimple.py "Santiago Chávez"
 	$ python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
 
-### 6. argumentosParsed.py
+### 6. [argumentosParsed.py]()
 
 > Este programa también muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", pero usando la librería "argparse" que simplifica el proceso además de que provee un mensaje de ayuda a los usuarios.
 
@@ -104,7 +104,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python argumentosParsed.py -n "Santiago Chávez"
 	$ python argumentosParsed.py -n "Santiago Chávez" -e
 
-### 7. limpiarTexto.py
+### 7. [limpiarTexto.py]()
 
 > Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.
 
@@ -138,7 +138,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
 	$ python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 
-### 8. contarPalabras.py
+### 8. [contarPalabras.py]()
 
 > Este programa intenta contar la frecuencia de las palabras de un texto.
 
@@ -165,7 +165,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python contarPalabras.py -f "texto2.txt" > "texto2_palabras.txt"
 	$ python contarPalabras.py -f "text1o.txt" -q -o af > "texto1_palabras.txt"
 
-### 9. contarCaracteres.py
+### 9. [contarCaracteres.py]()
 
 > Este programa intenta contar la frecuencia de las caracteres de un texto.
 
@@ -191,7 +191,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python contarCaracteres.py -f "texto2.txt" > "texto2_caracteres.txt"
 	$ python contarCaracteres.py -f "text1o.txt" -q -o af > "texto1_caracteres.txt"
 
-### 10. basicNLTK.py
+### 10. [basicNLTK.py]()
 
 > Este script muestra los primeros pasos de uso de la librería "nltk" (Natural Language Toolkit) para procesamiento de lenguaje natural. Incluye instrucciones básicas de instalación, configuración y descarga de Corpora, Diccionarios, etc.
 > 
@@ -207,7 +207,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python basicNLTK.py -u > basicNLTK_test.txt
 
-### 11. mediumNLTK.py
+### 11. [mediumNLTK.py]()
 
 > Este script muestra es una versión un poco más avanzada de uso de NLTK, utilizando el corpus CESS.
 
@@ -217,7 +217,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python mediumNLTK.py -u > mediumNLTK_test.txt
 
-### 12. stanford-postaggerNLTK.py
+### 12. [stanford-postaggerNLTK.py]()
 
 > En este script mostraré cómo usar NLTK con un programa externo (Stanford POS-Tagger) para "etiquetar" 
 las palabras de una frase en español con mejores resultados que los logrados con los ejemplos anteriores.
@@ -228,7 +228,7 @@ las palabras de una frase en español con mejores resultados que los logrados co
 
 	$ python stanford-postaggerNLTK.py -u > stanford-postaggerNLTK_test.txt
 
-### 13. simple-stanford-corenlp.py
+### 13. [simple-stanford-corenlp.py]()
 
 > En este script se muestra cómo usar el software Stanford CoreNLP. CoreNLP es un programa escrito en leguaje JAVA, sin embargo podemos usar CoreNLP desde Python usando un programa intermedio del tipo "wrapper".
 
@@ -238,7 +238,7 @@ las palabras de una frase en español con mejores resultados que los logrados co
 
 	$ python simple-stanford-corenlp.py -u > simple-stanford-corenlp_test.txt
 
-### 14. medium-stanford-corenlp.py
+### 14. [medium-stanford-corenlp.py]()
 
 > En este script se muestra cómo usar la API del software Stanford CoreNLP para "anotar" textos en español,
 haciendo un us más avanzado de este poderoso sofware de procesamiento de lenguaje natural.
@@ -249,7 +249,7 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 
 	$ python medium-stanford-corenlp.py -u > medium-stanford-corenlp.xml
 
-### 15. basicFreeling.py
+### 15. [basicFreeling.py]()
 
 **EN DESARROLLO...**
 
