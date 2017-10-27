@@ -44,7 +44,7 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 **Ejemplo de uso:**
 
-	$ python helloWorldUTF8.py
+	python helloWorldUTF8.py
 
 ### 3. [simpleEncodingUTF8.py](https://github.com/sanxofon/basicnlp/blob/master/simpleEncodingUTF8.py) / [simpleEncodingCP1252.py](https://github.com/sanxofon/basicnlp/blob/master/simpleEncodingCP1252.py)
 
@@ -268,6 +268,7 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 
 ## Testing
 
+```Shell
 	echo Testing "helloWorldUTF8"
 	python helloWorldUTF8.py
 	
@@ -308,3 +309,4 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	python simple-stanford-corenlp.py
 	echo Testing "medium-stanford-corenlp"
 	python medium-stanford-corenlp.py
+```
