@@ -16,23 +16,22 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 1. [vacio.py](#1-vaciopy)
 1. [helloWorldUTF8.py](#2-helloworldutf8py)
-1. [simpleEncodingUTF8.py](#3-simpleencodingutf8py)
-1. [simpleEncodingCP1252.py](#4-simpleencodingcp1252py)
-1. [simpleRegexUTF8.py](#5-simpleregexutf8py)
-1. [argumentosSimple.py](#6-argumentossimplepy)
-1. [argumentosParsed.py](#7-argumentosparsedpy)
-1. [limpiarTexto.py](#8-limpiartextopy)
-1. [contarPalabras.py](#9-contarpalabraspy)
-1. [contarCaracteres.py](#10-contarcaracterespy)
-1. [basicNLTK.py](#11-basicnltkpy)
+1. [simpleEncodingUTF8.py / simpleEncodingCP1252.py](3-simpleencodingutf8py--simpleencodingcp1252py)
+1. [simpleRegexUTF8.py](#4-simpleregexutf8py)
+1. [argumentosSimple.py](#5-argumentossimplepy)
+1. [argumentosParsed.py](#6-argumentosparsedpy)
+1. [limpiarTexto.py](#7-limpiartextopy)
+1. [contarPalabras.py](#8-contarpalabraspy)
+1. [contarCaracteres.py](#9-contarcaracterespy)
+1. [basicNLTK.py](#10-basicnltkpy)
     1. get-pip.py
     1. nltk_packages.txt
     1. instalar_nltk_data.py
-1. [mediumNLTK.py](#12-mediumnltkpy)
-1. [stanford-postaggerNLTK.py](#13-stanford-postaggernltkpy)
-1. [simple-stanford-corenlp.py](#14-simple-stanford-corenlppy)
-1. [medium-stanford-corenlp.py](#15-medium-stanford-corenlppy)
-1. [basicFreeling.py](#16-basicfreelingpy)
+1. [mediumNLTK.py](#11-mediumnltkpy)
+1. [stanford-postaggerNLTK.py](#12-stanford-postaggernltkpy)
+1. [simple-stanford-corenlp.py](#13-simple-stanford-corenlppy)
+1. [medium-stanford-corenlp.py](#14-medium-stanford-corenlppy)
+1. [basicFreeling.py](#15-basicfreelingpy)
    1. freelingwrapper.py
 
 ### 1. [vacio.py](vacio.py)
