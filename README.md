@@ -2,7 +2,7 @@
 
 ### Lenguaje de programación utilizado en este curso: PYTHON 2.7
 
-**ENGLISH READERS: This repo, README, code comments and examples are in spanish*
+> *ENGLISH READERS: This repo, README, code comments and examples are in spanish*
 
 En este REPO incluímos varios scripts básicos que sirven como introducción al uso de PYTHON para el Procesamiento de Lenguaje Natural.
 
@@ -15,7 +15,7 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 ## Archivos incluídos hasta ahora:
 
 1. [vacio.py](#1-vaciopy)
-    1. [encoding/](encoding/) (El ABCii de la codificación de caracteres en un sistema digital)
+    1. encoding/ ([El ABCii de la codificación de caracteres en un sistema digital](encoding/))
 1. [helloWorldUTF8.py](#2-helloworldutf8py)
 1. [simpleEncodingUTF8.py / simpleEncodingCP1252.py](#3-simpleencodingutf8py--simpleencodingcp1252py)
 1. [simpleRegexUTF8.py](#4-simpleregexutf8py)

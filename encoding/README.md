@@ -30,7 +30,7 @@ Binario
 
 <th>
 
-Dec
+Decimal
 
 </th>
 
@@ -576,11 +576,11 @@ Etc.
 
 En la tabla anterior notaremos que la manera de “codificar” nuestras letras no es otra cosa que pasarlas a **números binarios**. Y veremos que cuantas más letras agregamos, más “bits” necesitamos, que es la cantidad de caracteres binarios que se necesitas para “escribir” ese número. Pero también se nota que cada bit que agregamos “rinde más”, es decir, permite codificar más cantidad de letras.
 
-Pero sería muy difícil escribir y luego poder leer palabras con varias letras seguidas en este sistema. Entonces se les ocurrió ir contando de 8 bits en 8 bits. El número máximo que se puede escribir en 8 bits es 11111111 (ocho unos), o sea, 255\. A eso los matemáticos les gusta escribirlo como **2⁸-1** , es decir, 2 multiplicado por sí mismo 8 veces (256), menos uno (255). Si le agregamos el 0, es decir que podemos empezar con espacio “ “, son 256, es decir que hay **2⁸** números en 8 bits si contamos el cero.
+Pero sería muy difícil escribir y luego poder leer palabras con varias letras seguidas en este sistema. Entonces se les ocurrió ir contando de 8 bits en 8 bits. El número máximo que se puede escribir en 8 bits es 11111111 (ocho unos), o sea, 255\. A eso los matemáticos les gusta escribirlo como **2⁸-1** , es decir, 2 multiplicado por sí mismo 8 veces (256), menos uno (255). Si le agregamos el 0, es decir que podemos empezar con espacio “ “, son 256, es decir que hay **2⁸** números (o posibilidades) en 8 bits contando el cero.
 
 Así que la cosa más o menos quedó como sigue:
 
-Con los primeros 32 números (5 bits, del 0 al 31, o de 0 a 11111 en binario) lograron hacer un código para avisar algo así como “Ahí te va una letra”.
+Con los primeros 32 números (5 bits, del 0 al 31, del 0 al 2⁵, o de 0 a 11111 en binario) lograron hacer un código para avisar algo así como “Ahí te va una letra”.
 
 Del número 32 al 127 (los siguientes 2 bits, del 2⁵ al 2⁷, del 100000 al 1111111 en binario) asignaron a cada uno una letra, número y todos los signos más comunes de las máquinas de escribir en inglés que les cupieron muy a según su criterio (ver tabla más abajo).
 
@@ -596,7 +596,7 @@ A eso le llamaron ASCII.
 
 *   ASCII usa los valores de 0 a 31 (y 127) para los caracteres de control.
 *   ASCII usa los valores de 32 a 126 para letras, dígitos y símbolos.
-*   ASCII no usa los valores de 128 a 255.
+*   ASCII actualmente ya no usa los valores de 128 a 255.
 
 **Caracteres incluídos:**
 
