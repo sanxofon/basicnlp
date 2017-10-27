@@ -61,7 +61,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 
 	$ python simpleEncodingUTF8.py
 ```Diff
-+		>> IMPRIMIMOS CADENAS DE TEXTO NORMAL DIRECTAMENTE
+-		>> IMPRIMIMOS CADENAS DE TEXTO NORMAL DIRECTAMENTE
 +		El veloz murciélago hindú comía feliz cardillo y kiwi.
 +		La cigüena tocaba el saxofón detrás del palenque de paja.
 +		El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
@@ -74,7 +74,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 +		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
 +		\u1639\u1640\u1641\u1642\u1643\u1644\u1645\u1646\u1647\u1648\u1649
 
-+		>> IMPRIMIMOS CADENAS DE TEXTO NORMAL DECODIFICADAS (UTF-8)
+-		>> IMPRIMIMOS CADENAS DE TEXTO NORMAL DECODIFICADAS (UTF-8)
 +		El veloz murciélago hindú comía feliz cardillo y kiwi.
 +		La cigüena tocaba el saxofón detrás del palenque de paja.
 +		El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
@@ -87,7 +87,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 +		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
 +		\u1639\u1640\u1641\u1642\u1643\u1644\u1645\u1646\u1647\u1648\u1649
 
-+		>> IMPRIMIMOS CADENAS DE TEXTO UNICODE
+-		>> IMPRIMIMOS CADENAS DE TEXTO UNICODE
 +		El veloz murciélago hindú comía feliz cardillo y kiwi.
 +		La cigüena tocaba el saxofón detrás del palenque de paja.
 +		El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
@@ -100,7 +100,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 +		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
 +		ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
 
-+		>> IMPRIMIMOS CADENAS DE TEXTO RAW-UNICODE
+-		>> IMPRIMIMOS CADENAS DE TEXTO RAW-UNICODE
 +		El veloz murciélago hindú comía feliz cardillo y kiwi.\nLa cigüena tocaba el saxofón detrás del palenque de paja.
 +		El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
 +		Exhíbanse politiquillos zafios,\ncon orejas kilométricas\n\ty unas de gavilán.
@@ -121,13 +121,13 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 
 	$ python simpleRegexUTF8.py
 ```Diff
-+		>> RE.SEARCH
+-		>> RE.SEARCH
 +		Coincidencia en el índice 22, 28
 +		Grupos:
 +			con
 +			el
 
-+		>> RE.FINDALL
+-		>> RE.FINDALL
 +		Coincidencias:
 +			con el
 +			te aguarda
@@ -136,12 +136,12 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 +			qué fin
 +			te aguarda
 
-+		>> RE.SUB
+-		>> RE.SUB
 +		Original: 	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
 +		Resultado: 	—¡Joven «emponzoñado» el con whisky, qué fin… aguarda te exhibir!
 +		Unicode: 	—¡Joven «emponzoñado» el con whisky, fin qué… aguarda te exhibir!
 
-+		>> RE.COMPILE
+-		>> RE.COMPILE
 +		search:
 +			22 28
 +		findall:
