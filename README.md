@@ -15,12 +15,14 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 ## Archivos incluídos hasta ahora:
 
 1. [vacio.py](#1-vaciopy)
+    1. [encoding/](encoding/)
 1. [helloWorldUTF8.py](#2-helloworldutf8py)
 1. [simpleEncodingUTF8.py / simpleEncodingCP1252.py](#3-simpleencodingutf8py--simpleencodingcp1252py)
 1. [simpleRegexUTF8.py](#4-simpleregexutf8py)
 1. [argumentosSimple.py](#5-argumentossimplepy)
 1. [argumentosParsed.py](#6-argumentosparsedpy)
 1. [limpiarTexto.py](#7-limpiartextopy)
+    1. test/
 1. [contarPalabras.py](#8-contarpalabraspy)
 1. [contarCaracteres.py](#9-contarcaracterespy)
 1. [basicNLTK.py](#10-basicnltkpy)
@@ -37,6 +39,10 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 ### 1. [vacio.py](https://github.com/sanxofon/basicnlp/blob/master/vacio.py)
 
 > Este script muestra las cabeceras "env" y "UTF8" que debe tener todo script de este repo. El archivo ".py" debe editarse con esta codificación. Además muestra cómo hacer comentarios dentro del código.
+
+En la carpeta **encoding/** escribí un pequeño texto que intenta explicar el porqué de la necesidad de los encodings así como una breve historia de algunos muy famosos:
+
+- [**El ABCii de la codificación de caracteres en un sistema digital**](https://github.com/sanxofon/basicnlp/blob/master/encoding/README.md)
 
 ### 2. [helloWorldUTF8.py](https://github.com/sanxofon/basicnlp/blob/master/helloWorldUTF8.py)
 
@@ -203,6 +209,11 @@ Para desplegar la ayuda en terminal ejecute:
 
 > Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.
 
+Para este programa (y otros) se utiliza la carpeta **test/** que además contiene dos archivos de texto que se pueden usar para testear el script:
+
+- [texto1.txt](https://github.com/sanxofon/basicnlp/blob/master/test/texto1.txt) (Textos varios de Groucho Marx)
+- [texto2.txt](https://github.com/sanxofon/basicnlp/blob/master/test/texto2.txt) (*El origen del pensamiento* de Armando Palacio Valdés)
+
 **Ayuda:**
 Para desplegar la ayuda en terminal ejecute:
 
@@ -239,6 +250,11 @@ Para desplegar la ayuda en terminal ejecute:
 
 > Este programa intenta contar la frecuencia de las palabras de un texto.
 
+Para este programa (y otros) se utiliza la carpeta **test/** que además contiene dos archivos de texto que se pueden usar para testear el script:
+
+- [texto1.txt](https://github.com/sanxofon/basicnlp/blob/master/test/texto1.txt) (Textos varios de Groucho Marx)
+- [texto2.txt](https://github.com/sanxofon/basicnlp/blob/master/test/texto2.txt) (*El origen del pensamiento* de Armando Palacio Valdés)
+
 **Ayuda:**
 Para desplegar la ayuda en terminal ejecute:
 
@@ -267,6 +283,11 @@ Para desplegar la ayuda en terminal ejecute:
 ### 9. [contarCaracteres.py](https://github.com/sanxofon/basicnlp/blob/master/contarCaracteres.py)
 
 > Este programa intenta contar la frecuencia de las caracteres de un texto.
+
+Para este programa (y otros) se utiliza la carpeta **test/** que además contiene dos archivos de texto que se pueden usar para testear el script:
+
+- [texto1.txt](https://github.com/sanxofon/basicnlp/blob/master/test/texto1.txt) (Textos varios de Groucho Marx)
+- [texto2.txt](https://github.com/sanxofon/basicnlp/blob/master/test/texto2.txt) (*El origen del pensamiento* de Armando Palacio Valdés)
 
 **Ayuda:**
 Para desplegar la ayuda en terminal ejecute:
