@@ -1,0 +1,147 @@
+Cadena:
+	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
+El veloz murciélago hindú comía feliz cardillo y kiwi.
+La cigüena tocaba el saxofón detrás del palenque de paja.
+El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
+Exhíbanse politiquillos zafios,
+con orejas kilométricas
+	y unas de gavilán.
+
+Evaluación:
+0.109240687679
+
+Tagged Unigram:
+	None —¡
+	None Joven
+	None «
+	None emponzoñado
+	None »
+	sps00 con
+	da0ms0 el
+	None whisky
+	Fc ,
+	pt0cs000 qué
+	ncms000 fin
+	None …
+	pp2cs000 te
+	None aguarda
+	vmn0000 exhibir
+	Fat !
+	da0ms0 El
+	None veloz
+	ncms000 murciélago
+	nccs000 hindú
+	vmii3s0 comía
+	aq0cs0 feliz
+	None cardillo
+	cc y
+	None kiwi
+	Fp .
+	da0fs0 La
+	None cigüena
+	vmii3s0 tocaba
+	da0ms0 el
+	None saxofón
+	rg detrás
+	spcms del
+	None palenque
+	sps00 de
+	None paja
+	Fp .
+	da0ms0 El
+	None pingüino
+	None Wenceslao
+	vmis3s0 hizo
+	ncmp000 kilómetros
+	sps00 bajo
+	aq0fs0 exhaustiva
+	ncfs000 lluvia
+	cc y
+	ncms000 frío
+	Fc ,
+	None añoraba
+	sps00 a
+	dp3cs0 su
+	vmp00sm querido
+	ncms000 cachorro
+	Fp .
+	None Exhíbanse
+	None politiquillos
+	None zafios
+	Fc ,
+	sps00 con
+	ncfp000 orejas
+	None kilométricas
+	cc y
+	di0fp0 unas
+	sps00 de
+	None gavilán
+	Fp .
+
+Tagged Bigram:
+	None —¡
+	None Joven
+	None «
+	None emponzoñado
+	None »
+	None con
+	None el
+	None whisky
+	None ,
+	None qué
+	None fin
+	None …
+	None te
+	None aguarda
+	None exhibir
+	None !
+	None El
+	None veloz
+	None murciélago
+	None hindú
+	None comía
+	None feliz
+	None cardillo
+	None y
+	None kiwi
+	None .
+	None La
+	None cigüena
+	None tocaba
+	None el
+	None saxofón
+	None detrás
+	None del
+	None palenque
+	None de
+	None paja
+	None .
+	None El
+	None pingüino
+	None Wenceslao
+	None hizo
+	None kilómetros
+	None bajo
+	None exhaustiva
+	None lluvia
+	None y
+	None frío
+	None ,
+	None añoraba
+	None a
+	None su
+	None querido
+	None cachorro
+	None .
+	None Exhíbanse
+	None politiquillos
+	None zafios
+	None ,
+	None con
+	None orejas
+	None kilométricas
+	None y
+	None unas
+	None de
+	None gavilán
+	None .

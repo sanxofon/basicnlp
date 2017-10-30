@@ -408,7 +408,7 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	echo Testing "argumentosSimple"
 	python argumentosSimple.py Santiago Chávez
 	python argumentosSimple.py "Santiago Chávez"
-	python argumentosSimple.py "Santiago Chávez" utf8 > "test/test_argumentosSimple.txt"
+	python argumentosSimple.py "Santiago Chávez" utf8 > "test/argumentosSimple.txt"
 	echo Testing "argumentosParsed"
 	python argumentosParsed.py -a "Santiago Chávez"
 	python argumentosParsed.py -a "Santiago Chávez" -m
@@ -427,13 +427,13 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	python contarCaracteres.py -f "test/texto2.txt" -o aF -u > "test/texto2_caracteres.txt"
 	python contarCaracteres.py -f "test/texto1.txt" -o aF -u > "test/texto1_caracteres.txt"
 	echo Testing "basicNLTK"
-	python basicNLTK.py
+	python basicNLTK.py -u > "test/basicNLTK.txt"
 	echo Testing "mediumNLTK"
-	python mediumNLTK.py
+	python mediumNLTK.py -u > "test/mediumNLTK.txt"
 	echo Testing "stanford-postaggerNLTK"
-	python stanford-postaggerNLTK.py
+	python stanford-postaggerNLTK.py -u > "test/stanford-postaggerNLTK.txt"
 	echo Testing "simple-stanford-corenlp"
-	python simple-stanford-corenlp.py
+	python simple-stanford-corenlp.py > "test/simple-stanford-corenlp.txt"
 	echo Testing "medium-stanford-corenlp"
-	python medium-stanford-corenlp.py
+	python medium-stanford-corenlp.py > "test/medium-stanford-corenlp.txt"
 ```

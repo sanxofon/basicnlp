@@ -97,9 +97,9 @@ if crear_taggers:
     bi_tag = bt(cess_sents[:train])
 
     # Guardamos los taggers en archivos para ahorrar tiempo la siguiente vez
-    with open('cess_unigram.tagger.pkl', 'wb') as output:
+    with open('test/cess_unigram.tagger.pkl', 'wb') as output:
         pickle.dump(uni_tag, output, pickle.HIGHEST_PROTOCOL)
-    with open('cess_bigram.tagger.pkl', 'wb') as output:
+    with open('test/cess_bigram.tagger.pkl', 'wb') as output:
         pickle.dump(bi_tag, output, pickle.HIGHEST_PROTOCOL)
 
     # Evaluamos en los datos de testeo, el 10% restante
@@ -108,9 +108,9 @@ if crear_taggers:
     print evaluacion
 else:
     # Si ya están generados los taggers podemos simplemente abrirlos
-    with open('cess_unigram.tagger.pkl', 'rb') as input:
+    with open('test/cess_unigram.tagger.pkl', 'rb') as input:
         uni_tag = pickle.load(input)
-    with open('cess_bigram.tagger.pkl', 'rb') as input:
+    with open('test/cess_bigram.tagger.pkl', 'rb') as input:
         bi_tag = pickle.load(input)
 
 

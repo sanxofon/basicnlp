@@ -1,31 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-######################################################
-# ESTE PEDAZO CONTROLA LA SALIDA UTF-8 Y LA AYUDA
-import argparse
-parser = argparse.ArgumentParser(description=u'Stanford CoreNLP en español desde Python')
-parser.add_argument("-u", "--utf8", help=u"Codificar la salida como UTF-8.", action="store_true")
-args = parser.parse_args()
-if args.utf8:
-    # import codecs,locale,sys
-    # sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
-    import codecs,sys
-    sys.stdout = codecs.getwriter("utf8")(sys.stdout)
-######################################################
-# Función de ayuda de impresión (no le hagan caso)
-def addslashes(s):
-    ech = [
-        ("\r","\\r"),
-        ("\n","\\n"),
-        ("\t","\\t"),
-    ]
-    for e in ech:
-        if e[0] in s:
-            s = s.replace(e[0], e[1])
-    return s
-######################################################
-
 """
 En este script se muestra cómo usar la API del software Stanford CoreNLP para "anotar" textos en español
  - https://stanfordnlp.github.io
@@ -54,7 +29,7 @@ from stanfordcorenlp import StanfordCoreNLP
 nlp = StanfordCoreNLP(r'/home/jaci/git/corenlp/', lang='es', memory='2g')
 
 # Podemos probar de la manera más simple que nos dará una salida en formato JSON (más adelante veremos qué es eso)
-print nlp.annotate(cadena)
+print nlp.annotate(cadena)#.encode('utf-8')
 
 # # Podemos especificar las propiedades que queremos extraer y el formato de salida:
 # props={'annotators': 'tokenize,ssplit,pos','pipelineLanguage':'es','outputFormat':'xml'}
