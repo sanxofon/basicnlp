@@ -640,12 +640,12 @@ A eso le llamaron ASCII.
 *   UTF-8 no usa los valores de 128 a 159.
 *   UTF-8 es idéntico tanto a ANSI como a 8859-1 para los valores de 160 a 255.
 
-UTF-8 continúa desde el valor 256, es decir que no siempre usa un byte, sino que puede usar hasta 4 bytes, es decir un número binario de hasta 32 dígitos, es decir, alrededor de 135 millones de caracteres posibles.
+UTF-8 continúa desde el valor 256, es decir que no siempre usa un byte, sino que puede usar hasta 4 bytes, es decir un número binario de hasta 32 dígitos.
 
 *   189 para 1 byte
-*   4096 par 2 bytes
+*   4096 para 2 bytes: Se incluyen casi todos los alfabetos latinos, y también alfabetos griegos, cirílicos, coptos, armenios, hebreos, árabes, siríacos y tanas, así como la combinación de marcas diacríticas.
 *   262144 para 3 bytes: aquí se incluyen los caracteres chinos, japoneses, coreanos, etc.
-*   Más de 130 millones de caracteres posibles en 4 bytes: *UNICODE*.
+*   Más de 130 millones de caracteres posibles en 4 bytes, emoticones, etc.: *UNICODE*.
 
 **Caracteres incluídos** (ejemplo)**:**  
 UTF-8 incluye muchísimos caracteres que no podemos mostrar aquí.  
