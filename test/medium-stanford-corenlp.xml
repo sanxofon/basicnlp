@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root><document><sentences><sentence id="1"><tokens><token id="1"><word>--</word><lemma>--</lemma><CharacterOffsetBegin>0</CharacterOffsetBegin><CharacterOffsetEnd>1</CharacterOffsetEnd><POS>fg</POS><NER>O</NER></token><token id="2"><word>¡</word><lemma>¡</lemma><CharacterOffsetBegin>1</CharacterOffsetBegin><CharacterOffsetEnd>2</CharacterOffsetEnd><POS>faa</POS><NER>O</NER></token><token id="3"><word>Joven</word><lemma>joven</lemma><CharacterOffsetBegin>2</CharacterOffsetBegin><CharacterOffsetEnd>7</CharacterOffsetEnd><POS>np00000</POS><NER>O</NER></token><token id="4"><word>"</word><lemma>"</lemma><CharacterOffsetBegin>8</CharacterOffsetBegin><CharacterOffsetEnd>9</CharacterOffsetEnd><POS>fe</POS><NER>O</NER></token><token id="5"><word>emponzoñado</word><lemma>emponzoñado</lemma><CharacterOffsetBegin>9</CharacterOffsetBegin><CharacterOffsetEnd>20</CharacterOffsetEnd><POS>vmp0000</POS><NER>O</NER></token><token id="6"><word>"</word><lemma>"</lemma><CharacterOffsetBegin>20</CharacterOffsetBegin><CharacterOffsetEnd>21</CharacterOffsetEnd><POS>fe</POS><NER>O</NER></token><token id="7"><word>con</word><lemma>con</lemma><CharacterOffsetBegin>22</CharacterOffsetBegin><CharacterOffsetEnd>25</CharacterOffsetEnd><POS>sp000</POS><NER>O</NER></token><token id="8"><word>el</word><lemma>el</lemma><CharacterOffsetBegin>26</CharacterOffsetBegin><CharacterOffsetEnd>28</CharacterOffsetEnd><POS>da0000</POS><NER>O</NER></token><token id="9"><word>whisky</word><lemma>whisky</lemma><CharacterOffsetBegin>29</CharacterOffsetBegin><CharacterOffsetEnd>35</CharacterOffsetEnd><POS>nc0s000</POS><NER>O</NER></token><token id="10"><word>,</word><lemma>,</lemma><CharacterOffsetBegin>35</CharacterOffsetBegin><CharacterOffsetEnd>36</CharacterOffsetEnd><POS>fc</POS><NER>O</NER></token><token id="11"><word>qué</word><lemma>qué</lemma><CharacterOffsetBegin>37</CharacterOffsetBegin><CharacterOffsetEnd>40</CharacterOffsetEnd><POS>pt000000</POS><NER>O</NER></token><token id="12"><word>fin</word><lemma>fin</lemma><CharacterOffsetBegin>41</CharacterOffsetBegin><CharacterOffsetEnd>44</CharacterOffsetEnd><POS>nc0s000</POS><NER>O</NER></token><token id="13"><word>...</word><lemma>...</lemma><CharacterOffsetBegin>44</CharacterOffsetBegin><CharacterOffsetEnd>45</CharacterOffsetEnd><POS>fs</POS><NER>O</NER></token><token id="14"><word>te</word><lemma>te</lemma><CharacterOffsetBegin>46</CharacterOffsetBegin><CharacterOffsetEnd>48</CharacterOffsetEnd><POS>pp000000</POS><NER>O</NER></token><token id="15"><word>aguarda</word><lemma>aguarda</lemma><CharacterOffsetBegin>49</CharacterOffsetBegin><CharacterOffsetEnd>56</CharacterOffsetEnd><POS>vmip000</POS><NER>O</NER></token><token id="16"><word>exhibir</word><lemma>exhibir</lemma><CharacterOffsetBegin>57</CharacterOffsetBegin><CharacterOffsetEnd>64</CharacterOffsetEnd><POS>vmn0000</POS><NER>O</NER></token><token id="17"><word>la</word><lemma>la</lemma><CharacterOffsetBegin>65</CharacterOffsetBegin><CharacterOffsetEnd>67</CharacterOffsetEnd><POS>da0000</POS><NER>O</NER></token><token id="18"><word>Universidad</word><lemma>universidad</lemma><CharacterOffsetBegin>68</CharacterOffsetBegin><CharacterOffsetEnd>79</CharacterOffsetEnd><POS>np00000</POS><NER>ORG</NER></token><token id="19"><word>Nacional</word><lemma>nacional</lemma><CharacterOffsetBegin>80</CharacterOffsetBegin><CharacterOffsetEnd>88</CharacterOffsetEnd><POS>np00000</POS><NER>ORG</NER></token><token id="20"><word>!</word><lemma>!</lemma><CharacterOffsetBegin>88</CharacterOffsetBegin><CharacterOffsetEnd>89</CharacterOffsetEnd><POS>fat</POS><NER>O</NER></token></tokens><parse>(ROOT
+  (sentence
+    (S
+      (S
+        (sp (fg --)
+          (prep (faa ¡))
+          (sn
+            (grup.nom (np00000 Joven))))
+        (grup.verb (fe ") (vmp0000 emponzoñado) (fe "))
+        (sp
+          (prep (sp000 con))
+          (sn
+            (spec (da0000 el))
+            (grup.nom (nc0s000 whisky)))))
+      (fc ,)
+      (S
+        (sadv
+          (grup.adv (pt000000 qué)))
+        (sn
+          (grup.nom (nc0s000 fin)))))
+    (fs ...)
+    (S
+      (sn
+        (grup.nom (pp000000 te)))
+      (grup.verb (vmip000 aguarda))
+      (S
+        (infinitiu (vmn0000 exhibir))
+        (sn
+          (spec (da0000 la))
+          (grup.nom
+            (grup.nom (np00000 Universidad) (np00000 Nacional))
+            (fat !)))))))
+
+</parse></sentence></sentences></document></root>
+

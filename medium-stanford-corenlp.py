@@ -1,6 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+######################################################
+# ESTE PEDAZO CONTROLA LA SALIDA UTF-8 Y LA AYUDA
+import argparse
+parser = argparse.ArgumentParser(description=u'StanfordCoreNLP (medium)')
+parser.add_argument("-u", "--utf8", help=u"Codificar la salida como UTF-8.", action="store_true")
+parser.add_argument("-j", "--json", help=u"Salida en formato JSON", action="store_true")
+parser.add_argument("-x", "--xml", help=u"Salida en formato XML", action="store_true")
+args = parser.parse_args()
+if args.utf8:
+    # import codecs,locale,sys
+    # sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
+    import codecs,sys
+    sys.stdout = codecs.getwriter("utf8")(sys.stdout)
+if args.json:
+    outputFormat = "json"
+elif args.xml:
+    outputFormat = "xml"
+else:
+    outputFormat = "text"
+######################################################
 """
 En este script se muestra cómo usar la API del software Stanford CoreNLP para "anotar" textos en español
  - https://stanfordnlp.github.io
@@ -11,15 +30,16 @@ desde python usando el wrapper:
 
 Podemos ejecutar este script desde la consola:
 
-    $ python medium-stanford-corenlp.py
+    $ python medium-stanford-corenlp.py -u -j > test/medium-stanford-corenlp.json
+    $ python medium-stanford-corenlp.py -u -x > test/medium-stanford-corenlp.xml
 
 """
 
 cadena = u"—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir la Universidad Nacional!"
 cadena = cadena.encode("utf-8")
 
-print u"Cadena:"
-print "\t",cadena
+# print u"Cadena:"
+# print "\t",cadena
 from stanfordcorenlp import StanfordCoreNLP
 
 # Este comando inicia un servidor similar al que usamos probando la instalación y podemos usar "nlp" como
@@ -28,12 +48,10 @@ from stanfordcorenlp import StanfordCoreNLP
 # que tenga tu compu al programa ya que los procesos usan mucha memoria RAM (se recomiendan 8g])
 nlp = StanfordCoreNLP(r'/home/jaci/git/corenlp/', lang='es', memory='2g')
 
-# Podemos probar de la manera más simple que nos dará una salida en formato JSON (más adelante veremos qué es eso)
-print nlp.annotate(cadena)#.encode('utf-8')
-
 # # Podemos especificar las propiedades que queremos extraer y el formato de salida:
-# props={'annotators': 'tokenize,ssplit,pos','pipelineLanguage':'es','outputFormat':'xml'}
-# print nlp.annotate(cadena, properties=props)
+# Podemos probar una salida en formato XML o JSON (más adelante veremos qué es eso)
+props={'annotators': 'tokenize,ssplit,pos,ner,parse','pipelineLanguage':'es','outputFormat':outputFormat}
+print nlp.annotate(cadena, properties=props)
 
 """
 

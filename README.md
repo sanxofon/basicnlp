@@ -433,7 +433,8 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	echo Testing "stanford-postaggerNLTK"
 	python stanford-postaggerNLTK.py -u > "test/stanford-postaggerNLTK.txt"
 	echo Testing "simple-stanford-corenlp"
-	python simple-stanford-corenlp.py > "test/simple-stanford-corenlp.txt"
+    python simple-stanford-corenlp.py -u > test/simple-stanford-corenlp.txt
 	echo Testing "medium-stanford-corenlp"
-	python medium-stanford-corenlp.py > "test/medium-stanford-corenlp.txt"
+	python medium-stanford-corenlp.py -u -j > test/medium-stanford-corenlp.json
+	python medium-stanford-corenlp.py -u -x > test/medium-stanford-corenlp.xml
 ```

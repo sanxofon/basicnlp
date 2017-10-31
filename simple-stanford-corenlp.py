@@ -1,6 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+######################################################
+# ESTE PEDAZO CONTROLA LA SALIDA UTF-8 Y LA AYUDA
+import argparse
+parser = argparse.ArgumentParser(description=u'StanfordCoreNLP (simple)')
+parser.add_argument("-u", "--utf8", help=u"Codificar la salida como UTF-8.", action="store_true")
+args = parser.parse_args()
+if args.utf8:
+    # import codecs,locale,sys
+    # sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
+    import codecs,sys
+    sys.stdout = codecs.getwriter("utf8")(sys.stdout)
+######################################################
 """
 En este script se muestra cómo usar el software Stanford CoreNLP
  - https://stanfordnlp.github.io
@@ -49,6 +60,7 @@ Podemos instalarlo con "pip" de forma muy simple:
 Hemos terminado, así que podemos ejecutar este script desde la consola:
 
     $ python simple-stanford-corenlp.py
+    $ python simple-stanford-corenlp.py -u > test/simple-stanford-corenlp.txt
 
 """
 
@@ -56,7 +68,7 @@ cadena = u"—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exh
 cadena = cadena.encode("utf-8")
 
 print u"Cadena:"
-print "\t",cadena
+print "\t",cadena.decode('utf-8')
 from stanfordcorenlp import StanfordCoreNLP
 
 # Este comando inicia un servidor similar al que usamos probando la instalación y podemos usar "nlp" como
@@ -82,7 +94,7 @@ print
 
 # 4- Análisis de circunscripciones / Constituency Parsing
 print 'COPAR:'
-print nlp.parse(cadena).encode('utf-8')
+print nlp.parse(cadena)
 print
 
 # 5- Análisis de dependencias / Dependency Parsing (NO FUNCIONA EN ESPAÑOL!!)
