@@ -574,7 +574,7 @@ Etc.
 
 </table>
 
-En la tabla anterior notaremos que la manera de “codificar” nuestras letras no es otra cosa que pasarlas a **números binarios**. Y veremos que cuantas más letras agregamos, más “bits” necesitamos, que es la cantidad de caracteres binarios que se necesitas para “escribir” ese número. Pero también se nota que cada bit que agregamos “rinde más”, es decir, permite codificar más cantidad de letras.
+En la tabla anterior notaremos que la manera de “codificar” nuestras letras no es otra cosa que pasarlas a **números binarios**. Y veremos que cuantas más letras agregamos, más “bits” necesitamos. Los *bits* son la cantidad de caracteres binarios que se necesitas para “escribir” un número. Pero también se nota que cada bit que agregamos “rinde más”, es decir, permite codificar más cantidad de letras.
 
 Pero sería muy difícil escribir y luego poder leer palabras con varias letras seguidas en este sistema. Entonces se les ocurrió ir contando de 8 bits en 8 bits. El número máximo que se puede escribir en 8 bits es 11111111 (ocho unos), o sea, 255\. A eso los matemáticos les gusta escribirlo como **2⁸-1** , es decir, 2 multiplicado por sí mismo 8 veces (256), menos uno (255). Si le agregamos el 0, es decir que podemos empezar con espacio “ “, son 256, es decir que hay **2⁸** números (o posibilidades) en 8 bits contando el cero.
 
@@ -639,11 +639,17 @@ A eso le llamaron ASCII.
 *   UTF-8 es idéntico a ASCII para los valores de 0 a 127.
 *   UTF-8 no usa los valores de 128 a 159.
 *   UTF-8 es idéntico tanto a ANSI como a 8859-1 para los valores de 160 a 255.
-*   UTF-8 continúa desde el valor 256 con más de 10 000 caracteres diferentes.
+
+UTF-8 continúa desde el valor 256, es decir que no siempre usa un byte, sino que puede usar hasta 4 bytes, es decir un número binario de hasta 32 dígitos, es decir, alrededor de 135 millones de caracteres posibles.
+
+*   189 para 1 byte
+*   4096 par 2 bytes
+*   262144 para 3 bytes: aquí se incluyen los caracteres chinos, japoneses, coreanos, etc.
+*   Más de 130 millones de caracteres posibles en 4 bytes: *UNICODE*.
 
 **Caracteres incluídos** (ejemplo)**:**  
 UTF-8 incluye muchísimos caracteres que no podemos mostrar aquí.  
-Como ejemplo, mostraremos sólo los 2230 _kanjis_ japoneses más comunes actualmente (incluídos en UTF-8 y UNICODE).
+Como ejemplo, mostraremos sólo los 2230 _kanjis_ japoneses más comunes actualmente (incluídos en UTF-8 de 3 bytes).
 
 ![UTF-8 Kanji (ejemplo)](UTF8-Kanji.png)
 
