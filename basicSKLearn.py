@@ -1,92 +1,121 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Import necessary modules
+"""
+Este 
+
+
+INSTALAR DEPENDENCIAS
+
+Ubuntu 16-4:
+    sudo apt-get install python-tk
+    sudo pip install matplotlib
+    sudo pip install scipy
+    sudo pip install sklearn
+    sudo pip install pandas
+"""
+
+
+# Importar módulos necesarios
 from sklearn import datasets
 import matplotlib.pyplot as plt
 
-# Load the digits dataset: digits
+# Cargue el conjunto de datos: digits (incluido en sklearn como ejemplo)
 digits = datasets.load_digits()
 
-# Print the keys and DESCR of the dataset
-print(digits.DESCR)
+# Imprima las claves y la descripción del conjunto de datos
+print("Keys:")
 print(digits.keys())
+print("Description:")
+print(digits.DESCR)
 
-# Print the shape of the images and data keys
+# Imprime la "shape" de las imágenes y las claves de datos
+print("Images shape:")
 print(digits.images.shape)
+print("Data shape:")
 print(digits.data.shape)
+print("Target shape:")
+print(digits.target.shape)
 
-# Display digit 1010
-plt.imshow(digits.images[1010], cmap=plt.cm.gray_r, interpolation='nearest')
-plt.show()
+# # Mostrar dígito número: 123
+# plt.imshow(digits.images[123], cmap=plt.cm.gray_r, interpolation='nearest')
+# plt.show()
+# # Mostrar dígito número: 1010
+# plt.imshow(digits.images[1010], cmap=plt.cm.gray_r, interpolation='nearest')
+# plt.show()
+# # Mostrar dígito número: 1234
+# plt.imshow(digits.images[1234], cmap=plt.cm.gray_r, interpolation='nearest')
+# plt.show()
 
-"""
-plt.figure()
-sns.countplot(x='missile', hue='party', data=df, palette='RdBu')
-plt.xticks([0,1], ['No', 'Yes'])
-plt.show()
+# <>
 
- sklearn.neighbors import KNeighborsClassifier
----------------------
- # Import KNeighborsClassifier from sklearn.neighbors
-from sklearn.neighbors import KNeighborsClassifier
-
-# Create arrays for the features and the response variable
-y = df['party'].values
-X = df.drop('party', axis=1).values
-
-# Create a k-NN classifier with 6 neighbors
-knn = KNeighborsClassifier(n_neighbors=6)
-
-# Fit the classifier to the data
-knn.fit(X, y) 
----------------------
-# Import necessary modules
+import numpy as np
+import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 
-# Create feature and target arrays
+# Crear matrices de "features" y de "target" desde el dataset "digits"
 X = digits.data
 y = digits.target
 
-# Split into training and test set
+# # Custom data desde un archivo excel
+# data_x = pd.read_excel("input.xlsx")
+# X = data_x.as_matrix()
+# y = pd.Series(range(0,len(X)))
+
+
+# Dividir en el conjunto de entrenamiento y prueba
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state=42, stratify=y)
 
-# Create a k-NN classifier with 7 neighbors: knn
-knn = KNeighborsClassifier(n_neighbors=7)
+n = 7 # número de "neighbors": knn
 
-# Fit the classifier to the training data
+# Crea un clasificador k-NN con n neighbors: knn
+knn = KNeighborsClassifier(n_neighbors=n)
+
+# "Fit", cargar el clasificador a los datos de entrenamiento
 knn.fit(X_train, y_train)
 
-# Print the accuracy
+# Imprime la precisión
+print("Accuracy ("+str(n)+"):")
 print(knn.score(X_test, y_test))
----------------------
-# Setup arrays to store train and test accuracies
-neighbors = np.arange(1, 9)
+
+
+neighbors = np.arange(1, 15)
 train_accuracy = np.empty(len(neighbors))
 test_accuracy = np.empty(len(neighbors))
 
-# Loop over different values of k
+print "Test de diferentes valores de n_neighbors:"
+kmem = 0
+# Bucle sobre diferentes valores de k
 for i, k in enumerate(neighbors):
-    # Setup a k-NN Classifier with k neighbors: knn
+    # Configure un clasificador k-NN con k neighbors: knn
     knn = KNeighborsClassifier(n_neighbors=k)
 
-    # Fit the classifier to the training data
+    # Ajustar el clasificador a los datos de entrenamiento
     knn.fit(X_train, y_train)
     
-    #Compute accuracy on the training set
-    train_accuracy[i] = knn.score(X_train, y_train)
+    # Computar la precisión en el conjunto de entrenamiento
+    a = knn.score(X_train, y_train)
 
-    #Compute accuracy on the testing set
-    test_accuracy[i] = knn.score(X_test, y_test)
+    # Compute la precisión en el conjunto de prueba
+    b = knn.score(X_test, y_test)
 
-# Generate plot
-plt.title('k-NN: Varying Number of Neighbors')
-plt.plot(neighbors, test_accuracy, label = 'Testing Accuracy')
-plt.plot(neighbors, train_accuracy, label = 'Training Accuracy')
-plt.legend()
-plt.xlabel('Number of Neighbors')
-plt.ylabel('Accuracy')
-plt.show()
----------------------
-"""
+    test_accuracy[i] = a
+    train_accuracy[i] = b
+
+    c = a-abs(a-b)
+    if k>1 and kmem<c:
+        print "\t",k,a-abs(a-b)
+    kmem = c
+
+
+# # Generar "plot" gráfica
+# plt.title('k-NN: número variable de neighbors')
+# plt.plot(neighbors, test_accuracy, label = 'Precisión de prueba')
+# plt.plot(neighbors, train_accuracy, label = 'Precisión de entrenamiento')
+# plt.legend()
+# plt.xlabel('Number of Neighbors')
+# plt.ylabel('Accuracy')
+# plt.show()
+
+#"""
