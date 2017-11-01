@@ -373,11 +373,15 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 
 ### 15. [basicFreeling.py](https://github.com/sanxofon/basicnlp/blob/master/basicFreeling.py)
 
-**EN DESARROLLO...**
+> Tal vez el mejor software de NLP para el idioma españon es FREELING (en JAVA, como CoreNLP). Este script muestra cómo podemos analizar un texto con FREELING desde Python usando un wrapper.
 
 > Este script necesita del archivo incluído:
 > 
 > 1. freelingwrapper.py
+
+**Ejemplo de uso:**
+
+	$ python basicFreeling.py > test/basicFreeling.json
 
 ***
 
@@ -437,4 +441,6 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	echo Testing "medium-stanford-corenlp"
 	python medium-stanford-corenlp.py -u -j > test/medium-stanford-corenlp.json
 	python medium-stanford-corenlp.py -u -x > test/medium-stanford-corenlp.xml
+	echo Testing "basicFreeling"
+	python basicFreeling.py > test/basicFreeling.json
 ```
