@@ -1,6 +1,5 @@
-import logging
+import logging,re
 from subprocess import check_output, CalledProcessError, Popen, PIPE
-from lxml import etree # http://lxml.de/
 
 binary = None
 
@@ -27,7 +26,14 @@ class Analyzer(object):
         proc = Popen(cmd, stdin=PIPE, stdout=PIPE)
         outs, errs = proc.communicate(input)
         if errs is None:
-            return etree.XML("<sentences>{}</sentences>".format(outs))
+            outs = re.sub(r'\n', '', outs) # Clean br
+            outs = re.sub(r'\} *\{', '},{', outs) # RESOLVE ERROR HACK
+            # Compress json
+            outs = re.sub(r'  +', ' ', outs)
+            outs = re.sub(r' ?([\[\]\{\}]) ?', r'\1', outs)
+            outs = re.sub(r'" ?([\:,]) ?', r'"\1', outs)
+            return '{"sentences":['+outs+']}'
+            # return outs
         else:
             raise Exception(errs)
 
@@ -49,5 +55,5 @@ class Analyzer(object):
             param, value = self._build_param(key, val)
             cmd += [param, value]
 
-        cmd += ['--output', 'xml']
+        cmd += ['--output', 'json']
         return cmd

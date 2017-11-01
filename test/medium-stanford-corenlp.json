@@ -1,0 +1,250 @@
+{
+  "sentences": [
+    {
+      "index": 0,
+      "parse": "(ROOT\n  (sentence\n    (S\n      (S\n        (sp (fg --)\n          (prep (faa ¡))\n          (sn\n            (grup.nom (np00000 Joven))))\n        (grup.verb (fe \") (vmp0000 emponzoñado) (fe \"))\n        (sp\n          (prep (sp000 con))\n          (sn\n            (spec (da0000 el))\n            (grup.nom (nc0s000 whisky)))))\n      (fc ,)\n      (S\n        (sadv\n          (grup.adv (pt000000 qué)))\n        (sn\n          (grup.nom (nc0s000 fin)))))\n    (fs ...)\n    (S\n      (sn\n        (grup.nom (pp000000 te)))\n      (grup.verb (vmip000 aguarda))\n      (S\n        (infinitiu (vmn0000 exhibir))\n        (sn\n          (spec (da0000 la))\n          (grup.nom\n            (grup.nom (np00000 Universidad) (np00000 Nacional))\n            (fat !)))))))",
+      "tokens": [
+        {
+          "index": 1,
+          "word": "--",
+          "originalText": "—",
+          "lemma": "--",
+          "characterOffsetBegin": 0,
+          "characterOffsetEnd": 1,
+          "pos": "fg",
+          "ner": "O",
+          "before": "",
+          "after": ""
+        },
+        {
+          "index": 2,
+          "word": "¡",
+          "originalText": "¡",
+          "lemma": "¡",
+          "characterOffsetBegin": 1,
+          "characterOffsetEnd": 2,
+          "pos": "faa",
+          "ner": "O",
+          "before": "",
+          "after": ""
+        },
+        {
+          "index": 3,
+          "word": "Joven",
+          "originalText": "Joven",
+          "lemma": "joven",
+          "characterOffsetBegin": 2,
+          "characterOffsetEnd": 7,
+          "pos": "np00000",
+          "ner": "O",
+          "before": "",
+          "after": " "
+        },
+        {
+          "index": 4,
+          "word": "\"",
+          "originalText": "«",
+          "lemma": "\"",
+          "characterOffsetBegin": 8,
+          "characterOffsetEnd": 9,
+          "pos": "fe",
+          "ner": "O",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 5,
+          "word": "emponzoñado",
+          "originalText": "emponzoñado",
+          "lemma": "emponzoñado",
+          "characterOffsetBegin": 9,
+          "characterOffsetEnd": 20,
+          "pos": "vmp0000",
+          "ner": "O",
+          "before": "",
+          "after": ""
+        },
+        {
+          "index": 6,
+          "word": "\"",
+          "originalText": "»",
+          "lemma": "\"",
+          "characterOffsetBegin": 20,
+          "characterOffsetEnd": 21,
+          "pos": "fe",
+          "ner": "O",
+          "before": "",
+          "after": " "
+        },
+        {
+          "index": 7,
+          "word": "con",
+          "originalText": "con",
+          "lemma": "con",
+          "characterOffsetBegin": 22,
+          "characterOffsetEnd": 25,
+          "pos": "sp000",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 8,
+          "word": "el",
+          "originalText": "el",
+          "lemma": "el",
+          "characterOffsetBegin": 26,
+          "characterOffsetEnd": 28,
+          "pos": "da0000",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 9,
+          "word": "whisky",
+          "originalText": "whisky",
+          "lemma": "whisky",
+          "characterOffsetBegin": 29,
+          "characterOffsetEnd": 35,
+          "pos": "nc0s000",
+          "ner": "O",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 10,
+          "word": ",",
+          "originalText": ",",
+          "lemma": ",",
+          "characterOffsetBegin": 35,
+          "characterOffsetEnd": 36,
+          "pos": "fc",
+          "ner": "O",
+          "before": "",
+          "after": " "
+        },
+        {
+          "index": 11,
+          "word": "qué",
+          "originalText": "qué",
+          "lemma": "qué",
+          "characterOffsetBegin": 37,
+          "characterOffsetEnd": 40,
+          "pos": "pt000000",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 12,
+          "word": "fin",
+          "originalText": "fin",
+          "lemma": "fin",
+          "characterOffsetBegin": 41,
+          "characterOffsetEnd": 44,
+          "pos": "nc0s000",
+          "ner": "O",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 13,
+          "word": "...",
+          "originalText": "…",
+          "lemma": "...",
+          "characterOffsetBegin": 44,
+          "characterOffsetEnd": 45,
+          "pos": "fs",
+          "ner": "O",
+          "before": "",
+          "after": " "
+        },
+        {
+          "index": 14,
+          "word": "te",
+          "originalText": "te",
+          "lemma": "te",
+          "characterOffsetBegin": 46,
+          "characterOffsetEnd": 48,
+          "pos": "pp000000",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 15,
+          "word": "aguarda",
+          "originalText": "aguarda",
+          "lemma": "aguarda",
+          "characterOffsetBegin": 49,
+          "characterOffsetEnd": 56,
+          "pos": "vmip000",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 16,
+          "word": "exhibir",
+          "originalText": "exhibir",
+          "lemma": "exhibir",
+          "characterOffsetBegin": 57,
+          "characterOffsetEnd": 64,
+          "pos": "vmn0000",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 17,
+          "word": "la",
+          "originalText": "la",
+          "lemma": "la",
+          "characterOffsetBegin": 65,
+          "characterOffsetEnd": 67,
+          "pos": "da0000",
+          "ner": "O",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 18,
+          "word": "Universidad",
+          "originalText": "Universidad",
+          "lemma": "universidad",
+          "characterOffsetBegin": 68,
+          "characterOffsetEnd": 79,
+          "pos": "np00000",
+          "ner": "ORG",
+          "before": " ",
+          "after": " "
+        },
+        {
+          "index": 19,
+          "word": "Nacional",
+          "originalText": "Nacional",
+          "lemma": "nacional",
+          "characterOffsetBegin": 80,
+          "characterOffsetEnd": 88,
+          "pos": "np00000",
+          "ner": "ORG",
+          "before": " ",
+          "after": ""
+        },
+        {
+          "index": 20,
+          "word": "!",
+          "originalText": "!",
+          "lemma": "!",
+          "characterOffsetBegin": 88,
+          "characterOffsetEnd": 89,
+          "pos": "fat",
+          "ner": "O",
+          "before": "",
+          "after": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,35 @@
-from lxml import etree
-from pyfreeling import Analyzer
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Tal vez el mejor software de NLP para el idioma español actualmente es FREELING (escrito en JAVA, como CoreNLP).
+Este script muestra cómo podemos analizar un texto con FREELING desde Python usando un wrapper.
 
+INSTALAR FREELING:
+	0. Debemos tener instalado JAVA como se mostró en el archivo "stanford-postaggerNLTK.py"
+
+	1. Descargar el instaldor adecuado de FREELING para nuestro sistema operativo desde:
+		https://github.com/TALP-UPC/FreeLing/releases
+		En MAC es un poco más difícil, instrucciones: 
+			https://talp-upc.gitbooks.io/freeling-user-manual/content/installation.html#installing-on-macos
+	
+	2. Una vez instalado el programa necesitamos saber dónde se creó la carpeta con los archivos de configuración de FREELING. En mi caso (Ubuntu 16), FREELING se instaló en: "/usr/share/freeling/" y los archivos de configuración se encuentran en: "/usr/share/freeling/config/".
+
+	3. En un editor de texto (como Sublime Text) debemos abrir el archivo de configuración del idioma español: "es.json". Este archivo se puede editar para configurar los procedimientos que se aplicarán, el formato de salida y demás. Las instrucciones y opciones están en los comentarios del mismo archivo
+
+Este script necesita del archivo incluído:
+	freelingwrapper.py
+
+Ejemplo de uso:
+	$ python basicFreeling.py > test/basicFreeling.json
+
+"""
+
+from freelingwrapper import Analyzer
+
+# Todos las configuraciones, seleccion de idioma y formato de salida se hacen en el archivo "es.cfg"
 config_file = '/usr/share/freeling/config/es.cfg'
+
+# Acá se puede aregar cualqier texto, nótese que no se declara el texto como unicode
 text = """La canasta de consumo para un hogar compuesto por un matrimonio con dos hijos e inquilinos de la vivienda, en la ciudad de Buenos Aires, alcanzaba un costo en el mes de mayo de 19.221,70 pesos, de acuerdo a estimaciones oficiales de la Dirección de Estadísticas y Censos del Gobierno de la Ciudad. Dicho valor representa un incremento del 5,05 por ciento con respecto al mes de abril, y muestra una llamativa aceleración desde que se disparó el proceso inflacionario, en noviembre de 2015 con el anuncio anticipado de Cambiemos de una devaluación y quita de retenciones a las exportaciones, al tiempo que crecía la perspectiva de que podría llegar al Gobierno. La inflación para la economía familiar, medida por el costo de la canasta de consumo, prácticamente se triplicó entre los últimos seis meses del gobierno anterior y el medio que lleva Cambiemos en el mando de la economía: del 9,2 por ciento de aumento acumulado entre mayo y noviembre del año pasado, saltó a más del 26 por ciento en el medio año transcurrido entre noviembre de 2015 y mayo pasado. El valor de la canasta de consumo creció 41,3 por ciento para un hogar conformado por una familia tipo en el último año, pero con fuerte aceleración en los útimos tres meses: 3,9 por ciento en marzo, 4,4 por ciento en abril y 5,05 por ciento en mayo.
 Del valor total de la canasta de consumo de mayo, 6622,10 pesos (34,5 por ciento) correspondieron a la canasta de alimentos. El presupuesto familiar debió destinar, en ese mismo mes, otros 6251,46 pesos (32,5 por ciento) a los gastos de mantenimiento y servicios del hogar: alquiler, expensas, gas, electricidad, agua, bienes durables para el equipamiento del hogar y artículos de limpieza. El resto de la canasta corresponde a gastos de transporte, comunicaciones, educación, esparcimiento, salud y cuidado personal, e indumentaria, que suman en conjunto, aproximadamente otro tercio del presupuesto.
 La canasta de alimentos, de acuerdo al seguimiento del organismo porteño, evolucionó en forma proporcional a la canasta total de consumo, con un incremento del 26,2 por ciento en los últimos seis meses, contra un incremento en los seis meses previos (de noviembre de 2015 a mayo de 2016) del 9,2 por ciento, siempre según datos de la Dirección de Estadísticas del gobierno de la CABA. Allí se refleja el fuerte impacto que la política de ajustes y devaluación del gobierno de Cambiemos tuvo sobre la economía popular.
@@ -11,6 +39,6 @@ El informe de canastas de consumo del Gobierno de la Ciudad presenta seis casos 
 El aumento de la canasta de consumo que registra el gobierno de la Ciudad supera en mayo el incremento del índice de precios al consumidor que informó el Indec y refleja el deterioro progresivo del poder adquisitivo de las familias, con un proceso inflacionario incesante que se volvió a acelerar en los últimos tres meses. Esto último, el Indec no lo reflejó, por el apagón estadístico por decisión propia que el gobierno dispuso en diciembre y que, cuando volvieron a encenderse, no se recuperó con la reconstrucción de la serie de indicadores de precios mes a mes, como técnicamente hubiera sido esperable.
 """
 analyzer = Analyzer(config=config_file, lang='es')
-output = analyzer.run(text, 'flush')
+output = analyzer.run(text)
 
-print(etree.tostring(output))
+print(output)

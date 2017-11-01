@@ -373,11 +373,15 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 
 ### 15. [basicFreeling.py](https://github.com/sanxofon/basicnlp/blob/master/basicFreeling.py)
 
-**EN DESARROLLO...**
+> Tal vez el mejor software de NLP para el idioma españon es FREELING (en JAVA, como CoreNLP). Este script muestra cómo podemos analizar un texto con FREELING desde Python usando un wrapper.
 
 > Este script necesita del archivo incluído:
 > 
 > 1. freelingwrapper.py
+
+**Ejemplo de uso:**
+
+	$ python basicFreeling.py > test/basicFreeling.json
 
 ***
 
@@ -408,7 +412,7 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	echo Testing "argumentosSimple"
 	python argumentosSimple.py Santiago Chávez
 	python argumentosSimple.py "Santiago Chávez"
-	python argumentosSimple.py "Santiago Chávez" utf8 > "test/test_argumentosSimple.txt"
+	python argumentosSimple.py "Santiago Chávez" utf8 > "test/argumentosSimple.txt"
 	echo Testing "argumentosParsed"
 	python argumentosParsed.py -a "Santiago Chávez"
 	python argumentosParsed.py -a "Santiago Chávez" -m
@@ -427,13 +431,16 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	python contarCaracteres.py -f "test/texto2.txt" -o aF -u > "test/texto2_caracteres.txt"
 	python contarCaracteres.py -f "test/texto1.txt" -o aF -u > "test/texto1_caracteres.txt"
 	echo Testing "basicNLTK"
-	python basicNLTK.py
+	python basicNLTK.py -u > "test/basicNLTK.txt"
 	echo Testing "mediumNLTK"
-	python mediumNLTK.py
+	python mediumNLTK.py -u > "test/mediumNLTK.txt"
 	echo Testing "stanford-postaggerNLTK"
-	python stanford-postaggerNLTK.py
+	python stanford-postaggerNLTK.py -u > "test/stanford-postaggerNLTK.txt"
 	echo Testing "simple-stanford-corenlp"
-	python simple-stanford-corenlp.py
+    python simple-stanford-corenlp.py -u > test/simple-stanford-corenlp.txt
 	echo Testing "medium-stanford-corenlp"
-	python medium-stanford-corenlp.py
+	python medium-stanford-corenlp.py -u -j > test/medium-stanford-corenlp.json
+	python medium-stanford-corenlp.py -u -x > test/medium-stanford-corenlp.xml
+	echo Testing "basicFreeling"
+	python basicFreeling.py > test/basicFreeling.json
 ```

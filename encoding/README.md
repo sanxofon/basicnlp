@@ -574,9 +574,9 @@ Etc.
 
 </table>
 
-En la tabla anterior notaremos que la manera de “codificar” nuestras letras no es otra cosa que pasarlas a **números binarios**. Y veremos que cuantas más letras agregamos, más “bits” necesitamos, que es la cantidad de caracteres binarios que se necesitas para “escribir” ese número. Pero también se nota que cada bit que agregamos “rinde más”, es decir, permite codificar más cantidad de letras.
+En la tabla anterior notaremos que la manera de “codificar” nuestras letras no es otra cosa que pasarlas a **números binarios**. Y veremos que cuantas más letras agregamos, más “bits” necesitamos. Los *bits* son la cantidad de caracteres binarios que se necesitas para “escribir” un número. Pero también se nota que cada bit que agregamos “rinde más”, es decir, permite codificar más cantidad de letras.
 
-Pero sería muy difícil escribir y luego poder leer palabras con varias letras seguidas en este sistema. Entonces se les ocurrió ir contando de 8 bits en 8 bits. El número máximo que se puede escribir en 8 bits es 11111111 (ocho unos), o sea, 255\. A eso los matemáticos les gusta escribirlo como **2⁸-1** , es decir, 2 multiplicado por sí mismo 8 veces (256), menos uno (255). Si le agregamos el 0, es decir que podemos empezar con espacio “ “, son 256, es decir que hay **2⁸** números (o posibilidades) en 8 bits contando el cero.
+Pero sería muy difícil escribir y luego poder leer palabras con varias letras seguidas en este sistema, no sabríamos dónde termina una letra y empieza la que sigue. Entonces se les ocurrió ir contando de 8 bits en 8 bits. El número máximo que se puede escribir en 8 bits es 11111111 (ocho unos), o sea, 255\. A eso los matemáticos les gusta escribirlo como **2⁸-1** , es decir, 2 multiplicado por sí mismo 8 veces (256), menos uno (255). Si le agregamos el 0, es decir que podemos empezar con espacio “ “, son 256, es decir que hay **2⁸** números (o posibilidades) en 8 bits contando el cero.
 
 Así que la cosa más o menos quedó como sigue:
 
@@ -639,11 +639,17 @@ A eso le llamaron ASCII.
 *   UTF-8 es idéntico a ASCII para los valores de 0 a 127.
 *   UTF-8 no usa los valores de 128 a 159.
 *   UTF-8 es idéntico tanto a ANSI como a 8859-1 para los valores de 160 a 255.
-*   UTF-8 continúa desde el valor 256 con más de 10 000 caracteres diferentes.
+
+UTF-8 continúa desde el valor 256, es decir que no siempre usa un byte, sino que puede usar hasta 4 bytes, es decir un número binario de hasta 32 dígitos.
+
+*   189 para 1 byte
+*   4096 para 2 bytes: Se incluyen casi todos los alfabetos latinos, y también alfabetos griegos, cirílicos, coptos, armenios, hebreos, árabes, siríacos y tanas, así como la combinación de marcas diacríticas.
+*   262144 para 3 bytes: aquí se incluyen los caracteres chinos, japoneses, coreanos, etc.
+*   Más de 130 millones de caracteres posibles en 4 bytes, emoticones, etc.: *UNICODE*.
 
 **Caracteres incluídos** (ejemplo)**:**  
 UTF-8 incluye muchísimos caracteres que no podemos mostrar aquí.  
-Como ejemplo, mostraremos sólo los 2230 _kanjis_ japoneses más comunes actualmente (incluídos en UTF-8 y UNICODE).
+Como ejemplo, mostraremos sólo los 2230 _kanjis_ japoneses más comunes actualmente (incluídos en UTF-8 de 3 bytes).
 
 ![UTF-8 Kanji (ejemplo)](UTF8-Kanji.png)
 
@@ -4703,120 +4709,6 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 <td>Letra pequeña latina y con diéresis</td>
 
 <td>Latin small letter y with diaeresis</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-### De 8-bit en 8-bit hasta UNICODE
-
-<table cellpadding="2" cellspacing="0">
-
-<tbody>
-
-<tr>
-
-<th align="center">Rango Código hexadecimal</th>
-
-<th align="center">Rango Código decimal</th>
-
-<th>UTF-8</th>
-
-<th>UTF-16</th>
-
-<th>UTF-32</th>
-
-<th>UNICODE</th>
-
-</tr>
-
-<tr>
-
-<td align="center">000080</td>
-
-<td align="center">128</td>
-
-<td align="center">1</td>
-
-<td rowspan="6" align="center">2</td>
-
-<td rowspan="8" align="center">4</td>
-
-<td rowspan="2" align="center">1</td>
-
-</tr>
-
-<tr>
-
-<td align="center">0000A0</td>
-
-<td align="center">160</td>
-
-<td rowspan="3" align="center">2</td>
-
-</tr>
-
-<tr>
-
-<td align="center">000400</td>
-
-<td align="center">1024</td>
-
-<td align="center">2</td>
-
-</tr>
-
-<tr>
-
-<td align="center">000800</td>
-
-<td align="center">2048</td>
-
-<td rowspan="2" align="center">3</td>
-
-</tr>
-
-<tr>
-
-<td align="center">004000</td>
-
-<td align="center">16384</td>
-
-<td rowspan="2" align="center">3</td>
-
-</tr>
-
-<tr>
-
-<td align="center">010000</td>
-
-<td align="center">65536</td>
-
-<td rowspan="2" align="center">4</td>
-
-</tr>
-
-<tr>
-
-<td align="center">040000</td>
-
-<td align="center">262144</td>
-
-<td rowspan="2" align="center">4</td>
-
-<td rowspan="2" align="center">4</td>
-
-</tr>
-
-<tr>
-
-<td align="center">10FFFF</td>
-
-<td align="center">1114111</td>
-
-<td align="center">5...</td>
 
 </tr>
 

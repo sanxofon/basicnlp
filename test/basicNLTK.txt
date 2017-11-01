@@ -1,0 +1,146 @@
+Cadena:
+	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
+El veloz murciélago hindú comía feliz cardillo y kiwi.
+La cigüena tocaba el saxofón detrás del palenque de paja.
+El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
+Exhíbanse politiquillos zafios,
+con orejas kilométricas
+	y unas de gavilán.
+
+Palabras:
+	—¡Joven
+	«
+	emponzoñado
+	»
+	con
+	el
+	whisky
+	,
+	qué
+	fin…
+	te
+	aguarda
+	exhibir
+	!
+	El
+	veloz
+	murciélago
+	hindú
+	comía
+	feliz
+	cardillo
+	y
+	kiwi.
+	La
+	cigüena
+	tocaba
+	el
+	saxofón
+	detrás
+	del
+	palenque
+	de
+	paja.
+	El
+	pingüino
+	Wenceslao
+	hizo
+	kilómetros
+	bajo
+	exhaustiva
+	lluvia
+	y
+	frío
+	,
+	añoraba
+	a
+	su
+	querido
+	cachorro.
+	Exhíbanse
+	politiquillos
+	zafios
+	,
+	con
+	orejas
+	kilométricas
+	y
+	unas
+	de
+	gavilán
+	.
+
+Palabras/Puntuación:
+	—¡
+	Joven
+	«
+	emponzoñado
+	»
+	con
+	el
+	whisky
+	,
+	qué
+	fin
+	…
+	te
+	aguarda
+	exhibir
+	!
+	El
+	veloz
+	murciélago
+	hindú
+	comía
+	feliz
+	cardillo
+	y
+	kiwi
+	.
+	La
+	cigüena
+	tocaba
+	el
+	saxofón
+	detrás
+	del
+	palenque
+	de
+	paja
+	.
+	El
+	pingüino
+	Wenceslao
+	hizo
+	kilómetros
+	bajo
+	exhaustiva
+	lluvia
+	y
+	frío
+	,
+	añoraba
+	a
+	su
+	querido
+	cachorro
+	.
+	Exhíbanse
+	politiquillos
+	zafios
+	,
+	con
+	orejas
+	kilométricas
+	y
+	unas
+	de
+	gavilán
+	.
+
+Frases:
+	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
+	El veloz murciélago hindú comía feliz cardillo y kiwi.
+	La cigüena tocaba el saxofón detrás del palenque de paja.
+	El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
+	Exhíbanse politiquillos zafios,\ncon orejas kilométricas\n\ty unas de gavilán.

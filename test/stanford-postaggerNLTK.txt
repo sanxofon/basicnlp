@@ -1,0 +1,74 @@
+Cadena:
+	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!\nEl veloz murciélago hindú comía feliz cardillo y kiwi.\nLa cigüena tocaba el saxofón detrás del palenque de paja.\nEl pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.\nExhíbanse politiquillos zafios,\ncon orejas kilométricas\n\ty unas de gavilán.
+Frases:
+	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
+	El veloz murciélago hindú comía feliz cardillo y kiwi.
+	La cigüena tocaba el saxofón detrás del palenque de paja.
+	El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
+	Exhíbanse politiquillos zafios,\ncon orejas kilométricas\n\ty unas de gavilán.
+—¡ nc0n000
+Joven np00000
+« fe
+emponzoñado nc00000
+» fe
+con sp000
+el da0000
+whisky nc0s000
+, fc
+qué pt000000
+fin nc0s000
+… fs
+te pp000000
+aguarda vmip000
+exhibir vmn0000
+! fat
+El da0000
+veloz aq0000
+murciélago nc0s000
+hindú aq0000
+comía vmii000
+feliz aq0000
+cardillo nc0s000
+y cc
+kiwi z0
+. fp
+La da0000
+cigüena nc0s000
+tocaba vmii000
+el da0000
+saxofón nc0s000
+detrás rg
+del sp000
+palenque nc0s000
+de sp000
+paja aq0000
+. fp
+El da0000
+pingüino aq0000
+Wenceslao np00000
+hizo vmis000
+kilómetros nc0p000
+bajo sp000
+exhaustiva aq0000
+lluvia nc0s000
+y cc
+frío nc0s000
+, fc
+añoraba vmii000
+a sp000
+su dp0000
+querido aq0000
+cachorro nc0s000
+. fp
+Exhíbanse aq0000
+politiquillos nc0p000
+zafios aq0000
+, fc
+con sp000
+orejas nc0p000
+kilométricas aq0000
+y cc
+unas di0000
+de sp000
+gavilán nc0s000
+. fp
