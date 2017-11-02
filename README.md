@@ -379,9 +379,11 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 > 
 > 1. freelingwrapper.py
 
-**Ejemplo de uso:**
+**Ejemplos de uso:**
 
 	$ python basicFreeling.py > test/basicFreeling.json
+	$ python basicFreeling.py -c /usr/share/freeling/config/es.cfg -l es -f test/texto1.txt > test/texto1_freeling.json
+	$ python basicFreeling.py -f test/texto2.txt > test/texto2_freeling.json
 
 ***
 
@@ -443,4 +445,6 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	python medium-stanford-corenlp.py -u -x > test/medium-stanford-corenlp.xml
 	echo Testing "basicFreeling"
 	python basicFreeling.py > test/basicFreeling.json
+	python basicFreeling.py -c /usr/share/freeling/config/es.cfg -l es -f test/texto1.txt > test/texto1_freeling.json
+	python basicFreeling.py -f test/texto2.txt > test/texto2_freeling.json
 ```
