@@ -1,0 +1,14 @@
+-i		Ingorar MAYÚSCULAS/minúsculas
+-R/-r	Busca Recursivamente
+-l		Solo muestra el nombre del archivo, no el contenido encontrado
+-n 		Antecede la linea de texto encontrada con el número de línea que es
+-s 		No muestra errores sobre archivo no encontrado, o archivos ilegibles
+-w		Sólo coincide con la palabra completa
+--include	Patrón de archivos a incluír en la búsqueda
+--exclude	lista de archivos a excluir de la búsqueda
+
+Devuelve el nombre del archivo, el número de línea y la linea encontrada
+grep --exclude=={lista_epubs.txt,lista_epubs_results.txt} --include=*.txt -riwsn "mexico|méxico" F:\LIBROS\epub_clean
+Devuelve solo el nombre del archivo
+grep --exclude=={lista_epubs.txt,lista_epubs_results.txt} --include=*.txt -riwsl "mexico|méxico" F:\LIBROS\epub_clean
+grep --include=*.txt -riwsn "mexico" F:\LIBROS\epub_clean
