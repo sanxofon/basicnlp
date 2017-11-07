@@ -392,7 +392,7 @@ Para conocer qué son y cómo se usan la expresiones regulares he escrito otro d
 
 - **[Curso básico de expresiones regulares en español](../regexbasico)**
 
-Por lo pronto diré simplemente que en el patrón **'m[eé][xj]ico'** se usan los paréntesis cuadrados **[** y **]**. Todos los caracteres que se encierren entre éstos son opcionales, es decir que se encontrarán coincidencias con cualquiera de ellos en la posición señalada.
+Por lo pronto diré simplemente que en el patrón **'m[eé][xj]ico'** se usan los corchetes **[]** que tienen un significado especial. Todos los caracteres que se encierren entre corchetes son opcionales, es decir que se encontrarán coincidencias con cualquiera de ellos en la posición señalada.
 
 Por ejemplo, si definimos la *epresión regular*:
 

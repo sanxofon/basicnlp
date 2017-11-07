@@ -578,7 +578,7 @@ En la tabla anterior notaremos que la manera de “codificar” nuestras letras 
 
 Pero sería muy difícil escribir y luego poder leer palabras con varias letras seguidas en este sistema, no sabríamos dónde termina una letra y empieza la que sigue. Entonces se les ocurrió ir contando de 8 bits en 8 bits. El número máximo que se puede escribir en 8 bits es 11111111 (ocho unos), o sea, 255\. A eso los matemáticos les gusta escribirlo como **2⁸-1** , es decir, 2 multiplicado por sí mismo 8 veces (256), menos uno (255). Si le agregamos el 0, es decir que podemos empezar con espacio “ “, son 256, es decir que hay **2⁸** números (o posibilidades) en 8 bits contando el cero.
 
-Así que la cosa más o menos quedó como sigue:
+**Así que la cosa más o menos quedó como sigue:**
 
 Con los primeros 32 números (5 bits, del 0 al 31, del 0 al 2⁵, o de 0 a 11111 en binario) lograron hacer un código para avisar algo así como “Ahí te va una letra”.
 
@@ -604,7 +604,7 @@ A eso le llamaron ASCII.
 
 ## El juego de caracteres ANSI (Windows-1252)
 
-**Año de creación:** 1980
+**Año de creación:** 1980-1985
 **Nombre completo:** Codificación de caracteres del alfabeto latino, usada por defecto por Microsoft Windows  
 **Acrónimos:** Windows-1252 ó CP-1252\. Conocido históricamente como ANSI _Code Page_ o ACP
 
@@ -642,9 +642,9 @@ A eso le llamaron ASCII.
 
 UTF-8 continúa desde el valor 256, es decir que no siempre usa un byte, sino que puede usar hasta 4 bytes, es decir un número binario de hasta 32 dígitos.
 
-*   189 para 1 byte
-*   4096 para 2 bytes: Se incluyen casi todos los alfabetos latinos, y también alfabetos griegos, cirílicos, coptos, armenios, hebreos, árabes, siríacos y tanas, así como la combinación de marcas diacríticas.
-*   262144 para 3 bytes: aquí se incluyen los caracteres chinos, japoneses, coreanos, etc.
+*   189 variedades para 1 byte
+*   4096 variedades para 2 bytes: Se incluyen casi todos los alfabetos latinos, y también alfabetos griegos, cirílicos, coptos, armenios, hebreos, árabes, siríacos y tanas, así como la combinación de marcas diacríticas.
+*   262144 variedades para 3 bytes: aquí se incluyen los caracteres chinos, japoneses, coreanos, etc.
 *   Más de 130 millones de caracteres posibles en 4 bytes, emoticones, etc.: *UNICODE*.
 
 **Caracteres incluídos** (ejemplo)**:**  
@@ -962,9 +962,9 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>/</td>
 
-<td>solidus</td>
+<td>división-barra</td>
 
-<td>solidus</td>
+<td>division-slash</td>
 
 </tr>
 
@@ -1160,7 +1160,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>:</td>
 
-<td>colon</td>
+<td>dos puntos</td>
 
 <td>colon</td>
 
@@ -1196,7 +1196,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td><</td>
 
-<td>menos que signo</td>
+<td>menor que</td>
 
 <td>less-than sign</td>
 
@@ -1232,7 +1232,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>></td>
 
-<td>signo mayor que</td>
+<td>mayor que</td>
 
 <td>greater-than sign</td>
 
@@ -1250,7 +1250,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>?</td>
 
-<td>signo de interrogación</td>
+<td>signo de interrogación, cierre</td>
 
 <td>question mark</td>
 
@@ -1268,7 +1268,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>@</td>
 
-<td>comercial en</td>
+<td>arroba</td>
 
 <td>commercial at</td>
 
@@ -1772,9 +1772,9 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>\</td>
 
-<td>solidus inverso</td>
+<td>barra invertida</td>
 
-<td>reverse solidus</td>
+<td>reverse slash</td>
 
 </tr>
 
@@ -1826,7 +1826,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>_</td>
 
-<td>línea baja</td>
+<td>guión bajo</td>
 
 <td>low line</td>
 
@@ -2330,7 +2330,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>{</td>
 
-<td>corchete izquierdo</td>
+<td>llave izquierda</td>
 
 <td>left curly bracket</td>
 
@@ -2348,7 +2348,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>|</td>
 
-<td>linea vertical</td>
+<td>barra vertical</td>
 
 <td>vertical line</td>
 
@@ -2366,7 +2366,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>}</td>
 
-<td>brazalete derecho</td>
+<td>llave derecha</td>
 
 <td>right curly bracket</td>
 
@@ -2456,7 +2456,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>única marca de bajo 9</td>
+<td>Comilla baja simple</td>
 
 <td>single low-9 quotation mark</td>
 
@@ -2492,7 +2492,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>doble bajo-9 comillas</td>
+<td>Comillas bajas dobles</td>
 
 <td>double low-9 quotation mark</td>
 
@@ -2582,7 +2582,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>por mille signo</td>
+<td>por millar</td>
 
 <td>per mille sign</td>
 
@@ -2726,7 +2726,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>dejado comillas simples</td>
+<td>comilla simple izquierda</td>
 
 <td>left single quotation mark</td>
 
@@ -2744,7 +2744,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>comillas simples correctas</td>
+<td>comilla simple derecha</td>
 
 <td>right single quotation mark</td>
 
@@ -2762,7 +2762,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>dejó doble comilla</td>
+<td>dobles comillas derechas</td>
 
 <td>left double quotation mark</td>
 
@@ -2780,7 +2780,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>comillas dobles correctas</td>
+<td>dobles comillas izquierdas</td>
 
 <td>right double quotation mark</td>
 
@@ -2816,7 +2816,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>en dash</td>
+<td>guión inglés</td>
 
 <td>en dash</td>
 
@@ -2870,7 +2870,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>signo de marca</td>
+<td>signo de marca registrada</td>
 
 <td>trade mark sign</td>
 
@@ -2906,7 +2906,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td></td>
 
-<td>comillas de ángulo único que apuntan hacia la derecha</td>
+<td>comilla sencilla de ángulo la derecha</td>
 
 <td>single right-pointing angle quotation mark</td>
 
@@ -3014,7 +3014,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>¡</td>
 
-<td>signo de exclamación invertido</td>
+<td>signo de exclamación apertura</td>
 
 <td>inverted exclamation mark</td>
 
@@ -3140,7 +3140,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>¨</td>
 
-<td>diaresis</td>
+<td>diéresis</td>
 
 <td>diaeresis</td>
 
@@ -3194,7 +3194,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>«</td>
 
-<td>comillas de ángulo doble con doble ángulo hacia la izquierda</td>
+<td>comillas españolas (de ángulo doble) izquierdas</td>
 
 <td>left-pointing double angle quotation mark</td>
 
@@ -3212,7 +3212,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>¬</td>
 
-<td>no firmar</td>
+<td>singo notr</td>
 
 <td>not sign</td>
 
@@ -3482,7 +3482,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>»</td>
 
-<td>comillas de doble ángulo que apuntan hacia la derecha</td>
+<td>comillas españolas (de ángulo doble) derechas</td>
 
 <td>right-pointing double angle quotation mark</td>
 
@@ -3572,7 +3572,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>À</td>
 
-<td>Letra mayúscula latina A con tumba</td>
+<td>Letra mayúscula latina A con acento grave</td>
 
 <td>Latin capital letter A with grave</td>
 
@@ -3590,7 +3590,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Á</td>
 
-<td>Letra mayúscula latina A con aguda</td>
+<td>Letra mayúscula latina A con acento agudo</td>
 
 <td>Latin capital letter A with acute</td>
 
@@ -3716,7 +3716,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>È</td>
 
-<td>Letra mayúscula latina E con tumba</td>
+<td>Letra mayúscula latina E con acento grave</td>
 
 <td>Latin capital letter E with grave</td>
 
@@ -3788,7 +3788,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Ì</td>
 
-<td>Letra mayúscula latina con tumba</td>
+<td>Letra mayúscula latina con acento grave</td>
 
 <td>Latin capital letter I with grave</td>
 
@@ -3806,7 +3806,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Í</td>
 
-<td>Letra mayúscula latina I con aguda</td>
+<td>Letra mayúscula latina I con acento agudo</td>
 
 <td>Latin capital letter I with acute</td>
 
@@ -3878,7 +3878,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Ñ</td>
 
-<td>Letra latina mayúscula N con tilde</td>
+<td>Letra latina mayúscula eñe</td>
 
 <td>Latin capital letter N with tilde</td>
 
@@ -3896,7 +3896,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Ò</td>
 
-<td>Letra mayúscula latina O con tumba</td>
+<td>Letra mayúscula latina O con acento grave</td>
 
 <td>Latin capital letter O with grave</td>
 
@@ -3914,7 +3914,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Ó</td>
 
-<td>Letra mayúscula latina O con aguda</td>
+<td>Letra mayúscula latina O con acento agudo</td>
 
 <td>Latin capital letter O with acute</td>
 
@@ -4004,7 +4004,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Ø</td>
 
-<td>Letra mayúscula latina O con un trazo</td>
+<td>Letra mayúscula latina O con barra</td>
 
 <td>Latin capital letter O with stroke</td>
 
@@ -4022,7 +4022,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Ù</td>
 
-<td>Letra mayúscula latina U con tumba</td>
+<td>Letra mayúscula latina U con acento grave</td>
 
 <td>Latin capital letter U with grave</td>
 
@@ -4094,7 +4094,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>Ý</td>
 
-<td>Letra mayúscula latina Y con aguda</td>
+<td>Letra mayúscula latina Y con acento agudo</td>
 
 <td>Latin capital letter Y with acute</td>
 
@@ -4148,7 +4148,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>à</td>
 
-<td>Letra pequeña latina a con tumba</td>
+<td>Letra pequeña latina a con acento grave</td>
 
 <td>Latin small letter a with grave</td>
 
@@ -4166,7 +4166,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>á</td>
 
-<td>Letra pequeña latina a con aguda</td>
+<td>Letra pequeña latina a con acento agudo</td>
 
 <td>Latin small letter a with acute</td>
 
@@ -4292,7 +4292,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>è</td>
 
-<td>Letra pequeña latina e con tumba</td>
+<td>Letra pequeña latina e con acento grave</td>
 
 <td>Latin small letter e with grave</td>
 
@@ -4310,7 +4310,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>é</td>
 
-<td>Letra pequeña latina e con aguda</td>
+<td>Letra pequeña latina e con acento agudo</td>
 
 <td>Latin small letter e with acute</td>
 
@@ -4364,7 +4364,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>ì</td>
 
-<td>Letra pequeña latina i con tumba</td>
+<td>Letra pequeña latina i con acento grave</td>
 
 <td>Latin small letter i with grave</td>
 
@@ -4382,7 +4382,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>í</td>
 
-<td>Letra pequeña latina i con aguda</td>
+<td>Letra pequeña latina i con acento agudo</td>
 
 <td>Latin small letter i with acute</td>
 
@@ -4454,7 +4454,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>ñ</td>
 
-<td>Letra pequeña latina n con tilde</td>
+<td>Letra pequeña latina eñe</td>
 
 <td>Latin small letter n with tilde</td>
 
@@ -4472,7 +4472,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>ò</td>
 
-<td>Letra pequeña latina o con tumba</td>
+<td>Letra pequeña latina o con acento grave</td>
 
 <td>Latin small letter o with grave</td>
 
@@ -4490,7 +4490,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>ó</td>
 
-<td>Letra pequeña latina o con aguda</td>
+<td>Letra pequeña latina o con acento agudo</td>
 
 <td>Latin small letter o with acute</td>
 
@@ -4580,7 +4580,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>ø</td>
 
-<td>Letra pequeña latina o con un golpe</td>
+<td>Letra pequeña latina o con barra</td>
 
 <td>Latin small letter o with stroke</td>
 
@@ -4598,7 +4598,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>ù</td>
 
-<td>Letra pequeña latina u con tumba</td>
+<td>Letra pequeña latina u con acento grave</td>
 
 <td>Latin small letter u with grave</td>
 
@@ -4670,7 +4670,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>ý</td>
 
-<td>Letra pequeña latina y con aguda</td>
+<td>Letra pequeña latina y con acento agudo</td>
 
 <td>Latin small letter y with acute</td>
 
@@ -4688,7 +4688,7 @@ La siguiente tabla muestra las diferencias entre los juegos de caracteres descri
 
 <td>þ</td>
 
-<td>Letra latina pequeña espina</td>
+<td>Letra griega sho o islandesa thorn</td>
 
 <td>Latin small letter thorn</td>
 
