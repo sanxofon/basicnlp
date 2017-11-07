@@ -10,7 +10,7 @@ Una **coincidencia** es cuando la expresión regular se concontró en la cadena 
 
 Una **cadena** es un texto al cual se le aplicará la expresión regular.
 
-Caracteres literales
+### Caracteres literales
 
 La expresión regular más básica consiste en un único carácter literal, como **a** y la búsqueda de sólo la primera cincidencia en una cadena. Si la cadena es **Lupita es una niña**, la coincidencia será la **a** que está después de la **t**. Los programas que realizar expresiones regulares nos permiten recibir el caracter encontrado como respuesta, **a**, y/o la posición de la coincidencia, que en este caso sería **5**.
 
@@ -31,58 +31,61 @@ Esta expresión regular también puede coincidir con la segunda. Solo lo hace cu
 1. el corchete de apertura **[** 
 1. y la llave de apertura **{** 
 
-Estos caracteres especiales a menudo se llaman "metacaracteres". La mayoría de ellos son errores cuando se usan solos.
+Estos caracteres especiales a menudo se llaman "metacaracteres". La mayoría de ellos muestran errores cuando se usan solos.
 
-Si desea utilizar cualquiera de estos caracteres como un literal en una expresión regular, debe escapar de ellos con una barra invertida. Si quiere hacer coincidir 1 + 1 = 2 , la expresión regular correcta es 1 \ + 1 = 2 . De lo contrario, el signo más tiene un significado especial.
+Si deseas utilizar cualquiera de estos caracteres como un literal en una expresión regular, debe escaparlos con una barra invertida. Si quiere hacer coincidir '**1 + 1 = 2**', la expresión regular correcta es '**1 \\+ 1 = 2**'. De lo contrario, el signo más (+) tiene un significado especial.
 
-Aprenda más sobre los caracteres literales
-Clases de caracteres o juegos de caracteres
+### Clases de caracteres o juegos de caracteres
 
-Una "clase de caracteres" coincide solo con uno de varios caracteres. Para hacer coincidir una a o una e, usa [ ae ] . Puede usar esto en gr [ ae ] y para hacer coincidir gris o gris . Una clase de caracter solo coincide con un solo carácter. gr [ ae ] y no concuerda con graay , graey o cualquier cosa similar . El orden de los caracteres dentro de una clase de caracter no importa.
+Una "clase de caracteres" coincide solo con uno de varios caracteres. Para hacer coincidir una **a** o una **e**, usa **[ae]**. Puede usar esto en **p[aeiou]to** y para hacer coincidir **p*a*to**, **p*e*to**, **p*i*to**, **p*o*to** y **p*u*to**. Una *clase de caracter* solo coincide con un solo caracter: **p[aeiou]to** no concuerda con **paato**, **pauto**, **peiuto** o cualquier cosa similar . El orden de los caracteres dentro de una clase de caracter no importa.
 
-Puede usar un guion dentro de una clase de caracteres para especificar un rango de caracteres. [ 0 - 9 ] coincide con un solo dígito entre 0 y 9. Puede usar más de un rango. [ 0 - 9 a - f A - F ] coincide con un solo dígito hexadecimal, mayúsculas y minúsculas insensiblemente. Puede combinar rangos y caracteres individuales. [ 0 - 9 a - f x A - F X ] coincide con un dígito hexadecimal o la letra X.
+Puede usar un guion dentro de una clase de caracteres para especificar un rango de caracteres. **[0-9]** coincide con un solo dígito entre 0 y 9. Puede usar más de un rango. **[0-9a-z]** coincide con un solo caracter ya sea número del **0** al **9** o una letra de la **a** a la **z** (sin acento, diéresis ni eñe). Para incluír todos los acentos del español y la ñ podemos usar: **[a-záéíóúüñ]**
 
-Escribir una referencia después del corchete de apertura niega la clase de caracter. El resultado es que la clase de caracteres coincide con cualquier carácter que no esté en la clase de caracteres. q [ ^ x ] coincide con qu en cuestión . No coincide con Iraq ya que no hay un caracter después de la q para que coincida la clase de caracter negada.
+Escribir una referencia (**^**) después del corchete de apertura niega la clase de caracter. El resultado es que la clase de caracteres coincide con cualquier carácter que **no** esté en la clase de caracteres. **c[^ou]lo** coincide con cualquier palabra como **calo**, **colo**, **cblo**, **c8lo**, etc. pero no coincide con **colo** ni con **culo**.
 
-Aprenda más sobre las clases de caracteres
-Clases de caracteres abreviados
+### Clases de caracteres abreviados
 
-\ d coincide con un solo carácter que es un dígito, \ w coincide con un "carácter de palabra" (caracteres alfanuméricos más guion bajo) y \ s coincide con un carácter de espacio en blanco (incluye pestañas y saltos de línea). Los caracteres reales que coinciden con los atajos depende del software que está utilizando. En las aplicaciones modernas, incluyen letras y números que no son en inglés.
++ **\\d** coincide con un solo carácter que es un dígito
++ **\\w** coincide con un "carácter de palabra" (caracteres alfanuméricos sin acentos más guion bajo)
++ **\\s** coincide con un carácter de espacio en blanco (incluye tabulador y saltos de línea).
 
-Aprenda más sobre las clases de caracteres abreviados
-Caracteres no imprimibles
+Los caracteres reales que coinciden con los atajos depende del software que está utilizando, sobre todo con letras y signos que no sean del inglés, como los acentos del español y la eñe.
 
-Puede usar secuencias de caracteres especiales para poner caracteres no imprimibles en su expresión regular. Utilice \ t para hacer coincidir un carácter de tabulación (ASCII 0x09), \ r para retorno de carro (0x0D) y \ n para avance de línea (0x0A). Los elementos no imprimibles más exóticos son \ a (campana, 0x07), \ e (escape, 0x1B), \ f (alimentación de formulario, 0x0C) y \ v (pestaña vertical, 0x0B). Recuerde que los archivos de texto de Windows usan \ r \ n para terminar líneas, mientras que los archivos de texto de UNIX usan \ n .
+### Caracteres no imprimibles
 
-Si su aplicación es compatible con Unicode , use \ uFFFF o \ x {FFFF} para insertar un carácter Unicode. \ u20AC o \ x {20AC} coincide con el signo de moneda del euro.
+Puede usar secuencias de caracteres especiales para poner caracteres no imprimibles en su expresión regular.
+
+1. **\\t** para hacer coincidir un carácter de tabulación
+1. **\\r** para retorno de carro
+1. **\\n** para salto de línea
+
+Los elementos no imprimibles más exóticos son **\\a** (campana), **\\e** (escape), **\\f** (alimentación de formulario) y **\\v** (pestaña vertical). Recuerde que los archivos de texto de Windows usan **\\r\\n** para terminar líneas, mientras que los archivos de texto de UNIX y MAC usan **\\n** .
+
+Si su aplicación es compatible con Unicode , use **\\uFFFF** o **\\x{FFFF}** para insertar un carácter Unicode. **\\u20AC** o **\\x{20AC}** coincide con el signo de moneda del euro €.
 
 Si su aplicación no es compatible con Unicode, use \ xFF para que coincida con un carácter específico por su índice hexadecimal en el juego de caracteres. \ xA9 coincide con el símbolo de copyright en el juego de caracteres Latin-1.
 
 Todos los caracteres no imprimibles se pueden usar directamente en la expresión regular o como parte de una clase de caracteres.
 
-Obtenga más información sobre los caracteres no imprimibles
-El punto coincide (casi) con cualquier caracter
+### El punto coincide (casi) con cualquier caracter
 
 El punto coincide con un solo carácter, excepto los caracteres de salto de línea. La mayoría de las aplicaciones tienen un modo "punto coincide con todos" o "línea única" que hace que el punto coincida con cualquier carácter, incluidos los saltos de línea.
 
 gr . y coincide con gris , gris , gr% y , etc. Utilice el punto con moderación. A menudo, una clase de caracter o clase de carácter negada es más rápida y más precisa.
 
-Aprenda más sobre el punto
-Anclajes
+### Anclajes
 
 Los anclajes no coinciden con ningún caracter. Ellos coinciden con una posición. ^ coincide al comienzo de la cadena y $ coincidencias al final de la cadena. La mayoría de los motores regex tienen un modo "multilínea" que hace ^ coincidir después de cualquier salto de línea, y $ antes de cualquier salto de línea. Eg ^ b solo coincide con el primer b en bob .
 
 \ b coincide en un límite de palabra. Un límite de palabras es una posición entre un carácter que puede coincidir con \ w y un carácter que no puede ser igualado por \ w . \ b también coincide al principio y / o al final de la cadena si el primer y / o último caracteres de la cadena son caracteres de palabra. \ B coincide en todas las posiciones donde \ b no puede coincidir.
 
-Conozca más sobre anclajes
-Alternancia
+### Alternancia
 
 La alternancia es la expresión regular equivalente a "o". gato | el perro coincide con el gato en Sobre gatos y perros . Si la expresión regular se aplica nuevamente, coincide con el perro . Puede agregar tantas alternativas como desee: cat | perro | ratón | pez
 
 La alternancia tiene la precedencia más baja de todos los operadores de expresiones regulares. gato | la comida para perros coincide con la comida para gatos o perros . Para crear una expresión regular que coincida con la comida para gatos o la comida para perros , debe agrupar las alternativas: ( cat | dog ) comida .
 
-Aprenda más sobre la alternancia
-Repetición
+### Repetición
 
 El signo de interrogación hace que el token anterior en la expresión regular sea opcional. colo tu ? r coincide con el color o el color .
 
@@ -90,8 +93,7 @@ El asterisco o estrella le dice al motor que intente hacer coincidir el token an
 
 Use llaves para especificar una cantidad específica de repetición. Use \ b [ 1 - 9 ] [ 0 - 9 ] {3} \ b para hacer coincidir un número entre 1000 y 9999. \ b [ 1 - 9 ] [ 0 - 9 ] {2,4} \ b coincide con un número entre 100 y 99999.
 
-Conozca más sobre los cuantificadores
-Repetición codiciosa y perezosa
+### Repetición codiciosa y perezosa
 
 Los operadores de repetición o cuantificadores son codiciosos. Amplían el partido tanto como pueden, y solo devuelven si deben satisfacer el resto de la expresión regular. La expresión regular < . + > coincide <EM> primero </ EM> en Esta es una <EM> primera </ EM> prueba .
 
@@ -99,8 +101,7 @@ Coloque un signo de interrogación después del cuantificador para que sea flojo
 
 Una mejor solución es seguir mi consejo de usar el punto con moderación. Use < [ ^ <> ] + > para hacer coincidir rápidamente una etiqueta HTML sin tener en cuenta los atributos. La clase de caracteres negada es más específica que el punto, lo que ayuda al motor de expresiones regulares a encontrar coincidencias rápidamente.
 
-Aprenda más sobre los cuantificadores codiciosos y perezosos
-Agrupando y capturando
+### Agrupando y capturando
 
 Coloque paréntesis alrededor de múltiples tokens para agruparlos. A continuación, puede aplicar un cuantificador al grupo. Ej. Establecer ( Valor ) ? coincide con Set o SetValue .
 
@@ -108,23 +109,19 @@ Los paréntesis crean un grupo de captura. El ejemplo de arriba tiene un grupo. 
 
 Use la sintaxis especial Set (?: Value ) ? para agrupar tokens sin crear un grupo de captura. Esto es más eficiente si no planea usar los contenidos del grupo. No confunda el signo de interrogación en la sintaxis del grupo que no captura con el cuantificador.
 
-Obtenga más información sobre cómo agrupar y capturar
-Backreferences
+### Backreferences
 
 Dentro de la expresión regular, puede usar la referencia inversa \ 1 para que coincida con el mismo texto que coincidió con el grupo de captura. ( [ abc ] ) = \ 1 coincide con a = a , b = b y c = c . No coincide con nada más. Si su expresión regular tiene múltiples grupos de captura, se numeran contando sus paréntesis de apertura de izquierda a derecha.
 
-Obtenga más información acerca de las referencias posteriores
-Grupos nombrados y Backreferences
+### Grupos nombrados y Backreferences
 
 Si tu expresión regular tiene muchos grupos, hacer un seguimiento de sus números puede ser engorroso. Haga que sus expresiones regulares sean más fáciles de leer nombrando sus grupos. (? <mygroup> [ abc ] ) = \ k <mygroup> es idéntico a ( [ abc ] ) = \ 1 , excepto que puede hacer referencia al grupo por su nombre.
 
-Aprenda más sobre grupos nombrados
-Propiedades Unicode
+### Propiedades Unicode
 
 \ p {L} coincide con un solo caracter que se encuentra en la categoría Unicode dada. L significa letra. \ P {L} coincide con un solo carácter que no está en la categoría Unicode dada. Puede encontrar una lista completa de categorías Unicode en el tutorial.
 
-Obtenga más información sobre las expresiones regulares de Unicode
-Mira alrededor
+### Mirar alrededor (Lookaround)
 
 Lookaround es un tipo especial de grupo. Los tokens dentro del grupo se emparejan normalmente, pero luego el motor de expresiones regulares hace que el grupo abandone su coincidencia y solo conserva el resultado. Lookaround coincide con una posición, al igual que los anclajes. No expande la coincidencia de expresiones regulares.
 
@@ -135,8 +132,3 @@ q (?! u ) coincide con q en Iraq, pero no en cuestión . Esto es un lookahead ne
 Para mirar hacia atrás, use lookbehind. (? <= a ) b coincide con b en abc . Este es un aspecto positivo detrás. (? <! a ) b no coincide con abc .
 
 Puede usar una expresión regular hecha y derecha dentro de lookahead. La mayoría de las aplicaciones solo permiten expresiones de longitud fija en lookbehind.
-
-Conozca más sobre lookaround
-Sintaxis de espaciado libre
-
-Muchas aplicaciones tienen una opción que puede denominarse "espacio libre" o "ignorar espacios en blanco" o "comentarios" que hace que el motor de expresiones regulares ignore los espacios no escaneados y los saltos de línea, lo que hace que el carácter # inicie un comentario que se ejecuta hasta el final de la línea. Esto le permite usar espacios en blanco para formatear su expresión regular de manera que sea más fácil de leer para los humanos y, por lo tanto, sea más fácil de mantener. 

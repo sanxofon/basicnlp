@@ -101,7 +101,7 @@ Pero también podemos (y resulta muy útil en algunos casos) pedirle a *Google* 
 
 > **["Francis Bacon" -filósofo](http://www.google.com/search?q="Francis+Bacon"+-filósofo)**
 
-Ni Windows ni Mac ofrecen esa simple funcionalidad realmente y ocultan la herramienta que permite hacer todo eso y mucho mucho más en nuestros archivos personales. Simplemente fingen que no está ahí, pero en realidad es muy fácil ejecutarla para el que sabe que existe, y ninguna computadora decente se vendería en el mundo de los usuarios avanzados si no tuviera terminal, incluso si no pudiéramos ejecutarla desde el teclado sin ayuda del ratón o *mouse*, que es la forma elegante de hacerlo.
+Ni *Windows* ni *Mac* ofrecen esa simple funcionalidad claramente,e incluso ocultan la herramienta que permite hacer todo eso y mucho mucho más en nuestros archivos personales. Simplemente fingen que no está ahí, pero en realidad es muy fácil ejecutarla para el que sabe que existe, y ninguna computadora decente se vendería en el mundo de los usuarios avanzados si no tuviera terminal, incluso si no pudiéramos ejecutarla desde el teclado sin ayuda del ratón o *mouse*, que es la forma elegante de hacerlo.
 
 ## 2. ¿Cómo ejecutar la terminal?
 
@@ -370,6 +370,12 @@ Para buscar una cadena de texto (México) dentro de todos los archivos de texto 
 
 	$ grep --include=*.txt -ril 'mexico' /home/santiago/libros/
 
+Esa instrucción nos devolverá los nombres de los archivos que contienen el patrón (mexico) buscado.
+
+Podemos también pedirle que nos devuelva además el número de línea y el renglón completo donde aparece el *patrón* por primera vez en cada texto con:
+
+	$ grep --include=*.txt -rin 'mexico' /home/santiago/libros/
+
 Los argumentos que se usaron son:
 
 - **-i**  Ingorar MAYÚSCULAS/minúsculas
@@ -378,13 +384,25 @@ Los argumentos que se usaron son:
 - **-n** Antecede la linea de texto encontrada con el número de línea que es
 - **--include** Patrón de archivos a incluir en la búsqueda
 
-La instrucción anterior sólo encontrará las coincidencias con la palabra **mexico**, pero no con la palabra **méxico** (ni con *mejico* o *méjico*). Podemos encontrar todas estas coincidencias usando una expresión regular en el patrón de búsqueda:
+La instrucción anterior sólo encontrará las coincidencias con la palabra **mexico** (sin importar MAYÚSCULA y minúsculas, pero no coincidirá con la palabra **méxico** (ni con *mejico* o *méjico*). Podemos encontrar todas estas coincidencias usando una expresión regular en el patrón de búsqueda, en vez de  **'mexico'**, usaremos la expresión regular **'m[eé][xj]ico'**:
 
 	$ grep --include=*.txt -ril 'm[eé][xj]ico' /home/santiago/libros/
 
 Para conocer qué son y cómo se usan la expresiones regulares he escrito otro documento que tal vez quieras ver.
 
 - **[Curso básico de expresiones regulares en español](../regexbasico)**
+
+Por lo pronto diré simplemente que en el patrón **'m[eé][xj]ico'** se usan los paréntesis cuadrados **[** y **]**. Todos los caracteres que se encierren entre éstos son opcionales, es decir que se encontrarán coincidencias con cualquiera de ellos en la posición señalada.
+
+Por ejemplo, si definimos la *epresión regular*:
+
+> 'p**[aeiou]**to'
+
+Todas las palabras siguientes se consideran coincidencias posibles:
+
+> 'p**a**to', 'p**e**to', 'p**i**to', 'p**o**to' y 'p**u**to'
+
+
 
 ***
 
