@@ -9,9 +9,6 @@
 	>> python simpleRegexUTF8.py
 """
 
-# La librería "sys" no permite acceder a información del sistema
-import sys
-
 # La librería "re" nos permite realizar expresiones regulares en Python
 import re
 
