@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 
 # FIX PARA WINDOWS CONSOLE ----------------------
-import codecs,sys
-sys.stdout = codecs.getwriter("utf8")(sys.stdout)
+# Usar: chcp 1252
+import codecs,locale,sys
+sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
 # -----------------------------------------------
 
 import re
