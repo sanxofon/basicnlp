@@ -130,7 +130,7 @@ Compilar patrones de búsqueda
 print
 print u">> RE.COMPILE"
 # Compilamos el patrón de búsqueda
-patron_compilado = re.compile(patron)
+patron_compilado = re.compile(patron, re.UNICODE)
 
 print "search:"
 # Usamos el objeto "patron_compilado" para buscar (search)
