@@ -396,7 +396,7 @@ Por lo pronto diré simplemente que en el patrón **'m[eé][xj]ico'** se usan lo
 
 Por ejemplo, si definimos la *epresión regular*:
 
-> 'p**[aeiou]**to'
+> 'p[aeiou]to'
 
 Todas las palabras siguientes se consideran coincidencias posibles:
 
