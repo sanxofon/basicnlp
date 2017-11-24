@@ -1,0 +1,213 @@
+DEC	CHAR	DESC
+32	 	espacio
+33	!	signo de cierre de exclamación
+34	"	comillas dobles
+35	#	signo de número
+36	$	signo de dólar
+37	%	signo de porcentaje
+38	&	signo ampersand
+39	'	comilla / apóstrofe
+40	(	paréntesis izquierdo
+41	)	paréntesis derecho
+42	*	asterisco
+43	+	signo de más
+44	,	coma
+45	-	signo de menos / guíon
+46	.	punto
+47	/	barra / barra de división 
+48	0	cero
+49	1	uno
+50	2	dos
+51	3	tres
+52	4	cuatro
+53	5	cinco
+54	6	seis
+55	7	siete
+56	8	ocho
+57	9	nueve
+58	:	dos puntos
+59	;	punto y coma
+60	<	signo de menor que
+61	=	signo de igual
+62	>	signo de mayor que
+63	?	signo de interrogación - cierre 
+64	@	símbolo arroba
+65	A	A mayúscula
+66	B	B mayúscula
+67	C	C mayúscula
+68	D	D mayúscula
+69	E	E mayúscula
+70	F	F mayúscula
+71	G	G mayúscula
+72	H	H mayúscula
+73	I	I mayúscula
+74	J	J mayúscula
+75	K	K mayúscula
+76	L	L mayúscula
+77	M	M mayúscula
+78	N	N mayúscula
+79	O	O mayúscula
+80	P	P mayúscula
+81	Q	Q mayúscula
+82	R	R mayúscula
+83	S	S mayúscula
+84	T	T mayúscula
+85	U	U mayúscula
+86	V	V mayúscula
+87	W	W mayúscula
+88	X	X mayúscula
+89	Y	Y mayúscula
+90	Z	Z mayúscula
+91	[	corchete izquierdo
+92	\	barra invertida
+93	]	corchete derecho
+94	^	signo de intercalación / acento circunflejo
+95	_	signo de subrayado 
+96	`	acento grave 
+97	a	a minúscula
+98	b	b minúscula
+99	c	c minúscula
+100	d	d minúscula
+101	e	e minúscula
+102	f	f minúscula
+103	g	g minúscula
+104	h	h minúscula
+105	i	i minúscula
+106	j	j minúscula
+107	k	k minúscula
+108	l	l minúscula
+109	m	m minúscula
+110	n	n minúscula
+111	o	o minúscula
+112	p	p minúscula
+113	q	q minúscula
+114	r	r minúscula
+115	s	s minúscula
+116	t	t minúscula
+117	u	u minúscula
+118	v	v minúscula
+119	w	w minúscula
+120	x	x minúscula
+121	y	y minúscula
+122	z	z minúscula
+123	{	llave de apertura - izquierda
+124	|	barra vertical
+125	}	llave de cierre - derecho
+126	~	signo de equivalencia / tilde
+160	 	espacio sin separación (&nbsp;)
+161	¡	signo de apertura de exclamación
+162	¢	signo de centavo
+163	£	signo de Libra Esterlina
+164	¤	signo de divisa general
+165	¥	signo de yen
+166	¦	barra vertical partida
+167	§	signo de sección
+168	¨	diéresis / umlaut
+169	©	signo de derechos de autor / copyright
+170	ª	género feminino / indicador ordinal f.
+171	«	comillas anguladas de apertura
+172	¬	signo de no / símbolo lógico
+173		guión débil
+174	®	signo de marca registrada
+175	¯	macrón / raya alta 
+176	°	signo de grado
+177	±	signo de más o menos
+178	²	superíndice dos / cuadrado
+179	³	superíndice tres / cúbico
+180	´	acento agudo / agudo espaciado
+181	µ	signo de micro
+182	¶	signo de fin de párrafo
+183	·	punto medio / coma Georgiana
+184	¸	cedilla
+185	¹	superíndice uno
+186	º	género masculino / indicador ordinal m.
+187	»	comillas anguladas de cierre
+188	¼	fracción un cuarto
+189	½	fracción medio / mitad
+190	¾	fracción tres cuartos
+191	¿	signo de interrogación - apertura 
+192	À	A mayúscula con acento grave
+193	Á	A mayúscula con acento agudo
+194	Â	A mayúscula con acento circunflejo
+195	Ã	A mayúscula con tilde
+196	Ä	A mayúscula con diéresis
+197	Å	A mayúscula con anillo
+198	Æ	diptongo AE mayúscula (ligadura)
+199	Ç	C cedilla mayúscula
+200	È	E mayúscula con acento grave
+201	É	E mayúscula con acento agudo
+202	Ê	E mayúscula con acento circunflejo
+203	Ë	E mayúscula con diéresis
+204	Ì	I mayúscula con acento grave
+205	Í	I mayúscula con acento agudo
+206	Î	I mayúscula con acento circunflejo
+207	Ï	I mayúscula con diéresis 
+208	Ð	ETH islandesa mayúscula
+209	Ñ	N mayúscula con tilde / eñe mayúscula
+210	Ò	O mayúscula con acento grave
+211	Ó	O mayúscula con acento agudo
+212	Ô	O mayúscula con acento circunflejo
+213	Õ	O mayúscula con tilde
+214	Ö	O mayúscula con diéresis
+215	×	signo de multiplicación
+216	Ø	O mayúscula with slash
+217	Ù	U mayúscula con acento grave
+218	Ú	U mayúscula con acento agudo
+219	Û	U mayúscula con acento circunflejo
+220	Ü	U mayúscula con diéresis
+221	Ý	Y mayúscula con acento agudo
+222	Þ	THORN islandesa mayúscula
+223	ß	s minúscula (alemán) / Beta minúscula 
+224	à	a minúscula con acento grave
+225	á	a minúscula con acento agudo
+226	â	a minúscula con acento circunflejo
+227	ã	a minúscula con tilde
+228	ä	a minúscula con diéresis
+229	å	a minúscula con anillo
+230	æ	diptongo ae minúscula (ligadura)
+231	ç	c cedilla minúscula
+232	è	e minúscula con acento grave
+233	é	e minúscula con acento agudo
+234	ê	e minúscula con acento circunflejo
+235	ë	e minúscula con diéresis
+236	ì	i minúscula con acento grave
+237	í	i minúscula con acento agudo
+238	î	i minúscula con acento circunflejo
+239	ï	i minúscula con diéresis 
+240	ð	eth islandesa minúscula
+241	ñ	eñe minúscula / n minúscula con tilde
+242	ò	o minúscula con acento grave
+243	ó	o minúscula con acento agudo
+244	ô	o minúscula con acento circunflejo
+245	õ	o minúscula con tilde
+246	ö	o minúscula con diéresis
+247	÷	signo de división 
+248	ø	o barrada minúscula
+249	ù	u minúscula con acento grave
+250	ú	u minúscula con acento agudo
+251	û	u minúscula con acento circunflejo
+252	ü	u minúscula con diéresis
+253	ý	y minúscula con acento agudo
+254	þ	thorn islandesa minúscula
+255	ÿ	y minúscula con diéresis 
+338	Œ	OE mayúscula (ligadura)
+339	œ	oe minúscula (ligadura)
+352	Š	S mayúscula con caron
+353	š	s minúscula con caron / acento hacek
+376	Ÿ	Y mayúscula con diéresis
+402	ƒ	f minúscula itálica / signo de función 
+8211	–	raya corta
+8212	—	raya larga
+8216	‘	comilla izquierda - citación
+8217	’	comilla derecha - citación
+8218	‚	comilla de citación - baja
+8220	“	comillas de citación - arriba izquierda
+8221	”	comillas de citación - arriba derecha
+8222	„	comillas de citación - abajo
+8224	†	cruz
+8225	‡	doble cruz
+8226	•	viñeta / bullet
+8230	…	puntos suspensivos
+8240	‰	signo de pro mil
+8364	€	signo de euro
+8482	™	signo de marca registrada / trade mark 
