@@ -708,7 +708,7 @@ CD</td>
 
 <td>[ -~]+</td>
 
-<td>Caracteres in the printable section of the [ASCII table](http://www.asciitable.com/).</td>
+<td>Caracteres in the printable section of the ASCII table.</td>
 
 </tr>
 
@@ -732,7 +732,7 @@ CD</td>
 
 <td>[^ -~]+</td>
 
-<td>Caracteres that are **not** in the printable section of the [ASCII table](http://www.asciitable.com/).</td>
+<td>Caracteres that are **not** in the printable section of the ASCII table.</td>
 
 </tr>
 
@@ -765,7 +765,7 @@ luding new lines, which the regular dot doesn't match</td>
 
 </table>
 
-## [Anchors](regex-anchors.html) and [Boundaries](regex-boundaries.html)
+## Anchors and Boundaries
 
 <table style="table-layout:fixed;" border="0" width="100%">
 
@@ -787,7 +787,7 @@ luding new lines, which the regular dot doesn't match</td>
 
 <td><span class="mono">^</span></td>
 
-<td>[Start of string](regex-anchors.html#caret) or [start of line](regex-anchors.html#carmulti) depending on multiline mode. (But when [^inside brackets], it means "not")</td>
+<td>Start of string or start of line depending on multiline mode. (But when [^inside brackets], it means "not")</td>
 
 <td>^abc .*</td>
 
@@ -799,7 +799,7 @@ luding new lines, which the regular dot doesn't match</td>
 
 <td><span class="mono">$</span></td>
 
-<td>[End of string](regex-anchors.html#dollar) or [end of line](regex-anchors.html#eol) depending on multiline mode. Many engine-dependent subtleties.</td>
+<td>End of string or end of line depending on multiline mode. Many engine-dependent subtleties.</td>
 
 <td>.*? the end$</td>
 
@@ -811,7 +811,7 @@ luding new lines, which the regular dot doesn't match</td>
 
 <td><span class="mono">\A</span></td>
 
-<td>[Beginning of string](regex-anchors.html#A)  
+<td>Beginning of string  
 (all major engines except JS)</td>
 
 <td>\Aabc[\d\D]*</td>
@@ -825,7 +825,7 @@ luding new lines, which the regular dot doesn't match</td>
 
 <td><span class="mono">\z</span></td>
 
-<td>[Very end of the string](regex-anchors.html#z)  
+<td>Very end of the string  
 Not available in Python and JS</td>
 
 <td>the end\z</td>
@@ -838,7 +838,7 @@ Not available in Python and JS</td>
 
 <td><span class="mono">\Z</span></td>
 
-<td>[End of string](regex-anchors.html#Z) or (except Python) before final line break  
+<td>End of string or (except Python) before final line break  
 Not available in JS</td>
 
 <td>the end\Z</td>
@@ -851,7 +851,7 @@ Not available in JS</td>
 
 <td><span class="mono">\G</span></td>
 
-<td>[Beginning of String or End of Previous Match](regex-anchors.html#G)  
+<td>Beginning of String or End of Previous Match  
 .NET, Java, PCRE (C, PHP, R…), Perl, Ruby</td>
 
 </tr>
@@ -860,7 +860,7 @@ Not available in JS</td>
 
 <td><span class="mono">\b</span></td>
 
-<td>[Word boundary](regex-boundaries.html#wordboundary)  
+<td>Word boundary  
 Most engines: position where one side only is an ASCII letter, digit or underscore</td>
 
 <td>Bob.*\bcat\b</td>
@@ -873,7 +873,7 @@ Most engines: position where one side only is an ASCII letter, digit or undersco
 
 <td><span class="mono">\b</span></td>
 
-<td>[Word boundary](regex-boundaries.html#wordboundary)  
+<td>Word boundary  
 .NET, Java, Python 3, Ruby: position where one side only is a Unicode letter, digit or underscore</td>
 
 <td>Bob.*\b\кошка\b</td>
@@ -886,7 +886,7 @@ Most engines: position where one side only is an ASCII letter, digit or undersco
 
 <td><span class="mono">\B</span></td>
 
-<td>[Not a word boundary](regex-boundaries.html#notb)</td>
+<td>Not a word boundary</td>
 
 <td>c.*\Bcat\B.*</td>
 
@@ -992,7 +992,7 @@ Most engines: position where one side only is an ASCII letter, digit or undersco
 
 </table>
 
-## [Inline Modifiers](regex-modifiers.html)
+## Inline Modifiers
 
 None of these are supported in JavaScript. In Ruby, beware of <span class="socode">(?s)</span> and <span class="socode">(?m)</span>.  
 
@@ -1016,7 +1016,7 @@ None of these are supported in JavaScript. In Ruby, beware of <span class="socod
 
 <td><span class="mono">(?i)</span></td>
 
-<td>[Case-insensitive mode](regex-modifiers.html#i)  
+<td>Case-insensitive mode  
 (except JavaScript)</td>
 
 <td>(?i)Monday</td>
@@ -1029,7 +1029,7 @@ None of these are supported in JavaScript. In Ruby, beware of <span class="socod
 
 <td><span class="mono">(?s)</span></td>
 
-<td>[DOTALL mode](regex-modifiers.html#dotall) (except JS and Ruby). The dot (.) matches new line characters (\r\n). Also known as "single-line mode" because the dot treats the entire input as a single line</td>
+<td>DOTALL mode (except JS and Ruby). The dot (.) matches new line characters (\r\n). Also known as "single-line mode" because the dot treats the entire input as a single line</td>
 
 <td>(?s)From A.*to Z</td>
 
@@ -1042,7 +1042,7 @@ to Z</td>
 
 <td><span class="mono">(?m)</span></td>
 
-<td>[Multiline mode](regex-modifiers.html#multiline)  
+<td>Multiline mode  
 (except Ruby and JS) ^ and $ match at the beginning and end of every line</td>
 
 <td>(?m)1\r\n^2$\r\n^3$</td>
@@ -1057,7 +1057,7 @@ to Z</td>
 
 <td><span class="mono">(?m)</span></td>
 
-<td>[In Ruby](regex-modifiers.html#rubym): the same as (?s) in other engines, i.e. DOTALL mode, i.e. dot matches line breaks</td>
+<td>In Ruby: the same as (?s) in other engines, i.e. DOTALL mode, i.e. dot matches line breaks</td>
 
 <td>(?m)From A.*to Z</td>
 
@@ -1070,7 +1070,7 @@ to Z</td>
 
 <td><span class="mono">(?x)</span></td>
 
-<td>[Free-Spacing Mode mode](regex-modifiers.html#freespacing)  
+<td>Free-Spacing Mode mode  
 (except JavaScript). Also known as comment mode or whitespace mode</td>
 
 <td>(?x) # this is a  
@@ -1088,9 +1088,9 @@ abc # write on multiple
 
 <td><span class="mono">(?n)</span></td>
 
-<td>[.NET: named capture only](regex-modifiers.html#n)</td>
+<td>.NET: named capture only</td>
 
-<td>Turns all (parentheses) into non-capture groups. To capture, use [named groups](regex-capture.html#namedgroups).</td>
+<td>Turns all (parentheses) into non-capture groups. To capture, use named groups.</td>
 
 </tr>
 
@@ -1098,7 +1098,7 @@ abc # write on multiple
 
 <td><span class="mono">(?d)</span></td>
 
-<td>[Java: Unix linebreaks only](regex-modifiers.html#d)</td>
+<td>Java: Unix linebreaks only</td>
 
 <td>The dot and the ^ and $ anchors are only affected by \n</td>
 
@@ -1108,7 +1108,7 @@ abc # write on multiple
 
 </table>
 
-## [Lookarounds](regex-lookarounds.html)
+## Lookarounds
 
 <table style="table-layout:fixed;" border="0" width="100%">
 
@@ -1130,7 +1130,7 @@ abc # write on multiple
 
 <td><span class="mono">(?=…)</span></td>
 
-<td>[Positive lookahead](regex-disambiguation.html#lookahead)</td>
+<td>Positive lookahead</td>
 
 <td>(?=\d{10})\d{5}</td>
 
@@ -1142,7 +1142,7 @@ abc # write on multiple
 
 <td><span class="mono">(?<=…)</span></td>
 
-<td>[Positive lookbehind](regex-disambiguation.html#lookbehind)</td>
+<td>Positive lookbehind</td>
 
 <td>(?<=\d)cat</td>
 
@@ -1154,7 +1154,7 @@ abc # write on multiple
 
 <td><span class="mono">(?!…)</span></td>
 
-<td>[Negative lookahead](regex-disambiguation.html#negative-lookahead)</td>
+<td>Negative lookahead</td>
 
 <td>(?!theatre)the\w+</td>
 
@@ -1166,7 +1166,7 @@ abc # write on multiple
 
 <td><span class="mono">(?<!…)</span></td>
 
-<td>[Negative lookbehind](regex-disambiguation.html#negative-lookbehind)</td>
+<td>Negative lookbehind</td>
 
 <td>\w{3}(?<!mon)ster</td>
 
@@ -1178,7 +1178,7 @@ abc # write on multiple
 
 </table>
 
-## [Caracter Class Operations](regex-class-operations.html)
+## Caracter Class Operations
 
 <table style="table-layout:fixed;" border="0" width="100%">
 
@@ -1294,8 +1294,8 @@ abc # write on multiple
 
 <td><name="k"><span class="mono">\K</span></name="k"></td>
 
-<td>[Keep Out](regex-best-trick.html#bsk)  
-Perl, PCRE (C, PHP, R…), Python's alternate [_regex_](https://pypi.python.org/pypi/regex) engine, Ruby 2+: drop everything that was matched so far from the overall match to be returned</td>
+<td>Keep Out  
+Perl, PCRE (C, PHP, R…), Python's alternate _regex_ engine, Ruby 2+: drop everything that was matched so far from the overall match to be returned</td>
 
 <td>prefix\K\d+</td>
 
