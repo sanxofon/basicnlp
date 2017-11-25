@@ -20,12 +20,12 @@ Esta expresión regular también puede coincidir con la segunda **a**. Sólo lo 
 **Caracteres que tienen significados especiales en las expresiones regulares:**
 
 1. la barra invertida **\\** 
-1. la línea **^** 
+1. la referencia **^** 
 1. el signo de dólar **$** 
-1. el punto o el punto **.** 
-1. el símbolo de barra o tubo vertical **|** 
+1. el punto **.** 
+1. el símbolo de barra vertical **|** 
 1. el signo de interrogación **?** 
-1. el asterisco o estrella __*__ 
+1. el asterisco __*__ 
 1. el signo más **+** 
 1. el signo de guión o menos **-** 
 1. los paréntesis de apertura **(** y de cierre **)** 
