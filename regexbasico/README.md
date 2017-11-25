@@ -150,7 +150,7 @@ Los *operadores de repetición* o *cuantificadores* son **codiciosos**. Esto qui
 
 > Por ejemplo, el patrón **a+** coincidirá con **aaaa** en la cadena **aaaab**.
 
-Coloque un signo de interrogación **?** *después del cuantificador* para que sea **flojo**.
+Coloque un signo de interrogación **?** *después del cuantificador* para que sea **perezoso**.
 
 > Por ejemplo, el patrón **a+?** coincide con **a** en la cadena **aaaab**.
 
