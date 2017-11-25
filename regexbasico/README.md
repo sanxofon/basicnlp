@@ -36,11 +36,17 @@ Estos caracteres especiales a menudo se llaman "metacaracteres". La mayoría de 
 
 Si deseas utilizar cualquiera de estos caracteres como un literal en una expresión regular, debes *escaparlos* con una barra invertida. Si quieres hacer coincidir '**1 + 1 = 2**', la expresión regular correcta es '**1 \\+ 1 = 2**'. De lo contrario, el signo más (+) tiene un significado especial.
 
-Todos los demás caracteres son considerados literales y se representan a sí mismos en una *expresión regular*.
+Todos los demás caracteres son considerados literales y se representan a sí mismos en una *expresión regular*. De forma que si nuestro patrón es **abc123/"**, el motor buscará exactamente eso en el texto objetivo, como cualquier buscador por palabra simple.
 
 ### Clases de caracteres o juegos de caracteres
 
-Una "clase de caracteres" coincide solo con uno de varios caracteres. Para hacer coincidir una **a** o una **e**, usa **[ae]**. Puede usar esto en **p[aeiou]to** y para hacer coincidir **p*a*to**, **p*e*to**, **p*i*to**, **p*o*to** y **p*u*to**. Una *clase de caracter* solo coincide con un solo caracter: **p[aeiou]to** no concuerda con **paato**, **pauto**, **peiuto** o cualquier cosa similar . El orden de los caracteres dentro de una clase de caracter no importa.
+Una *clase de caracteres* coincide solo con uno de varios caracteres u opciones. Para hacer coincidir una **a** o una **e**, podemos usar el patrón **[ae]**.
+
+Podemos usar **p[aeiou]to** y para hacer coincidir con **p*a*to**, **p*e*to**, **p*i*to**, **p*o*to** y **p*u*to**. 
+
+Una *clase de caracter* solo coincide con **un solo** caracter: **p[aeiou]to** no concuerda con **p*aa*to**, **p*au*to**, **p*eiu*to** o cualquier cosa similar.
+
+**El orden de los caracteres dentro de una clase de caracter no importa.**
 
 Puede usar un guion dentro de una clase de caracteres para especificar un rango de caracteres. **[0-9]** coincide con un solo dígito entre 0 y 9. Puede usar más de un rango. **[0-9a-z]** coincide con un solo caracter ya sea número del **0** al **9** o una letra de la **a** a la **z** (sin acento, diéresis ni eñe). Para incluír todos los acentos del español y la ñ podemos usar: **[a-záéíóúüñ]**
 
