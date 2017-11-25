@@ -142,7 +142,7 @@ El asterisco __*__ le dice al motor que intente hacer coincidir el *token* anter
 
 Para especificar una cantidad específica de repeticiones se usan las llaves **{ }**.
 
-> Usa el patrón **[0-9]{3}** para hacer coincidir con cualquier número entre **000**, o bien se puede usar [0-9]{2,4} para coincidir con cualquier número entre **00** y **9999**.
+> Usa el patrón **[0-9]{3}** para hacer coincidir con cualquier número de tres cifras entre **000** y **999**, o bien se puede usar **[0-9]{2,4}** para coincidir con cualquier número de entre dos y cuatro cifras, entre **00** y **9999**.
 
 ### Repetición codiciosa y perezosa
 
