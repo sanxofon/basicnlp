@@ -74,7 +74,7 @@ Las opciones negativas de las anteriores son:
 
 Los caracteres reales que coinciden con los atajos depende del software que está utilizando, sobre todo con letras y signos que no sean del inglés, como los acentos del español y la eñe. Por ejemplo, el caracter **\\w** no va a coincidir con **á**, **é**, **í**, **ó**, **ú**, **ü** ni **ñ** en versiones que no incorporen Unicode correctamente.
 
-Ver CheatSheet para saber más entre las diferencias, por ejemplo, entre Python 2 y Python 3.
+Ver [CheatSheet](cheatsheet.md) para saber más entre las diferencias, por ejemplo, entre Python 2 y Python 3.
 
 ### Caracteres no imprimibles
 
