@@ -42,17 +42,23 @@ Todos los demás caracteres son considerados literales y se representan a sí mi
 
 Una *clase de caracteres* coincide solo con uno de varios caracteres u opciones. Para hacer coincidir una **a** o una **e**, podemos usar el patrón **[ae]**.
 
-Podemos usar **p[aeiou]to** y para hacer coincidir con **p*a*to**, **p*e*to**, **p*i*to**, **p*o*to** y **p*u*to**. 
+> Podemos usar **p[aeiou]to** y para hacer coincidir con **p*a*to**, **p*e*to**, **p*i*to**, **p*o*to** y **p*u*to**. 
 
 Una *clase de caracter* solo coincide con **un solo** caracter: **p[aeiou]to** no concuerda con **p*aa*to**, **p*au*to**, **p*eiu*to** o cualquier cosa similar.
 
 **El orden de los caracteres dentro de una clase de caracter no importa.**
 
-Puedes usar un guion **-** dentro de una *clase de caracteres* para especificar un rango de caracteres.  El patrón **[0-9]** coincide con un solo dígito entre 0 y 9. 
+Puedes usar un guion **-** dentro de una *clase de caracteres* para especificar un rango de caracteres. 
 
-Puedes usar más de un rango.  El patrón **[0-9a-z]** coincide con un solo caracter ya sea número del **0** al **9** o una letra de la **a** a la **z** (sin acento, diéresis ni eñe). Para incluir todos los acentos del español y la eñe podemos usar: **[a-záéíóúüñ]**
+> El patrón **[0-9]** coincide con un solo dígito entre 0 y 9. 
 
-Escribir una *referencia* después del *corchete de apertura* (**[^**) niega la clase de caracter. El resultado es que la clase de caracteres coincide con cualquier cosa que **no** esté en la clase de caracteres. **c[^au]lo** coincide con cualquier palabra como **celo**, **colo**, **cblo**, **c8lo**, etc. pero **no** coincide con **calo** ni con **culo**.
+Puedes usar más de un rango.  El patrón **[0-9a-z]** coincide con un solo caracter ya sea número del **0** al **9** o una letra de la **a** a la **z** (sin acento, diéresis ni eñe).
+
+> Para incluir todos los acentos del español y la eñe podemos usar: **[a-záéíóúüñ]**
+
+Escribir una *referencia* después del *corchete de apertura* (**[^**) niega la clase de caracter. El resultado es que la clase de caracteres coincide con cualquier cosa que **no** esté en la clase de caracteres.
+
+> Por ejemplo, el patrón **c[^au]lo** coincide con cualquier palabra como **celo**, **colo**, **cblo**, **c8lo**, etc. pero **no** coincide con **calo** ni con **culo**.
 
 ### Clases de caracteres abreviados
 
@@ -90,7 +96,7 @@ Todos los *caracteres no imprimibles* se pueden usar directamente en la *expresi
 
 El punto **.** coincide con un solo carácter, excepto los caracteres de *salto de línea*. La mayoría de las aplicaciones tienen un modo "punto coincide con todos" o "línea única" que hace que el punto coincida con *cualquier carácter*, incluidos los *saltos de línea*.
 
-El patrón **gr.s** y coincide con **gris**, **gr4s** , **gr%s**, etc.
+> El patrón **gr.s** y coincide con **gris**, **gr4s** , **gr%s**, etc.
 
 **Utilice el punto con moderación. A menudo, una clase de caracter o clase de carácter negada es más rápida y más precisa.**
 
@@ -102,7 +108,7 @@ El caracter **^** en un *patrón regex* coincide con el comienzo de la cadena y 
 
 La mayoría de los motores *regex* tienen un modo "multilínea" que hace a **^** coincidir *después* de cualquier *salto de línea*, y a **$** *antes* de cualquier *salto de línea*.
 
-Por ejemplo, en la cadena **bob blub** el patrón **^b** solo coincide con la primera **b** de _**b**ob_ y el patrón **b$** solo coincide con la última **b** de _blu**b**_.
+> Por ejemplo, en la cadena **bob blub** el patrón **^b** solo coincide con la primera **b** de _**b**ob_ y el patrón **b$** solo coincide con la última **b** de _blu**b**_.
 
 El caracter de anclaje **\\b** coincide en un límite de palabra.
 
@@ -120,25 +126,25 @@ Debe agrupar las alternativas entre paréntesis **(opcion1|opcion2|etc.)** para 
 
 El signo de interrogación **?** hace que el *token* anterior en la expresión regular sea opcional.
 
-Por ejemplo, el patrón **patos?** coincide con **pato** o **patos**. Y el patrón **ob?scuridad** coincide con **obscuridad** tanto como con **oscuridad**.
+> Por ejemplo, el patrón **patos?** coincide con **pato** o **patos**. Y el patrón **ob?scuridad** coincide con **obscuridad** tanto como con **oscuridad**.
 
 El asterisco __*__ le dice al motor que intente hacer coincidir el *token* anterior *con cero o más veces*. La suma **+** le dice al motor que intente hacer coincidir el token anterior *una vez o más*. 
 
-Por ejemplo, el patrón __eh*__ coincidirá con **e**, **eh**, **ehh**, **ehhh**, etc. y el patrón **go+l** encontrará coincidencias en **gol**, **gool**, **goool**, etc. pero no en **gl**. 
+> Por ejemplo, el patrón __eh*__ coincidirá con **e**, **eh**, **ehh**, **ehhh**, etc. y el patrón **go+l** encontrará coincidencias en **gol**, **gool**, **goool**, etc. pero no en **gl**. 
 
 Para especificar una cantidad específica de repeticiones se usan las llaves **{ }**.
 
-Usa el patrón **[0-9]{3}** para hacer coincidir con cualquier número entre **000**, o bien se puede usar [0-9]{2,4} para coincidir con cualquier número entre **00** y **9999**.
+> Usa el patrón **[0-9]{3}** para hacer coincidir con cualquier número entre **000**, o bien se puede usar [0-9]{2,4} para coincidir con cualquier número entre **00** y **9999**.
 
 ### Repetición codiciosa y perezosa
 
-Los *operadores de repetición* o *cuantificadores* son codiciosos. Esto quiere decir que amplían la coincidencia tanto como pueden, y solo devuelven el *match* si deben satisfacer el resto de la expresión regular o si no queda nada por agregar a la coincidencia.
+Los *operadores de repetición* o *cuantificadores* son **codiciosos**. Esto quiere decir que amplían la coincidencia tanto como pueden, y solo devuelven el *match* si deben satisfacer el resto de la expresión regular o si no queda nada por agregar a la coincidencia.
 
-Por ejemplo, el patrón **a+** coincidirá con **aaaa** en la cadena **aaaab**.
+> Por ejemplo, el patrón **a+** coincidirá con **aaaa** en la cadena **aaaab**.
 
-Coloque un signo de interrogación después del cuantificador para que sea flojo. < . + ? > coincide con <EM> en la cadena anterior.
+Coloque un signo de interrogación **?** *después del cuantificador* para que sea **flojo**.
 
-Una mejor solución es seguir mi consejo de usar el punto con moderación. Use < [ ^ <> ] + > para hacer coincidir rápidamente una etiqueta HTML sin tener en cuenta los atributos. La clase de caracteres negada es más específica que el punto, lo que ayuda al motor de expresiones regulares a encontrar coincidencias rápidamente.
+> Por ejemplo, el patrón **a+?** coincide con **a** en la cadena **aaaab**.
 
 ### Agrupando y capturando
 
