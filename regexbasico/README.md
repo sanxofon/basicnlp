@@ -1,22 +1,23 @@
+
 # Curso básico de expresiones regulares en español
 
-Muchas aplicaciones y lenguajes de programación tienen su propia implementación de expresiones regulares, a menudo con diferencias leves y a veces significativas con respecto a otras implementaciones. Cuando dos aplicaciones usan una implementación diferente de expresiones regulares, decimos que usan diferentes "sabores" (*flavours*) de expresiones regulares. Trataré de explicar la sintaxis de los "sabores" más comunes.
+Muchas aplicaciones y lenguajes de programación tienen su propia implementación de expresiones regulares (*regex*), a menudo con diferencias leves y a veces significativas con respecto a otras implementaciones. Cuando dos aplicaciones usan una implementación diferente de expresiones regulares, decimos que usan diferentes "sabores" (*flavours*) de expresiones regulares. Trataré de explicar la sintaxis de los "sabores" más comunes, pero dejo aquí un [CheatSheet](cheatsheet.md) para referencia rápida y que incluye las diferencias básicas que se encontrarán en los distintos *sabores* de *regex* más comunes.
 
 ## Patrones de texto y coincidencias
 
-Una **expresión regular**, o *regex* para abreviar, es un patrón que describe una cierta cantidad de texto.
+Una **expresión regular* -o *regex* para abreviar- es un patrón que describe una cierta cantidad de textos que tienen ciertas características similares.
 
-Una **coincidencia** es cuando la expresión regular se concontró en la cadena de búsqueda, la coincidencia es la porción de la cadena que coincide con el patrón.
+Una **coincidencia** es cuando la *expresión regular* se encontró en la cadena de búsqueda, la coincidencia es la porción de la *cadena* que coincide con el *patrón*, es decir el "pedazo de texto" que cumple las características definidas por la *expresión regular*.
 
-Una **cadena** es un texto al cual se le aplicará la expresión regular.
+Una **cadena** es un texto sobre el cual se buscarán *coincidencias* con la *expresión regular*.
 
 ### Caracteres literales
 
-La expresión regular más básica consiste en un único carácter literal, como **a** y la búsqueda de sólo la primera cincidencia en una cadena. Si la cadena es **Lupita es una niña**, la coincidencia será la **a** que está después de la **t**. Los programas que realizar expresiones regulares nos permiten recibir el caracter encontrado como respuesta, **a**, y/o la posición de la coincidencia, que en este caso sería **5**.
+La *expresión regular* más básica consiste en un único *carácter literal*, como **a** y la búsqueda de sólo la primera *coincidencia* en una *cadena*. Si la *cadena* es **Lupita es una niña**, la primera *coincidencia* será la **a** que está después de la **t**. Los programas que realizar expresiones regulares nos permiten recibir el *caracter* encontrado como respuesta, **a**, y/o la posición de la coincidencia, que en este caso sería **5**.
 
-Esta expresión regular también puede coincidir con la segunda. Solo lo hace cuando le dice al motor de expresiones regulares que comience a buscar a través de la cadena después de la primera coincidencia. En un editor de texto, puede hacerlo utilizando su función "Buscar siguiente" o "Buscar hacia adelante". En un lenguaje de programación, generalmente hay una función separada a la que puede llamar para continuar buscando a través de la cadena después de la coincidencia anterior, que busca la última coincidencia o que permite buscar todas las coincidencias.
+Esta expresión regular también puede coincidir con la segunda **a**. Sólo lo hace cuando se le pide al motor de expresiones regulares que comience a buscar a través de la cadena **después** de la primera coincidencia. En un editor de texto, puede hacerlo utilizando su función "Buscar siguiente" o "Buscar hacia adelante". En un lenguaje de programación, generalmente hay una función separada a la que puede llamar para continuar buscando a través de la cadena después de la coincidencia anterior, que busca la última coincidencia o bien que permite buscar *todas* las coincidencias.
 
-**Doce caracteres tienen significados especiales en las expresiones regulares:**
+**Caracteres que tienen significados especiales en las expresiones regulares:**
 
 1. la barra invertida **\\** 
 1. la línea **^** 
@@ -24,16 +25,18 @@ Esta expresión regular también puede coincidir con la segunda. Solo lo hace cu
 1. el punto o el punto **.** 
 1. el símbolo de barra o tubo vertical **|** 
 1. el signo de interrogación **?** 
-1. el asterisco o estrella ***** 
+1. el asterisco o estrella __*__ 
 1. el signo más **+** 
-1. el paréntesis de apertura **(** 
-1. el paréntesis de cierre **)** 
-1. el corchete de apertura **[** 
-1. y la llave de apertura **{** 
+1. el signo de guión o menos **-** 
+1. los paréntesis de apertura **(** y de cierre **)** 
+1. los corchetes de apertura **[** y de cierre **]** 
+1. y las llaves de apertura **{** y de cierre **}** 
 
-Estos caracteres especiales a menudo se llaman "metacaracteres". La mayoría de ellos muestran errores cuando se usan solos.
+Estos caracteres especiales a menudo se llaman "metacaracteres". La mayoría de ellos muestran errores cuando no se usan adecuadamente.
 
-Si deseas utilizar cualquiera de estos caracteres como un literal en una expresión regular, debe escaparlos con una barra invertida. Si quiere hacer coincidir '**1 + 1 = 2**', la expresión regular correcta es '**1 \\+ 1 = 2**'. De lo contrario, el signo más (+) tiene un significado especial.
+Si deseas utilizar cualquiera de estos caracteres como un literal en una expresión regular, debes *escaparlos* con una barra invertida. Si quieres hacer coincidir '**1 + 1 = 2**', la expresión regular correcta es '**1 \\+ 1 = 2**'. De lo contrario, el signo más (+) tiene un significado especial.
+
+Todos los demás caracteres son considerados literales y se representan a sí mismos en una *expresión regular*.
 
 ### Clases de caracteres o juegos de caracteres
 
