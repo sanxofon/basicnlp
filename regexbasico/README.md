@@ -60,7 +60,15 @@ Escribir una *referencia* después del *corchete de apertura* (**[^**) niega la 
 + **\\w** coincide con un "carácter de palabra" (caracteres alfanuméricos sin acentos más guion bajo)
 + **\\s** coincide con un carácter de espacio en blanco (incluye tabulador y saltos de línea).
 
-Los caracteres reales que coinciden con los atajos depende del software que está utilizando, sobre todo con letras y signos que no sean del inglés, como los acentos del español y la eñe. Ver CheatSheet para saber más entre las diferencias, por ejemplo, entre Python 2 y Python 3.
+Las opciones negativas de las anteriores son:
+
++ **\D**	coincide con un solo carácter que **no** es un dígito
++ **\W**	coincide con un carácter  que **no** sea "carácter de palabra"
++ **\S**	coincide con un carácter que **no** sea de espacio en blanco
+
+Los caracteres reales que coinciden con los atajos depende del software que está utilizando, sobre todo con letras y signos que no sean del inglés, como los acentos del español y la eñe. Por ejemplo, el caracter **\\w** no va a coincidir con **á**, **é**, **í**, **ó**, **ú**, **ü** ni **ñ** en versiones que no incorporen Unicode correctamente.
+
+Ver CheatSheet para saber más entre las diferencias, por ejemplo, entre Python 2 y Python 3.
 
 ### Caracteres no imprimibles
 
@@ -70,23 +78,29 @@ Puede usar secuencias de caracteres especiales para poner caracteres no imprimib
 1. **\\r** para retorno de carro
 1. **\\n** para salto de línea
 
-Los elementos no imprimibles más exóticos son **\\a** (campana), **\\e** (escape), **\\f** (alimentación de formulario) y **\\v** (pestaña vertical). Recuerde que los archivos de texto de Windows usan **\\r\\n** para terminar líneas, mientras que los archivos de texto de UNIX y MAC usan **\\n** .
+Los elementos no imprimibles más exóticos son **\\a** (campana), **\\e** (escape), **\\f** (alimentación de formulario) y **\\v** (pestaña vertical). Recuerde que los archivos de texto de *Windows* usan **\\r\\n** para terminar líneas, mientras que los archivos de texto de *UNIX* y *MAC* usan solamente **\\n** .
 
-Si su aplicación es compatible con Unicode , use **\\uFFFF** o **\\x{FFFF}** para insertar un carácter Unicode. **\\u20AC** o **\\x{20AC}** coincide con el signo de moneda del euro €.
+Si su aplicación es compatible con *Unicode* , puedes usar **\\uFFFF** o **\\x{FFFF}** para insertar un carácter *Unicode* *directamente*. Por ejemplo, **\\u1F40C** o **\\x{1F40C}** coincide con el signo de un caracolito **🐌** y **\\u1F4A9** o **\\x{1F4A9}** coincide con la famosa "*pile of poo*" 💩.
 
-Si su aplicación no es compatible con Unicode, use \ xFF para que coincida con un carácter específico por su índice hexadecimal en el juego de caracteres. \ xA9 coincide con el símbolo de copyright en el juego de caracteres Latin-1.
+Si una aplicación no es compatible con *Unicode*, se puede usar **\\xFF** para que coincida con un carácter específico por su índice hexadecimal en el juego de caracteres. **\\xA9** coincide con el símbolo de **Ⓒ** en el juego de caracteres *Latin-1*.
 
-Todos los caracteres no imprimibles se pueden usar directamente en la expresión regular o como parte de una clase de caracteres.
+Todos los *caracteres no imprimibles* se pueden usar directamente en la *expresión regular* o como parte de una *clase de caracteres*.
 
-### El punto coincide (casi) con cualquier caracter
+### El punto (.) coincide (casi) con cualquier caracter
 
-El punto coincide con un solo carácter, excepto los caracteres de salto de línea. La mayoría de las aplicaciones tienen un modo "punto coincide con todos" o "línea única" que hace que el punto coincida con cualquier carácter, incluidos los saltos de línea.
+El punto **.** coincide con un solo carácter, excepto los caracteres de *salto de línea*. La mayoría de las aplicaciones tienen un modo "punto coincide con todos" o "línea única" que hace que el punto coincida con *cualquier carácter*, incluidos los *saltos de línea*.
 
-gr . y coincide con gris , gris , gr% y , etc. Utilice el punto con moderación. A menudo, una clase de caracter o clase de carácter negada es más rápida y más precisa.
+El patrón **gr.s** y coincide con **gris**, **gr4s** , **gr%s**, etc.
+
+**Utilice el punto con moderación. A menudo, una clase de caracter o clase de carácter negada es más rápida y más precisa.**
 
 ### Anclajes
 
-Los anclajes no coinciden con ningún caracter. Ellos coinciden con una posición. ^ coincide al comienzo de la cadena y $ coincidencias al final de la cadena. La mayoría de los motores regex tienen un modo "multilínea" que hace ^ coincidir después de cualquier salto de línea, y $ antes de cualquier salto de línea. Eg ^ b solo coincide con el primer b en bob .
+Los anclajes no coinciden con ningún caracter sino con una posición.
+
+El caracter **^** en un *patrón regex* coincide con el comienzo de la cadena y el signo **$** coincide con el final de la cadena. La mayoría de los motores *regex* tienen un modo "multilínea" que hace a **^** coincidir después de cualquier salto de línea, y a **$** antes de cualquier salto de línea.
+
+Por ejemplo, el patrón **^b** solo coincide con la primera **b** en la cadena **bob bubbles**.
 
 \ b coincide en un límite de palabra. Un límite de palabras es una posición entre un carácter que puede coincidir con \ w y un carácter que no puede ser igualado por \ w . \ b también coincide al principio y / o al final de la cadena si el primer y / o último caracteres de la cadena son caracteres de palabra. \ B coincide en todas las posiciones donde \ b no puede coincidir.
 
