@@ -56,7 +56,7 @@ Puedes usar más de un rango.  El patrón **[0-9a-z]** coincide con un solo cara
 
 > Para incluir todos los acentos del español y la eñe podemos usar: **[a-záéíóúüñ]**
 
-Escribir una *referencia* después del *corchete de apertura* (**[^**) niega la clase de caracter. El resultado es que la clase de caracteres coincide con cualquier cosa que **no** esté en la clase de caracteres.
+Escribir una *referencia* después del *corchete de apertura* **[^** niega la clase de caracter. El resultado es que la clase de caracteres coincide con cualquier cosa que **no** esté en la clase de caracteres.
 
 > Por ejemplo, el patrón **c[^au]lo** coincide con cualquier palabra como **celo**, **colo**, **cblo**, **c8lo**, etc. pero **no** coincide con **calo** ni con **culo**.
 
