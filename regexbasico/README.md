@@ -98,29 +98,43 @@ El patrón **gr.s** y coincide con **gris**, **gr4s** , **gr%s**, etc.
 
 Los anclajes no coinciden con ningún caracter sino con una posición.
 
-El caracter **^** en un *patrón regex* coincide con el comienzo de la cadena y el signo **$** coincide con el final de la cadena. La mayoría de los motores *regex* tienen un modo "multilínea" que hace a **^** coincidir después de cualquier salto de línea, y a **$** antes de cualquier salto de línea.
+El caracter **^** en un *patrón regex* coincide con el comienzo de la cadena y el signo **$** coincide con el final de la *cadena*.
 
-Por ejemplo, el patrón **^b** solo coincide con la primera **b** en la cadena **bob bubbles**.
+La mayoría de los motores *regex* tienen un modo "multilínea" que hace a **^** coincidir *después* de cualquier *salto de línea*, y a **$** *antes* de cualquier *salto de línea*.
 
-\ b coincide en un límite de palabra. Un límite de palabras es una posición entre un carácter que puede coincidir con \ w y un carácter que no puede ser igualado por \ w . \ b también coincide al principio y / o al final de la cadena si el primer y / o último caracteres de la cadena son caracteres de palabra. \ B coincide en todas las posiciones donde \ b no puede coincidir.
+Por ejemplo, en la cadena **bob blub** el patrón **^b** solo coincide con la primera **b** de _**b**ob_ y el patrón **b$** solo coincide con la última **b** de _blu**b**_.
+
+El caracter de anclaje **\\b** coincide en un límite de palabra.
+
+Un límite de palabras es una posición entre un carácter que puede coincidir con **\\w** y un carácter que no puede ser igualado por **\\w** . El caracter **\\b** también coincide al principio y/o al final de la cadena si el primer y/o último caracteres de la cadena son *caracteres de palabra*.
+
+El caracter **\\B** es la negación del anterior y  coincide en todas las posiciones donde **\\b** no puede coincidir.
 
 ### Alternancia
 
-La alternancia es la expresión regular equivalente a "o". gato | el perro coincide con el gato en Sobre gatos y perros . Si la expresión regular se aplica nuevamente, coincide con el perro . Puede agregar tantas alternativas como desee: cat | perro | ratón | pez
+La alternancia es la expresión regular para las opciones de más de un caracter. El patrón **gato|perro** coincide con **gato** en *Sobre gatos y perros*. Si la expresión regular se aplica nuevamente, coincide con el **perro**. Puede agregar tantas alternativas como desee: **gato|perro|ratón|pez**.
 
-La alternancia tiene la precedencia más baja de todos los operadores de expresiones regulares. gato | la comida para perros coincide con la comida para gatos o perros . Para crear una expresión regular que coincida con la comida para gatos o la comida para perros , debe agrupar las alternativas: ( cat | dog ) comida .
+Debe agrupar las alternativas entre paréntesis **(opcion1|opcion2|etc.)** para usarla normalmente en una expresión regular más compleja: Comida para (gato|perro). Esto se debe a que la *alternancia* tiene la precedencia más baja de todos los operadores de expresiones regulares.
 
 ### Repetición
 
-El signo de interrogación hace que el token anterior en la expresión regular sea opcional. colo tu ? r coincide con el color o el color .
+El signo de interrogación **?** hace que el *token* anterior en la expresión regular sea opcional.
 
-El asterisco o estrella le dice al motor que intente hacer coincidir el token anterior con cero o más veces. La ventaja le dice al motor que intente hacer coincidir el token anterior una vez o más. < [ A - Z a - z ] [ A - Z a - z 0 - 9 ] * > coincide con una etiqueta HTML sin ningún atributo. < [ A - Z a - z 0 - 9 ] + > es más fácil de escribir, pero coincide con etiquetas no válidas como <1> .
+Por ejemplo, el patrón **patos?** coincide con **pato** o **patos**. Y el patrón **ob?scuridad** coincide con **obscuridad** tanto como con **oscuridad**.
 
-Use llaves para especificar una cantidad específica de repetición. Use \ b [ 1 - 9 ] [ 0 - 9 ] {3} \ b para hacer coincidir un número entre 1000 y 9999. \ b [ 1 - 9 ] [ 0 - 9 ] {2,4} \ b coincide con un número entre 100 y 99999.
+El asterisco __*__ le dice al motor que intente hacer coincidir el *token* anterior *con cero o más veces*. La suma **+** le dice al motor que intente hacer coincidir el token anterior *una vez o más*. 
+
+Por ejemplo, el patrón __eh*__ coincidirá con **e**, **eh**, **ehh**, **ehhh**, etc. y el patrón **go+l** encontrará coincidencias en **gol**, **gool**, **goool**, etc. pero no en **gl**. 
+
+Para especificar una cantidad específica de repeticiones se usan las llaves **{ }**.
+
+Usa el patrón **[0-9]{3}** para hacer coincidir con cualquier número entre **000**, o bien se puede usar [0-9]{2,4} para coincidir con cualquier número entre **00** y **9999**.
 
 ### Repetición codiciosa y perezosa
 
-Los operadores de repetición o cuantificadores son codiciosos. Amplían el partido tanto como pueden, y solo devuelven si deben satisfacer el resto de la expresión regular. La expresión regular < . + > coincide <EM> primero </ EM> en Esta es una <EM> primera </ EM> prueba .
+Los *operadores de repetición* o *cuantificadores* son codiciosos. Esto quiere decir que amplían la coincidencia tanto como pueden, y solo devuelven el *match* si deben satisfacer el resto de la expresión regular o si no queda nada por agregar a la coincidencia.
+
+Por ejemplo, el patrón **a+** coincidirá con **aaaa** en la cadena **aaaab**.
 
 Coloque un signo de interrogación después del cuantificador para que sea flojo. < . + ? > coincide con <EM> en la cadena anterior.
 
