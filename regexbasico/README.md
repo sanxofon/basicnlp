@@ -118,9 +118,17 @@ El caracter **\\B** es la negación del anterior y  coincide en todas las posici
 
 ### Alternancia
 
-La alternancia es la expresión regular para las opciones de más de un caracter. El patrón **gato|perro** coincide con **gato** en *Sobre gatos y perros*. Si la expresión regular se aplica nuevamente, coincide con el **perro**. Puede agregar tantas alternativas como desee: **gato|perro|ratón|pez**.
+La alternancia es la expresión regular para las opciones de más de un caracter.
 
-Debe agrupar las alternativas entre paréntesis **(opcion1|opcion2|etc.)** para usarla normalmente en una expresión regular más compleja: Comida para (gato|perro). Esto se debe a que la *alternancia* tiene la precedencia más baja de todos los operadores de expresiones regulares.
+> El patrón **gato|perro** coincide con **gato** en *Sobre gatos y perros*. Si la expresión regular se aplica nuevamente, coincide con el **perro**.
+
+Puede agregar tantas alternativas como desee: **gato|perro|ratón|pez**.
+
+Debe agrupar las alternativas entre paréntesis **(opcion1|opcion2|etc.)** para usarlas normalmente en una expresión regular más compleja:
+
+> Ejemplo, **Comida para (gato|perro)** coincidirá con **Comida para gato** y con **Comida para perro**. 
+
+Esto se debe a que la *alternancia* tiene la precedencia más baja de todos los operadores de expresiones regulares, es decir que en el patrón (sin paréntesis) **Comida para gato|perro** las opciones definidas son **Comida para gato** por un lado y **perro** por el otro.
 
 ### Repetición
 
