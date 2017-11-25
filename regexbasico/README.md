@@ -13,7 +13,7 @@ Una **cadena** es un texto sobre el cual se buscarán *coincidencias* con la *ex
 
 ### Caracteres literales
 
-La *expresión regular* más básica consiste en un único *carácter literal*, como **a** y la búsqueda de sólo la primera *coincidencia* en una *cadena*. Si la *cadena* es **Lupita es una niña**, la primera *coincidencia* será la **a** que está después de la **t**. Los programas que realizar expresiones regulares nos permiten recibir el *caracter* encontrado como respuesta, **a**, y/o la posición de la coincidencia, que en este caso sería **5**.
+La *expresión regular* más básica consiste en un único *caracter literal*, como **a** y la búsqueda de sólo la primera *coincidencia* en una *cadena*. Si la *cadena* es **Lupita es una niña**, la primera *coincidencia* será la **a** que está después de la **t**. Los programas que realizar expresiones regulares nos permiten recibir el *caracter* encontrado como respuesta, **a**, y/o la posición de la coincidencia, que en este caso sería **5**.
 
 Esta expresión regular también puede coincidir con la segunda **a**. Sólo lo hace cuando se le pide al motor de expresiones regulares que comience a buscar a través de la cadena **después** de la primera coincidencia. En un editor de texto, puede hacerlo utilizando su función "Buscar siguiente" o "Buscar hacia adelante". En un lenguaje de programación, generalmente hay una función separada a la que puede llamar para continuar buscando a través de la cadena después de la coincidencia anterior, que busca la última coincidencia o bien que permite buscar *todas* las coincidencias.
 
