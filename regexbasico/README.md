@@ -48,9 +48,11 @@ Una *clase de caracter* solo coincide con **un solo** caracter: **p[aeiou]to** n
 
 **El orden de los caracteres dentro de una clase de caracter no importa.**
 
-Puede usar un guion dentro de una clase de caracteres para especificar un rango de caracteres. **[0-9]** coincide con un solo dígito entre 0 y 9. Puede usar más de un rango. **[0-9a-z]** coincide con un solo caracter ya sea número del **0** al **9** o una letra de la **a** a la **z** (sin acento, diéresis ni eñe). Para incluír todos los acentos del español y la ñ podemos usar: **[a-záéíóúüñ]**
+Puedes usar un guion **-** dentro de una *clase de caracteres* para especificar un rango de caracteres.  El patrón **[0-9]** coincide con un solo dígito entre 0 y 9. 
 
-Escribir una referencia (**^**) después del corchete de apertura niega la clase de caracter. El resultado es que la clase de caracteres coincide con cualquier carácter que **no** esté en la clase de caracteres. **c[^ou]lo** coincide con cualquier palabra como **calo**, **colo**, **cblo**, **c8lo**, etc. pero no coincide con **colo** ni con **culo**.
+Puedes usar más de un rango.  El patrón **[0-9a-z]** coincide con un solo caracter ya sea número del **0** al **9** o una letra de la **a** a la **z** (sin acento, diéresis ni eñe). Para incluir todos los acentos del español y la eñe podemos usar: **[a-záéíóúüñ]**
+
+Escribir una *referencia* después del *corchete de apertura* (**[^**) niega la clase de caracter. El resultado es que la clase de caracteres coincide con cualquier cosa que **no** esté en la clase de caracteres. **c[^au]lo** coincide con cualquier palabra como **celo**, **colo**, **cblo**, **c8lo**, etc. pero **no** coincide con **calo** ni con **culo**.
 
 ### Clases de caracteres abreviados
 
@@ -58,7 +60,7 @@ Escribir una referencia (**^**) después del corchete de apertura niega la clase
 + **\\w** coincide con un "carácter de palabra" (caracteres alfanuméricos sin acentos más guion bajo)
 + **\\s** coincide con un carácter de espacio en blanco (incluye tabulador y saltos de línea).
 
-Los caracteres reales que coinciden con los atajos depende del software que está utilizando, sobre todo con letras y signos que no sean del inglés, como los acentos del español y la eñe.
+Los caracteres reales que coinciden con los atajos depende del software que está utilizando, sobre todo con letras y signos que no sean del inglés, como los acentos del español y la eñe. Ver CheatSheet para saber más entre las diferencias, por ejemplo, entre Python 2 y Python 3.
 
 ### Caracteres no imprimibles
 
