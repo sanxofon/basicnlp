@@ -192,7 +192,7 @@ En algunos lenguajes **\\p{L}** coincide con un solo caracter que se encuentra e
 	import unicodedata
 	from collections import defaultdict
 	unicode_category = defaultdict(list)
-	for c in map(chr, range(sys.maxunicode + 1)):
+	for c in map(unichr, range(sys.maxunicode + 1)):
 		unicode_category[unicodedata.category(c)].append(c)
 
 Podremos capturar todos los caracteres de una categoría con:
