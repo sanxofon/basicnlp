@@ -202,12 +202,34 @@ Podremos capturar todos los caracteres de una categoría con:
 
 ### Mirar alrededor (_Lookaround_)
 
-*Lookaround* es un tipo especial de grupo. Los *tokens* dentro del grupo se buscan normalmente, pero luego el motor de expresiones regulares hace que el grupo abandone su coincidencia y solo conserva el resultado. *Lookaround* coincide con una posición, al igual que los anclajes. No expande la coincidencia de expresiones regulares.
+*Lookaround* es un tipo especial de grupo. Los *tokens* dentro del grupo se buscan normalmente, pero luego el motor de expresiones regulares hace que el grupo abandone su coincidencia y solo conserva el resultado. *Lookaround* coincide con una posición, al igual que los anclajes, no expande la coincidencia de expresiones regulares.
 
-q (? = u ) concuerda con la q en cuestión , pero no en Iraq . Este es un avance positivo. Tú no eres parte de la coincidencia global de expresiones regulares. El lookahead coincide en cada posición de la cadena antes de a.
+#### Mirar adelante (_Lookahead_)
 
-q (?! u ) coincide con q en Iraq, pero no en cuestión . Esto es un lookahead negativo. Se intentan las fichas dentro de la búsqueda anticipada, se descarta su coincidencia y el resultado se invierte.
+Esta función *echa un vistazo hacia adelante* de un *token* para comprobar si el o los siguientes caracteres cumplen alguna característica, pero no captura nada de eso, sol mira y marca la posición.
 
-Para mirar hacia atrás, use lookbehind. (? <= a ) b coincide con b en abc . Este es un aspecto positivo detrás. (? <! a ) b no coincide con abc .
+Lookahead positivo. Si quisiéramos encontrar todas las letras **m** que se encuentren antes de las letras **pa** o **pe** en la *cadena* **El campeón acampará mañana**, podemos usar el patrón **m(?=pa|pe)** que sólo capturará las **m** subrayadas:
 
-Puede usar una expresión regular hecha y derecha dentro de lookahead. La mayoría de las aplicaciones solo permiten expresiones de longitud fija en lookbehind.
++ El ca**m**peón aca**m**pará mañana
+
+Lo que se ponga dentro de **(?=  )** puede ser cualquier expresión regular.
+
+Lookahead negativo. Podemos generar el resultado opuesto al anterior con el patrón **m(?!pa|pe)** que capturaría las **m** subrayadas:
+
++ El campeón acampará **m**añana
+
+Lo que se ponga dentro de **(?!  )** puede ser cualquier expresión regular.
+
+#### Mirar atrás(_Lookbehind_)
+
+Para mirar hacia atrás, use *lookbehind*. 
+
++ Positivo: El patrón **(?<=a)b** coincide con **b** en **abc** pero no en **cba**. A esto se le llama un *lookbehind positivo*.
++ Negativo: El patrón **(?<!a)b** no coincide con **abc** pero sí lo hace con **cba**. A esto se le llama un *lookbehind negativo*.
+
+Puedes usar una expresión regular hecha y derecha dentro de *lookahead* pero la mayoría de las aplicaciones solo permiten expresiones de longitud fija en *lookbehind*.
+
+## Autor
+
++ **Santiago Chávez Novaro** ([@sanxofon](https://twitter.com/sanxofon))
++ Sitio web: [La Lengua](http://lengua.la)
