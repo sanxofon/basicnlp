@@ -156,27 +156,53 @@ Coloque un signo de interrogación **?** *después del cuantificador* para que s
 
 ### Agrupando y capturando
 
-Coloque paréntesis alrededor de múltiples tokens para agruparlos. A continuación, puede aplicar un cuantificador al grupo. Ej. Establecer ( Valor ) ? coincide con Set o SetValue .
+Coloque paréntesis **( )** alrededor de múltiples *tokens* para agruparlos. A continuación, puede aplicar un *cuantificador* al grupo entero.
 
-Los paréntesis crean un grupo de captura. El ejemplo de arriba tiene un grupo. Después del partido, el grupo número uno no contiene nada si Set fue emparejado. Contiene valor si SetValue fue emparejado. Cómo acceder a los contenidos del grupo depende del software o del lenguaje de programación que esté utilizando. El grupo cero siempre contiene toda la coincidencia de expresiones regulares.
+> Por ejemplo,  el patrón **Set(Value)?** coincide con **Set** o con **SetValue**.
 
-Use la sintaxis especial Set (?: Value ) ? para agrupar tokens sin crear un grupo de captura. Esto es más eficiente si no planea usar los contenidos del grupo. No confunda el signo de interrogación en la sintaxis del grupo que no captura con el cuantificador.
+Los paréntesis crean un *grupo de captura*. El ejemplo de arriba tiene *un* grupo. Una vez encontradas las coincidencias, el grupo número uno no contiene nada si **Set** fue encontrado, pero contiene **Value** si **SetValue** fue encontrado.
 
-### Backreferences
+Cómo acceder a los contenidos del grupo depende del software o del lenguaje de programación que esté utilizando. Los usos más comunes son **\\1** ó **$1** para el primer grupo, **\\2** ó **$2** para el segundo, etc.
 
-Dentro de la expresión regular, puede usar la referencia inversa \ 1 para que coincida con el mismo texto que coincidió con el grupo de captura. ( [ abc ] ) = \ 1 coincide con a = a , b = b y c = c . No coincide con nada más. Si su expresión regular tiene múltiples grupos de captura, se numeran contando sus paréntesis de apertura de izquierda a derecha.
+El grupo cero siempre contiene la coincidencia completa de la expresión regular en la cadena.
 
-### Grupos nombrados y Backreferences
+Se puede usar la *sintaxis especial* **Set(?:Value)?** para agrupar *tokens* **sin crear un grupo de captura**. Esto es más eficiente en la memoria si no planea usar los contenidos del grupo. No confunda el signo de interrogación en la *sintaxis especial* del grupo que *no captura* **(?:** con el uso de *cuantificador* que normalmente tiene el signo de interrogación.
 
-Si tu expresión regular tiene muchos grupos, hacer un seguimiento de sus números puede ser engorroso. Haga que sus expresiones regulares sean más fáciles de leer nombrando sus grupos. (? <mygroup> [ abc ] ) = \ k <mygroup> es idéntico a ( [ abc ] ) = \ 1 , excepto que puede hacer referencia al grupo por su nombre.
+### Referencias para atrás
+
+Dentro de la expresión regular, puede usar la *referencia inversa* **\\1** para que coincida con el mismo texto que coincidió con el primer grupo de captura (siempre anterior en la expresión).
+
+> Por ejemplo, el patrón **([abc])=\\1** coincide con **a=a** , **b=b** y **c=c** . No coincide con nada más.
+
+Si tu expresión regular tiene múltiples grupos de captura, se numeran contando sus paréntesis de apertura de izquierda a derecha.
+
+> Por ejemplo, el patrón **([ab])([xy])=\\1\\2** coincide *únicamente* con **ax=ax**, **ay=ay**, **bx=bx** y **by=by**.
+
+### Grupos nombrados y Referencias
+
+Si tu expresión regular tiene muchos grupos, hacer un seguimiento de sus números puede ser engorroso. Puedes hacer que tus expresiones regulares sean más fáciles de leer nombrando sus grupos. 
+
+Por ejemplo, el patrón **(?P\<migrupo>[abc])=(?P=migrupo)** es idéntico a **([abc])=\\1**, excepto que puede hacer referencia al grupo por su nombre.
 
 ### Propiedades Unicode
 
-\ p {L} coincide con un solo caracter que se encuentra en la categoría Unicode dada. L significa letra. \ P {L} coincide con un solo caracter que no está en la categoría Unicode dada. Puede encontrar una lista completa de categorías Unicode en el tutorial.
+En algunos lenguajes **\\p{L}** coincide con un solo caracter que se encuentra en la categoría Unicode dada. L significa letra. **\\P{L}** coincide con un solo caracter que no está en la categoría Unicode dada. *Python* no maneja esta funcionalidad, pero puede ser interesante revisar las categorías *Unicode* con un *script* como el que sigue:
 
-### Mirar alrededor (Lookaround)
+	import sys
+	import unicodedata
+	from collections import defaultdict
+	unicode_category = defaultdict(list)
+	for c in map(chr, range(sys.maxunicode + 1)):
+		unicode_category[unicodedata.category(c)].append(c)
 
-Lookaround es un tipo especial de grupo. Los tokens dentro del grupo se emparejan normalmente, pero luego el motor de expresiones regulares hace que el grupo abandone su coincidencia y solo conserva el resultado. Lookaround coincide con una posición, al igual que los anclajes. No expande la coincidencia de expresiones regulares.
+Podremos capturar todos los caracteres de una categoría con:
+
+	alphabetic = unicode_category['Ll']
+
+
+### Mirar alrededor (_Lookaround_)
+
+*Lookaround* es un tipo especial de grupo. Los *tokens* dentro del grupo se buscan normalmente, pero luego el motor de expresiones regulares hace que el grupo abandone su coincidencia y solo conserva el resultado. *Lookaround* coincide con una posición, al igual que los anclajes. No expande la coincidencia de expresiones regulares.
 
 q (? = u ) concuerda con la q en cuestión , pero no en Iraq . Este es un avance positivo. Tú no eres parte de la coincidencia global de expresiones regulares. El lookahead coincide en cada posición de la cadena antes de a.
 
