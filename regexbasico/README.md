@@ -1,5 +1,5 @@
 
-# Curso básico de expresiones regulares en español
+# Curso rápido de expresiones regulares en español
 
 Muchas aplicaciones y lenguajes de programación tienen su propia implementación de expresiones regulares (*regex*), a menudo con diferencias leves y a veces significativas con respecto a otras implementaciones. Cuando dos aplicaciones usan una implementación diferente de expresiones regulares, decimos que usan diferentes "sabores" (*flavours*) de expresiones regulares. Trataré de explicar la sintaxis de los "sabores" más comunes, pero dejo aquí un [CheatSheet](cheatsheet.md) para referencia rápida y que incluye las diferencias básicas que se encontrarán en los distintos *sabores* de *regex* más comunes.
 
@@ -48,7 +48,7 @@ Una *clase de caracter* solo coincide con **un solo** caracter: **p[aeiou]to** n
 
 **El orden de los caracteres dentro de una clase de caracter no importa.**
 
-Puedes usar un guion **-** dentro de una *clase de caracteres* para especificar un rango de caracteres. 
+Puedes usar un guión **-** dentro de una *clase de caracteres* para especificar un rango de caracteres. 
 
 > El patrón **[0-9]** coincide con un solo dígito entre 0 y 9. 
 
@@ -63,7 +63,7 @@ Escribir una *referencia* después del *corchete de apertura* **[^** niega la cl
 ### Clases de caracteres abreviados
 
 + **\\d** coincide con un solo caracter que es un dígito
-+ **\\w** coincide con un "caracter de palabra" (caracteres alfanuméricos sin acentos más guion bajo)
++ **\\w** coincide con un "caracter de palabra" (caracteres alfanuméricos sin acentos más guión bajo)
 + **\\s** coincide con un caracter de espacio en blanco (incluye tabulador y saltos de línea).
 
 Las opciones negativas de las anteriores son:
@@ -229,7 +229,10 @@ Para mirar hacia atrás, use *lookbehind*.
 
 Puedes usar una expresión regular hecha y derecha dentro de *lookahead* pero la mayoría de las aplicaciones solo permiten expresiones de longitud fija en *lookbehind*.
 
-## Autor
+## Conclusiones
 
-+ **Santiago Chávez Novaro** ([@sanxofon](https://twitter.com/sanxofon))
-+ Sitio web: [La Lengua](http://lengua.la)
+Combinar inteligentemente todas estas opciones no siempre es fácil, pero simplemente descubrir el poder de las **expresiones regulares** nos abre todo un mundo de posibilidades en el **procesamiento del lenguaje** natural en la computadoras, con el tiempo se convierte en la única forma de **buscar** que queremos... y no hemos mencionado nada de **reemplazar**.
+
+### Referencia rápida
+
+#### [CheatSheet](https://github.com/sanxofon/basicnlp/blob/master/regexbasico/cheatsheet.md)
