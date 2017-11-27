@@ -101,6 +101,8 @@ Pero también podemos (y resulta muy útil en algunos casos) pedirle a *Google* 
 
 > **["Francis Bacon" -filósofo](http://www.google.com/search?q="Francis+Bacon"+-filósofo)**
 
+ - **Mira el archivo [BuscarEnGoogle.md](BuscarEnGoogle.md) para una referencia más completa de búsqueda avanzada en Google**
+
 Ni *Windows* ni *Mac* ofrecen esa simple funcionalidad claramente,e incluso ocultan la herramienta que permite hacer todo eso y mucho mucho más en nuestros archivos personales. Simplemente fingen que no está ahí, pero en realidad es muy fácil ejecutarla para el que sabe que existe, y ninguna computadora decente se vendería en el mundo de los usuarios avanzados si no tuviera terminal, incluso si no pudiéramos ejecutarla desde el teclado sin ayuda del ratón o *mouse*, que es la forma elegante de hacerlo.
 
 ## 2. ¿Cómo ejecutar la terminal?
