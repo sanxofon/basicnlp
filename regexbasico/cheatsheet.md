@@ -319,7 +319,7 @@ c</td>
 
 </table>
 
-## Logic
+## Lógicos
 
 <table style="table-layout:fixed;" border="0" width="100%">
 
@@ -327,7 +327,7 @@ c</td>
 
 <tr>
 
-<th scope="col">Logic</th>
+<th scope="col">Lógico</th>
 
 <th scope="col" width="50%">Desc</th>
 
@@ -401,7 +401,7 @@ c</td>
 
 </table>
 
-## Más White-Space
+## Espacios vacíos
 
 <table style="table-layout:fixed;" border="0" width="100%">
 
@@ -622,7 +622,7 @@ CD</td>
 
 </table>
 
-## Caracter Classes
+## Clases de caracteres
 
 <table style="table-layout:fixed;" border="0" width="100%">
 
@@ -765,7 +765,7 @@ luding new lines, which the regular dot doesn't match</td>
 
 </table>
 
-## Anchors and Boundaries
+## Anclas (anchors) y fronteras (boundaries)
 
 <table style="table-layout:fixed;" border="0" width="100%">
 
@@ -773,7 +773,7 @@ luding new lines, which the regular dot doesn't match</td>
 
 <tr>
 
-<th scope="col">Anchor</th>
+<th scope="col">Ancla</th>
 
 <th scope="col" width="50%">Desc</th>
 
@@ -898,101 +898,7 @@ Most engines: position where one side only is an ASCII letter, digit or undersco
 
 </table>
 
-## POSIX Classes
-
-<table style="table-layout:fixed;" border="0" width="100%">
-
-<tbody>
-
-<tr>
-
-<th scope="col">Caracter</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">[:alpha:]</span></td>
-
-<td>PCRE (C, PHP, R…): ASCII letters A-Z and a-z</td>
-
-<td>[8[:alpha:]]+</td>
-
-<td>WellDone88</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">[:alpha:]</span></td>
-
-<td>Ruby 2: Unicode letter or ideogram</td>
-
-<td>[[:alpha:]\d]+</td>
-
-<td>кошка99</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">[:alnum:]</span></td>
-
-<td>PCRE (C, PHP, R…): ASCII digits and letters A-Z and a-z</td>
-
-<td>[[:alnum:]]{10}</td>
-
-<td>ABCDE12345</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">[:alnum:]</span></td>
-
-<td>Ruby 2: Unicode digit, letter or ideogram</td>
-
-<td>[[:alnum:]]{10}</td>
-
-<td>кошка90210</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">[:punct:]</span></td>
-
-<td>PCRE (C, PHP, R…): ASCII punctuation mark</td>
-
-<td>[[:punct:]]+</td>
-
-<td>?!.,:;</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">[:punct:]</span></td>
-
-<td>Ruby: Unicode punctuation mark</td>
-
-<td>[[:punct:]]+</td>
-
-<td>‽,:〽⁆</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-## Inline Modifiers
+## Modificadores internos (inline)
 
 None of these are supported in JavaScript. In Ruby, beware of <span class="socode">(?s)</span> and <span class="socode">(?m)</span>.  
 
@@ -1002,7 +908,7 @@ None of these are supported in JavaScript. In Ruby, beware of <span class="socod
 
 <tr>
 
-<th scope="col">Modifier</th>
+<th scope="col">Modificador</th>
 
 <th scope="col" width="50%">Desc</th>
 
@@ -1084,31 +990,11 @@ abc # write on multiple
 
 </tr>
 
-<tr class="greentea">
-
-<td><span class="mono">(?n)</span></td>
-
-<td>.NET: named capture only</td>
-
-<td>Turns all (parentheses) into non-capture groups. To capture, use named groups.</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">(?d)</span></td>
-
-<td>Java: Unix linebreaks only</td>
-
-<td>The dot and the ^ and $ anchors are only affected by \n</td>
-
-</tr>
-
 </tbody>
 
 </table>
 
-## Lookarounds
+## Mirar adelante y atrás (Lookarounds)
 
 <table style="table-layout:fixed;" border="0" width="100%">
 
@@ -1178,143 +1064,3 @@ abc # write on multiple
 
 </table>
 
-## Caracter Class Operations
-
-<table style="table-layout:fixed;" border="0" width="100%">
-
-<tbody>
-
-<tr>
-
-<th scope="col">Class Operation</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">[…-[…]]</span></td>
-
-<td>.NET: character class subtraction. One character that is in those on the left, but not in the subtracted class.</td>
-
-<td>[a-z-[aeiou]]</td>
-
-<td>Any lowercase consonant</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">[…-[…]]</span></td>
-
-<td>.NET: character class subtraction.</td>
-
-<td>[\p{IsArabic}-[\D]]</td>
-
-<td>An Arabic character that is not a non-digit, i.e., an Arabic digit</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">[…&&[…]]</span></td>
-
-<td>Java, Ruby 2+: character class intersection. One character that is both in those on the left and in the && class.</td>
-
-<td>[\S&&[\D]]</td>
-
-<td>An non-whitespace character that is a non-digit.</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">[…&&[…]]</span></td>
-
-<td>Java, Ruby 2+: character class intersection.</td>
-
-<td>[\S&&[\D]&&[^a-zA-Z]]</td>
-
-<td>An non-whitespace character that a non-digit and not a letter.</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">[…&&[^…]]</span></td>
-
-<td>Java, Ruby 2+: character class subtraction is obtained by intersecting a class with a negated class</td>
-
-<td>[a-z&&[^aeiou]]</td>
-
-<td>An English lowercase letter that is not a vowel.</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">[…&&[^…]]</span></td>
-
-<td>Java, Ruby 2+: character class subtraction</td>
-
-<td>[\p{InArabic}&&[^\p{L}\p{N}]]</td>
-
-<td>An Arabic character that is not a letter or a number</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-## Other Syntax
-
-<table style="table-layout:fixed;" border="0" width="100%">
-
-<tbody>
-
-<tr>
-
-<th scope="col">Syntax</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="brown">
-
-<td><name="k"><span class="mono">\K</span></name="k"></td>
-
-<td>Keep Out  
-Perl, PCRE (C, PHP, R…), Python's alternate _regex_ engine, Ruby 2+: drop everything that was matched so far from the overall match to be returned</td>
-
-<td>prefix\K\d+</td>
-
-<td>12</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><name="blockescape"><span class="mono">\Q…\E</span></name="blockescape"></td>
-
-<td>Perl, PCRE (C, PHP, R…), Java: treat anything between the delimiters as a literal string. Useful to escape metacharacters.</td>
-
-<td>\Q(C++ ?)\E</td>
-
-<td>(C++ ?)</td>
-
-</tr>
-
-</tbody>
-
-</table>
