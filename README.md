@@ -14,11 +14,13 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 El curso está acompañado por algunos artículos que puedes leer independientemente y aportan conocimientos necesarios para poder llevar a cabo el curso a través de los archivos incluídos:
 
-1. **[El ABCii de la codificación de caracteres en un sistema digital](https://github.com/sanxofon/basicnlp/blob/master/encoding/README.md)**
-1. **[En el principio fue la línea de comandos: Curso básico de uso de la terminal o consola.](https://github.com/sanxofon/basicnlp/blob/master/terminal/README.md)**
-	1. [Guía rápida de búsqueda avanzada en Google](https://github.com/sanxofon/basicnlp/blob/master/terminal/BuscarEnGoogle.md)
+1. **[El ABCii de la codificación de caracteres en un sistema digital](encoding/README.md)**
+1. **[En el principio fue la línea de comandos: Curso básico de uso de la terminal o consola.](terminal/README.md)**
+	1. [Guía rápida de búsqueda avanzada en Google](terminal/BuscarEnGoogle.md)
 1. **[Curso rápido de expresiones regulares en español](https://github.com/sanxofon/basicnlp/blob/master/regexbasico/README.md)**
-	1. [Regex CheatSheet - Guía rápida de expresiones regulares](https://github.com/sanxofon/basicnlp/blob/master/regexbasico/cheatsheet.md)
+	1. [Regex CheatSheet - Guía rápida de expresiones regulares](regexbasico/cheatsheet.md)
+
+**¿Dudas? ¿Comentarios? Contáctamen por twitter: [@sanxofon](https://twitter.com/sanxofon)**
 
 ***
 
@@ -52,7 +54,7 @@ El curso está acompañado por algunos artículos que puedes leer independientem
 
 En la carpeta **encoding/** escribí un pequeño texto que intenta explicar el porqué de la necesidad de los encodings así como una breve historia de algunos muy famosos:
 
-- [**El ABCii de la codificación de caracteres en un sistema digital**](https://github.com/sanxofon/basicnlp/blob/master/encoding/README.md)
+- [**El ABCii de la codificación de caracteres en un sistema digital**](encoding/README.md)
 
 ### 2. [helloWorldUTF8.py](https://github.com/sanxofon/basicnlp/blob/master/helloWorldUTF8.py)
 
