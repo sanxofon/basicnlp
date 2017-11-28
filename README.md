@@ -10,6 +10,16 @@ Los archivos están ordenados como un curso y ampliamente comentados. En los com
 
 #### En los comentarios del código de cada ejemplo encontrarás instrucciones detalladas para entender el código, además de guías paso a paso para descargar gratuitamente e instalar todos los programas que puedas necesitar en cada caso.
 
+### Guías anexas
+
+El curso está acompañado por algunos artículos que puedes leer independientemente y aportan conocimientos necesarios para poder llevar a cabo el curso a través de los archivos incluídos:
+
+1. **[El ABCii de la codificación de caracteres en un sistema digital](https://github.com/sanxofon/basicnlp/blob/master/encoding/README.md)**
+1. **[En el principio fue la línea de comandos: Curso básico de uso de la terminal o consola.](https://github.com/sanxofon/basicnlp/blob/master/terminal/README.md)**
+	1. [Guía rápida de búsqueda avanzada en Google](https://github.com/sanxofon/basicnlp/blob/master/terminal/BuscarEnGoogle.md)
+1. **[Curso rápido de expresiones regulares en español](https://github.com/sanxofon/basicnlp/blob/master/regexbasico/README.md)**
+	1. [Regex CheatSheet - Guía rápida de expresiones regulares](https://github.com/sanxofon/basicnlp/blob/master/regexbasico/cheatsheet.md)
+
 ***
 
 ## Archivos incluídos hasta ahora:
