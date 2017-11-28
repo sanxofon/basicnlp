@@ -1,3 +1,12 @@
+# Regex CheatSheet - Guía rápida de expresiones regulares
+
+---
+
+### ¿Necesitas ayuda con las expresiones regulares?
+
+- **Consulta el [Curso rápido de expresiones regulares en español](https://github.com/sanxofon/basicnlp/blob/master/regexbasico/README.md)**
+
+
 ## Caracteres
 
 <table style="table-layout:fixed;" border="0" width="100%">
