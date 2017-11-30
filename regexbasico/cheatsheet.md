@@ -1,1075 +1,138 @@
 # Regex CheatSheet - Guía rápida de expresiones regulares
-
 ---
 
 ### ¿Necesitas ayuda con las expresiones regulares?
 
 - **Consulta el [Curso rápido de expresiones regulares en español](https://github.com/sanxofon/basicnlp/blob/master/regexbasico/README.md)**
 
-
 ## Caracteres
 
-<table style="table-layout:fixed;" border="0" width="100%">
+Caracter|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
+\d|Un dígito entre 0 y 9|file_\d\d|file_25
+\d|.NET, Python 3: Un dígito Unicode en cualquier escritura|file_\d\d|file_9੩
+\w|"caracter de palabra": Letra ASCII, dígito o guión bajo|\w-\w\w\w|A-b_1
+\w|.Python 3: "Caracter de palabra": Letra Unicode, ideograma, dígito, o guión bajo|\w-\w\w\w|字-ま_۳
+\w|.NET: "Caracter de palabra": Letra Unicode, ideograma, dígito, o conector|\w-\w\w\w|字-ま‿۳
+\s|"Caracter de espacio en blanco": espacio, tab, nueva línea, retorno de carro, tab vertical|a\sb\sc|a b<br>c
+\s|.NET, Python 3, JavaScript: "Caracter de espacio en blanco": cualquier separador Unicode|a\sb\sc|a b<br>c
+\D|Un caracter que no sea un _dígito_ según esté definido _\d_|\D\D\D|ABC
+\W|Un caracter que no sea un _caracter de palabra_ según esté definido _\w_|\W\W\W\W\W|*-+=)
+\S|Un caracter que no sea un _caracter de espacio en blanco_ según esté definido _\s_|\S\S\S\S|Yoyo
 
-<tbody>
-
-<tr>
-
-<th scope="col">Caracter</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\d</span></td>
-
-<td>Most engines: one digit  
-from 0 to 9</td>
-
-<td>file_\d\d</td>
-
-<td>file_25</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\d</span></td>
-
-<td>.NET, Python 3: one Unicode digit in any script</td>
-
-<td>file_\d\d</td>
-
-<td>file_9੩</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\w</span></td>
-
-<td>Most engines: "word character": ASCII letter, digit or underscore</td>
-
-<td>\w-\w\w\w</td>
-
-<td>A-b_1</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\w</span></td>
-
-<td>.Python 3: "word character": Unicode letter, ideogram, digit, or underscore</td>
-
-<td>\w-\w\w\w</td>
-
-<td>字-ま_۳</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\w</span></td>
-
-<td>.NET: "word character": Unicode letter, ideogram, digit, or connector</td>
-
-<td>\w-\w\w\w</td>
-
-<td>字-ま‿۳</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\s</span></td>
-
-<td>Most engines: "whitespace character": space, tab, newline, carriage return, vertical tab</td>
-
-<td>a\sb\sc</td>
-
-<td>a b  
-c</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\s</span></td>
-
-<td>.NET, Python 3, JavaScript: "whitespace character": any Unicode separator</td>
-
-<td>a\sb\sc</td>
-
-<td>a b  
-c</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\D</span></td>
-
-<td>One character that is not a _digit_ as defined by your engine's _\d_</td>
-
-<td>\D\D\D</td>
-
-<td>ABC</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\W</span></td>
-
-<td>One character that is not a _word character_ as defined by your engine's _\w_</td>
-
-<td>\W\W\W\W\W</td>
-
-<td>*-+=)</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\S</span></td>
-
-<td>One character that is not a _whitespace character_ as defined by your engine's _\s_</td>
-
-<td>\S\S\S\S</td>
-
-<td>Yoyo</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Cuantificadores
 
-<table style="table-layout:fixed;" border="0" width="100%">
+Cuantificador|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
++|Uno o más|Version \w-\w+|Version A-b1_1
+{3}|Exactamente tres veces|\D{3}|ABC
+{2,4}|Dos o cuatro veces|\d{2,4}|156
+{3,}|Tres o más veces|\w{3,}|regex_tutorial
+\*|Cero o más veces|A\*B\*C\*|AAACC
+?|Una vez o ninguna|libros?|libro
 
-<tbody>
-
-<tr>
-
-<th scope="col">Cuantificador</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">+</span></td>
-
-<td>One or more</td>
-
-<td>Version \w-\w+</td>
-
-<td>Version A-b1_1</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">{3}</span></td>
-
-<td>Exactly three times</td>
-
-<td>\D{3}</td>
-
-<td>ABC</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">{2,4}</span></td>
-
-<td>Two to four times</td>
-
-<td>\d{2,4}</td>
-
-<td>156</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">{3,}</span></td>
-
-<td>Three or more times</td>
-
-<td>\w{3,}</td>
-
-<td>regex_tutorial</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">*</span></td>
-
-<td>Zero or more times</td>
-
-<td>A*B*C*</td>
-
-<td>AAACC</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">?</span></td>
-
-<td>Once or none</td>
-
-<td>plurals?</td>
-
-<td>plural</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Más Caracteres
 
-<table style="table-layout:fixed;" border="0" width="100%">
+Caracter|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
+.|Cualquier caracter excepto salto de línea|a.c|abc
+.|Cualquier caracter excepto salto de línea|.*|whatever, man.
+\\.|Un punto (Caracter especial: debe ser escapado con un \\)|a\\.c|a.c
+\\ |Escapa un caracter especial|\\.\\*\\+\\?\\$\\/\\\\ |.*+?$\/\\
+\\ |Escapa un caracter especial|\\[\\{\\(\\)\\}\\]|[{()}]
 
-<tbody>
-
-<tr>
-
-<th scope="col">Caracter</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">**.**</span></td>
-
-<td>Any character except line break</td>
-
-<td>a.c</td>
-
-<td>abc</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">**.**</span></td>
-
-<td>Any character except line break</td>
-
-<td>.*</td>
-
-<td>whatever, man.</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\**.**</span></td>
-
-<td>A period (special character: needs to be escaped by a \)</td>
-
-<td>a\.c</td>
-
-<td>a.c</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\</span></td>
-
-<td>Escapes a special character</td>
-
-<td>\.\*\+\?    \$\^\/\\</td>
-
-<td>.*+?    $^/\</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\</span></td>
-
-<td>Escapes a special character</td>
-
-<td>\[\{\(\)\}\]</td>
-
-<td>[{()}]</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Lógicos
 
-<table style="table-layout:fixed;" border="0" width="100%">
+Lógico|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
+\||Opciones / operando OR|22\|33|33
+( … )|Capturar grupo|A(nt\|pple)|Apple (captura "pple")
+\1|Contenido del Grupo 1|r(\w)g\1x|regex
+\2|Contenido del Grupo 2|(\d\d)\+(\d\d)=\2\+\1|12+65=65+12
+(?: … )|Grupo que no es capturado|A(?:nt|pple)|Apple
 
-<tbody>
-
-<tr>
-
-<th scope="col">Lógico</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">|</span></td>
-
-<td>Alternation / OR operand</td>
-
-<td>22|33</td>
-
-<td>33</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">( … )</span></td>
-
-<td>Capturing group</td>
-
-<td>A(nt|pple)</td>
-
-<td>Apple (captures "pple")</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">\1</span></td>
-
-<td>Contents of Group 1</td>
-
-<td>r(\w)g\1x</td>
-
-<td>regex</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">\2</span></td>
-
-<td>Contents of Group 2</td>
-
-<td>(\d\d)\+(\d\d)=\2\+\1</td>
-
-<td>12+65=65+12</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">(?: … )</span></td>
-
-<td>Non-capturing group</td>
-
-<td>A(?:nt|pple)</td>
-
-<td>Apple</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Espacios vacíos
 
-<table style="table-layout:fixed;" border="0" width="100%">
+Caracter|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
+\t|Tab|T\t\w{2}|T &nbsp;&nbsp; ab
+\r|Caracter de retorno de carro|ver abajo
+\n|Caracter de nueva linea|ver abajo
+\r\n|Separador de nueva linea en Windows|AB\r\nCD|AB<br>CD
+\N|Perl, PCRE (C, PHP, R…): Un caracter que no es un salto de línea|\N+|ABC
+\h|Perl, PCRE (C, PHP, R…), Java: un caracter de espacio en blanco horizontal: tab o un separador de espacio Unicode
+\H|Un caracter que no es de espacio en blanco horizontal
+\v|.NET, JavaScript, Python, Ruby: tab vertical
+\v|Perl, PCRE (C, PHP, R…), Java: un caracter de espacio en blanco vertical: salto de línea, retorno de carro, tab vertical, envío de formulario, párrafo o separador de línea
+\V|Perl, PCRE (C, PHP, R…), Java: Cualquier caracter que no sea de espacio en blanco vertical
+\R|Perl, PCRE (C, PHP, R…), Java: Un salto de línea (el par retorno de carro + salto de línea, y todos los caracteres que coincidan con \v)
 
-<tbody>
-
-<tr>
-
-<th scope="col">Caracter</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\t</span></td>
-
-<td>Tab</td>
-
-<td>T\t\w{2}</td>
-
-<td>T     ab</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\r</span></td>
-
-<td>Carriage return character</td>
-
-<td>see below</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\n</span></td>
-
-<td>Line feed character</td>
-
-<td>see below</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\r\n</span></td>
-
-<td>Line separator on Windows</td>
-
-<td>AB\r\nCD</td>
-
-<td>AB  
-CD</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\N</span></td>
-
-<td>Perl, PCRE (C, PHP, R…): one character that is not a line break</td>
-
-<td>\N+</td>
-
-<td>ABC</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\h</span></td>
-
-<td>Perl, PCRE (C, PHP, R…), Java: one horizontal whitespace character: tab or Unicode space separator</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\H</span></td>
-
-<td>One character that is not a horizontal whitespace</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\v</span></td>
-
-<td>.NET, JavaScript, Python, Ruby: vertical tab</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\v</span></td>
-
-<td>Perl, PCRE (C, PHP, R…), Java: one vertical whitespace character: line feed, carriage return, vertical tab, form feed, paragraph or line separator</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">\V</span></td>
-
-<td>Perl, PCRE (C, PHP, R…), Java: any character that is not a vertical whitespace</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">\R</span></td>
-
-<td>Perl, PCRE (C, PHP, R…), Java: one line break (carriage return + line feed pair, and all the characters matched by \v)</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Más Cuantificadores
 
-<table style="table-layout:fixed;" border="0" width="100%">
+Cuantificador|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
++|El + (uno o más) es "codicioso"|\d+|12345
+?|Hace los cuantificadores "perezosos"|\d+?|1 en **1**2345
+\*|El \* (cero o más) es "codicioso"|A*|AAA
+?|Hace los cuantificadores "perezosos"|A*?|vacío en AAA
+{2,4}|Dos a cuatro veces, "codicioso"|\w{2,4}|abcd
+?|Hace los cuantificadores "perezosos"|\w{2,4}?|ab en **ab**cd
 
-<tbody>
-
-<tr>
-
-<th scope="col">Cuantificador</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">+</span></td>
-
-<td>The + (one or more) is "greedy"</td>
-
-<td>\d+</td>
-
-<td>12345</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">?</span></td>
-
-<td>Makes cuantificadores "lazy"</td>
-
-<td>\d+?</td>
-
-<td>1 in **1**2345</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">*</span></td>
-
-<td>The * (zero or more) is "greedy"</td>
-
-<td>A*</td>
-
-<td>AAA</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">?</span></td>
-
-<td>Makes cuantificadores "lazy"</td>
-
-<td>A*?</td>
-
-<td>empty in AAA</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">{2,4}</span></td>
-
-<td>Two to four times, "greedy"</td>
-
-<td>\w{2,4}</td>
-
-<td>abcd</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">?</span></td>
-
-<td>Makes cuantificadores "lazy"</td>
-
-<td>\w{2,4}?</td>
-
-<td>ab in **ab**cd</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Clases de caracteres
 
-<table style="table-layout:fixed;" border="0" width="100%">
+Caracter|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
+[ … ]|Uno de los caracteres entre los corchetes|[AEIOU]|Una vocal mayúscula sin acento
+[ … ]|Uno de los caracteres entre los corchetes|T[ao]p|_Tap_ o _Top_
+-|Range indicator|[a-z]|Una letra minúscula sin acento
+[x-y]|Uno de los caracteres en el rango de x a y|[A-Z]+|GREAT
+[ … ]|Uno de los caracteres entre los corchetes|[AB1-5w-z]|Uno de los siguientes: A,B,1,2,3,4,5,w,x,y,z
+[x-y]|Uno de los caracteres entre el rango de x a y|[ -~]+|Caracteres en la sección imprimible de la tabla ASCII.
+[^x]|Un caracter que no es *x*|[^a-z]{3}|A1!
+[^x-y]|Uno de los caracteres que **no** está en en rango de x a y|[^ -~]+|Caracteres que **no** están en la sección imprimible de la tabla ASCII.
+[\d\D]|Un caracter que es un dígito o un no-dígito|[\d\D]+|Cualquier caracter, uncluyendo nueva línea que el punto regular no hace coincidencia
+[\x41]|Coincide con el caracter en la posición hexadecimal 41 de la tabla ASCII, p.ej. A|[\x41-\x45]{3}|ABE
 
-<tbody>
-
-<tr>
-
-<th scope="col">Caracter</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">[ … ]</span></td>
-
-<td>One of the characters in the brackets</td>
-
-<td>[AEIOU]</td>
-
-<td>One uppercase vowel</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">[ … ]</span></td>
-
-<td>One of the characters in the brackets</td>
-
-<td>T[ao]p</td>
-
-<td>_Tap_ or _Top_</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">-</span></td>
-
-<td>Range indicator</td>
-
-<td>[a-z]</td>
-
-<td>One lowercase letter</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">[x-y]</span></td>
-
-<td>One of the characters in the range from x to y</td>
-
-<td>[A-Z]+</td>
-
-<td>GREAT</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">[ … ]</span></td>
-
-<td>One of the characters in the brackets</td>
-
-<td>[AB1-5w-z]</td>
-
-<td>One of either: A,B,1,2,3,4,5,w,x,y,z</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">[x-y]</span></td>
-
-<td>One of the characters in the range from x to y</td>
-
-<td>[ -~]+</td>
-
-<td>Caracteres in the printable section of the ASCII table.</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">[^x]</span></td>
-
-<td>One character that is not x</td>
-
-<td>[^a-z]{3}</td>
-
-<td>A1!</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">[^x-y]</span></td>
-
-<td>One of the characters **not** in the range from x to y</td>
-
-<td>[^ -~]+</td>
-
-<td>Caracteres that are **not** in the printable section of the ASCII table.</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">[\d\D]</span></td>
-
-<td>One character that is a digit or a non-digit</td>
-
-<td>[\d\D]+</td>
-
-<td>Any characters, inc-  
-luding new lines, which the regular dot doesn't match</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">[\x41]</span></td>
-
-<td>Matches the character at hexadecimal position 41 in the ASCII table, i.e. A</td>
-
-<td>[\x41-\x45]{3}</td>
-
-<td>ABE</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Anclas (anchors) y fronteras (boundaries)
 
-<table style="table-layout:fixed;" border="0" width="100%">
+Ancla|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
+^|Start of string or start of line depending on multiline mode. (But when [^inside corchetes], it means "not")|^abc .*|abc (line start)
+$|End of string or end of line depending on multiline mode. Many engine-dependent subtleties.|.*? the end$|this is the end
+\A|Beginning of string   (all major engines except JS)|\Aabc[\d\D]*|abc (string...  ...start)
+\z|Very end of the string   Not available in Python and JS|the end\z|this is...\n...**the end**
+\Z|End of string or (except Python) antes del salto de línea final   Not available in JS|the end\Z|this is...\n...**the end**\n
+\G|Beginning of String or End of Previous Match  .NET, Java, PCRE (C, PHP, R…), Perl, Ruby
+\b|Word boundary. Position where one side only is an letra ASCII, dígito o guión bajo|Bob.*\bcat\b|Bob ate the cat
+\b|Word boundary   .NET, Java, Python 3, Ruby: position where one side only is a Letra Unicode, dígito o guión bajo|Bob.*\b\кошка\b|Bob ate the кошка
+\B|Not a word boundary|c.*\Bcat\B.*|copycats
 
-<tbody>
-
-<tr>
-
-<th scope="col">Ancla</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">^</span></td>
-
-<td>Start of string or start of line depending on multiline mode. (But when [^inside brackets], it means "not")</td>
-
-<td>^abc .*</td>
-
-<td>abc (line start)</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">$</span></td>
-
-<td>End of string or end of line depending on multiline mode. Many engine-dependent subtleties.</td>
-
-<td>.*? the end$</td>
-
-<td>this is the end</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">\A</span></td>
-
-<td>Beginning of string  
-(all major engines except JS)</td>
-
-<td>\Aabc[\d\D]*</td>
-
-<td>abc (string...  
-...start)</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">\z</span></td>
-
-<td>Very end of the string  
-Not available in Python and JS</td>
-
-<td>the end\z</td>
-
-<td>this is...\n...**the end**</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">\Z</span></td>
-
-<td>End of string or (except Python) before final line break  
-Not available in JS</td>
-
-<td>the end\Z</td>
-
-<td>this is...\n...**the end**\n</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">\G</span></td>
-
-<td>Beginning of String or End of Previous Match  
-.NET, Java, PCRE (C, PHP, R…), Perl, Ruby</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">\b</span></td>
-
-<td>Word boundary  
-Most engines: position where one side only is an ASCII letter, digit or underscore</td>
-
-<td>Bob.*\bcat\b</td>
-
-<td>Bob ate the cat</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">\b</span></td>
-
-<td>Word boundary  
-.NET, Java, Python 3, Ruby: position where one side only is a Unicode letter, digit or underscore</td>
-
-<td>Bob.*\b\кошка\b</td>
-
-<td>Bob ate the кошка</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">\B</span></td>
-
-<td>Not a word boundary</td>
-
-<td>c.*\Bcat\B.*</td>
-
-<td>copycats</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Modificadores internos (inline)
+None of these are supported in JavaScript. In Ruby, beware of (?s) and (?m).  
 
-None of these are supported in JavaScript. In Ruby, beware of <span class="socode">(?s)</span> and <span class="socode">(?m)</span>.  
+Modificador|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
+(?i)|Case-insensitive mode   (except JavaScript)|(?i)Monday|monDAY
+(?s)|DOTALL mode (except JS and Ruby). The dot (.) matches new line characters (\r\n). Also known as "single-line mode" because the dot treats the entire input as a single line|(?s)From A.*to Z|From A to Z
+(?m)|Multiline mode   (except Ruby and JS) ^ and $ match at the beginning and end of every line|(?m)1\r\n^2$\r\n^3$|1<br>2<br>3
+(?m)|In Ruby: the same as (?s) in other engines, i.e. DOTALL mode, i.e. dot matches saltos de línea|(?m)From A.*to Z|From A to Z
+(?x)|Free-Spacing Mode mode   (except JavaScript). Also known as comment mode or whitespace mode|(?x) # this is a<br># comment<br>abc # write on multiple<br># lines<br>[ ]d # spaces must be<br># in corchetes|abc d
 
-<table style="table-layout:fixed;" border="0" width="100%">
-
-<tbody>
-
-<tr>
-
-<th scope="col">Modificador</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">(?i)</span></td>
-
-<td>Case-insensitive mode  
-(except JavaScript)</td>
-
-<td>(?i)Monday</td>
-
-<td>monDAY</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">(?s)</span></td>
-
-<td>DOTALL mode (except JS and Ruby). The dot (.) matches new line characters (\r\n). Also known as "single-line mode" because the dot treats the entire input as a single line</td>
-
-<td>(?s)From A.*to Z</td>
-
-<td>From A  
-to Z</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">(?m)</span></td>
-
-<td>Multiline mode  
-(except Ruby and JS) ^ and $ match at the beginning and end of every line</td>
-
-<td>(?m)1\r\n^2$\r\n^3$</td>
-
-<td>1  
-2  
-3</td>
-
-</tr>
-
-<tr class="greentea">
-
-<td><span class="mono">(?m)</span></td>
-
-<td>In Ruby: the same as (?s) in other engines, i.e. DOTALL mode, i.e. dot matches line breaks</td>
-
-<td>(?m)From A.*to Z</td>
-
-<td>From A  
-to Z</td>
-
-</tr>
-
-<tr class="wasabi">
-
-<td><span class="mono">(?x)</span></td>
-
-<td>Free-Spacing Mode mode  
-(except JavaScript). Also known as comment mode or whitespace mode</td>
-
-<td>(?x) # this is a  
-# comment  
-abc # write on multiple  
-# lines  
-[ ]d # spaces must be  
-# in brackets</td>
-
-<td>abc d</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Mirar adelante y atrás (Lookarounds)
 
-<table style="table-layout:fixed;" border="0" width="100%">
-
-<tbody>
-
-<tr>
-
-<th scope="col">Lookaround</th>
-
-<th scope="col" width="50%">Desc</th>
-
-<th scope="col">Ejemplo</th>
-
-<th scope="col">Match</th>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">(?=…)</span></td>
-
-<td>Positive lookahead</td>
-
-<td>(?=\d{10})\d{5}</td>
-
-<td>01234 in **01234**56789</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">(?<=…)</span></td>
-
-<td>Positive lookbehind</td>
-
-<td>(?<=\d)cat</td>
-
-<td>cat in 1**cat**</td>
-
-</tr>
-
-<tr class="brown">
-
-<td><span class="mono">(?!…)</span></td>
-
-<td>Negative lookahead</td>
-
-<td>(?!theatre)the\w+</td>
-
-<td>theme</td>
-
-</tr>
-
-<tr class="beige">
-
-<td><span class="mono">(?<!…)</span></td>
-
-<td>Negative lookbehind</td>
-
-<td>\w{3}(?<!mon)ster</td>
-
-<td>Munster</td>
-
-</tr>
-
-</tbody>
-
-</table>
+Lookaround|Desc|Ejemplo|Match
+| ----- | ----- | ----- | ----- |
+(?=…)|Positive lookahead|(?=\d{10})\d{5}|01234 in **01234**56789
+(?|Positive lookbehind|(?<=\d)cat|cat in 1**cat**
+(?!…)|Negative lookahead|(?!theatre)the\w+|theme
+(?|Negative lookbehind|\w{3}(?<!mon)ster|Munster
 
