@@ -21,9 +21,9 @@ patrones = [
 	(ur"([^\s]+)\s+([^\s]+)", u"Busca dos grupos de caracteres que no sean espacios seguidos, separados por un espacio"),
 	(ur"(\w+)[^\w\s]?\s+[^\w\s]?(\w+)", u"Busca dos palabras separadas por un espacio que pueden o no tener un caractes no de palabra a los lados"),
 	(ur"(\w+)\s+(?=(\w+))","Busca todos los pares de palabras (separadas por espacio) con lookahead"),
-	(ur"(\w+)(?=(?:\s+(\W*)(\w+))|([^\w\r\n]+))","Busca pares de palabra/palabra o palabra/otro, puede incluir caracteres que anteceden la segunda palabra"),
+	(ur"(\w+)(?=(?:([^\r\n\S]+)(\W*)(\w+))|([^\w\s]+)(\s+)?(\w+)?)","Busca pares de palabra/palabra o palabra/otro, puede incluir caracteres o separadores entre la primera y la segunda palabra"),
 ]
-print u"\nCadena:",cadena
+print "\n",u"Cadena:",cadena,"\n"
 for i,patron in enumerate(patrones):
 	if (len(sys.argv)>1 and sys.argv[1]!=str(i)):
 		continue
@@ -35,9 +35,9 @@ for i,patron in enumerate(patrones):
 		for ii,m in enumerate(match):
 			if isinstance(match[0], tuple):
 				m = filter(None, m) # Elimina los valores vacíos
-				print ii,"\t", "\t".join(m)
+				print ii,"\t", "\t".join([re.sub(r'\n',r'\\n',re.sub(r'\t',r'\\t',x)) for x in m])
 			else:
-				print ii,"\t", m
+				print ii,"x\t", re.sub(r'\n',r'\\n',re.sub(r'\t',r'\\t',m))
 	else:
-		print "\tNo hubo coincidencias"
+		print "\t"+u"No hubo coincidencias"
 print
