@@ -6,11 +6,11 @@ import argparse
 parser = argparse.ArgumentParser(description=u'StanfordCoreNLP (simple)')
 parser.add_argument("-u", "--utf8", help=u"Codificar la salida como UTF-8.", action="store_true")
 args = parser.parse_args()
+import codecs,locale,sys
 if args.utf8:
-    # import codecs,locale,sys
-    # sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
-    import codecs,sys
     sys.stdout = codecs.getwriter("utf8")(sys.stdout)
+else:
+    sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
 ######################################################
 """
 En este script se muestra cómo usar el software Stanford CoreNLP

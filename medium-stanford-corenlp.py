@@ -8,11 +8,11 @@ parser.add_argument("-u", "--utf8", help=u"Codificar la salida como UTF-8.", act
 parser.add_argument("-j", "--json", help=u"Salida en formato JSON", action="store_true")
 parser.add_argument("-x", "--xml", help=u"Salida en formato XML", action="store_true")
 args = parser.parse_args()
+import codecs,locale,sys
 if args.utf8:
-    # import codecs,locale,sys
-    # sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
-    import codecs,sys
     sys.stdout = codecs.getwriter("utf8")(sys.stdout)
+else:
+    sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
 if args.json:
     outputFormat = "json"
 elif args.xml:
