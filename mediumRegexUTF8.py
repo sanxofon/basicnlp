@@ -21,7 +21,7 @@ patrones = [
 	(ur"([^\s]+)\s+([^\s]+)", u"Busca dos grupos de caracteres que no sean espacios seguidos, separados por un espacio"),
 	(ur"(\w+)[^\w\s]?\s+[^\w\s]?(\w+)", u"Busca dos palabras separadas por un espacio que pueden o no tener un caractes no de palabra a los lados"),
 	(ur"(\w+)\s+(?=(\w+))","Busca todos los pares de palabras (separadas por espacio) con lookahead"),
-	(ur"(\w+)(?=(?:([^\r\n\S]+)(\W*)(\w+))|([^\w\s]+)(\s+)?(\w+)?)","Busca pares de palabra/palabra o palabra/otro, puede incluir caracteres o separadores entre la primera y la segunda palabra"),
+	(ur"(\w+)(?=(?:([^\r\n\S]+)(\W*)(\w+))|([^\w\s]+)(\s+)?(\w+)?)","Busca pares de palabra/palabra o palabra/otro(s)/palabra, puede incluir caracteres o separadores entre la primera y la segunda palabra"),
 ]
 print "\n",u"Cadena:",cadena,"\n"
 for i,patron in enumerate(patrones):
