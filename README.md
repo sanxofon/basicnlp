@@ -31,21 +31,22 @@ El curso está acompañado por algunos artículos que puedes leer independientem
 1. [helloWorldUTF8.py](#2-helloworldutf8py)
 1. [simpleEncodingUTF8.py / simpleEncodingCP1252.py](#3-simpleencodingutf8py--simpleencodingcp1252py)
 1. [simpleRegexUTF8.py](#4-simpleregexutf8py)
-1. [argumentosSimple.py](#5-argumentossimplepy)
-1. [argumentosParsed.py](#6-argumentosparsedpy)
-1. [limpiarTexto.py](#7-limpiartextopy)
+1. [mediumRegexUTF8.py](#5-mediumregexutf8py)
+1. [argumentosSimple.py](#6-argumentossimplepy)
+1. [argumentosParsed.py](#7-argumentosparsedpy)
+1. [limpiarTexto.py](#8-limpiartextopy)
     1. test/
-1. [contarPalabras.py](#8-contarpalabraspy)
-1. [contarCaracteres.py](#9-contarcaracterespy)
-1. [basicNLTK.py](#10-basicnltkpy)
+1. [contarPalabras.py](#9-contarpalabraspy)
+1. [contarCaracteres.py](#10-contarcaracterespy)
+1. [basicNLTK.py](#11-basicnltkpy)
     1. get-pip.py
     1. nltk_packages.txt
     1. instalar_nltk_data.py
-1. [mediumNLTK.py](#11-mediumnltkpy)
-1. [stanford-postaggerNLTK.py](#12-stanford-postaggernltkpy)
-1. [simple-stanford-corenlp.py](#13-simple-stanford-corenlppy)
-1. [medium-stanford-corenlp.py](#14-medium-stanford-corenlppy)
-1. [basicFreeling.py](#15-basicfreelingpy)
+1. [mediumNLTK.py](#12-mediumnltkpy)
+1. [stanford-postaggerNLTK.py](#13-stanford-postaggernltkpy)
+1. [simple-stanford-corenlp.py](#14-simple-stanford-corenlppy)
+1. [medium-stanford-corenlp.py](#15-medium-stanford-corenlppy)
+1. [basicFreeling.py](#16-basicfreelingpy)
    1. freelingwrapper.py
 
 ### 1. [vacio.py](https://github.com/sanxofon/basicnlp/blob/master/vacio.py)
@@ -169,7 +170,18 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 +			—¡Joven «emponzoñado» el con whisky, qué fin… aguarda te exhibir!
 ```
 
-### 5. [argumentosSimple.py](https://github.com/sanxofon/basicnlp/blob/master/argumentosSimple.py)
+### 5. [mediumRegexUTF8.py](https://github.com/sanxofon/basicnlp/blob/master/mediumRegexUTF8.py)
+
+> Este script muestra como realizar búsquedas RegEx más complejas 
+	sobre palabras y tipos de caracteres Unicode.
+
+**Ejemplos de uso:**
+
+	$ python mediumRegexUTF8.py
+
+| Puedes ver el resultado de la ejecución del archivo [acá](https://github.com/sanxofon/basicnlp/blob/master/test/mediumRegexUTF8.txt).
+
+### 6. [argumentosSimple.py](https://github.com/sanxofon/basicnlp/blob/master/argumentosSimple.py)
 
 > Este programa muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", considerando la codificación. (Imposible de resolver en Windows 7)
 
@@ -191,7 +203,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 		# No devuelve nada, los resultados se guardan en el archivo "test.txt"
 ```
 
-### 6. [argumentosParsed.py](https://github.com/sanxofon/basicnlp/blob/master/argumentosParsed.py)
+### 7. [argumentosParsed.py](https://github.com/sanxofon/basicnlp/blob/master/argumentosParsed.py)
 
 > Este programa también muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", pero usando la librería "argparse" que simplifica el proceso además de que provee un mensaje de ayuda a los usuarios.
 
@@ -217,7 +229,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python argumentosParsed.py -n "Santiago Chávez"
 	$ python argumentosParsed.py -n "Santiago Chávez" -e
 
-### 7. [limpiarTexto.py](https://github.com/sanxofon/basicnlp/blob/master/limpiarTexto.py)
+### 8. [limpiarTexto.py](https://github.com/sanxofon/basicnlp/blob/master/limpiarTexto.py)
 
 > Este programa intenta rectificar los saltos de línea de un texto mal formateado y/o aplica un reemplazo regex definido por el usuario.
 
@@ -258,7 +270,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
 	$ python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 
-### 8. [contarPalabras.py](https://github.com/sanxofon/basicnlp/blob/master/contarPalabras.py)
+### 9. [contarPalabras.py](https://github.com/sanxofon/basicnlp/blob/master/contarPalabras.py)
 
 > Este programa intenta contar la frecuencia de las palabras de un texto.
 
@@ -292,7 +304,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python contarPalabras.py -f "texto2.txt" > "texto2_palabras.txt"
 	$ python contarPalabras.py -f "text1o.txt" -q -o af > "texto1_palabras.txt"
 
-### 9. [contarCaracteres.py](https://github.com/sanxofon/basicnlp/blob/master/contarCaracteres.py)
+### 10. [contarCaracteres.py](https://github.com/sanxofon/basicnlp/blob/master/contarCaracteres.py)
 
 > Este programa intenta contar la frecuencia de las caracteres de un texto.
 
@@ -325,7 +337,7 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python contarCaracteres.py -f "texto2.txt" > "texto2_caracteres.txt"
 	$ python contarCaracteres.py -f "text1o.txt" -q -o af > "texto1_caracteres.txt"
 
-### 10. [basicNLTK.py](https://github.com/sanxofon/basicnlp/blob/master/basicNLTK.py)
+### 11. [basicNLTK.py](https://github.com/sanxofon/basicnlp/blob/master/basicNLTK.py)
 
 > Este script muestra los primeros pasos de uso de la librería "nltk" (Natural Language Toolkit) para procesamiento de lenguaje natural. Incluye instrucciones básicas de instalación, configuración y descarga de Corpora, Diccionarios, etc.
 > 
@@ -341,7 +353,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python basicNLTK.py -u > basicNLTK_test.txt
 
-### 11. [mediumNLTK.py](https://github.com/sanxofon/basicnlp/blob/master/mediumNLTK.py)
+### 12. [mediumNLTK.py](https://github.com/sanxofon/basicnlp/blob/master/mediumNLTK.py)
 
 > Este script muestra es una versión un poco más avanzada de uso de NLTK, utilizando el corpus CESS.
 
@@ -351,7 +363,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python mediumNLTK.py -u > mediumNLTK_test.txt
 
-### 12. [stanford-postaggerNLTK.py](https://github.com/sanxofon/basicnlp/blob/master/stanford-postaggerNLTK.py)
+### 13. [stanford-postaggerNLTK.py](https://github.com/sanxofon/basicnlp/blob/master/stanford-postaggerNLTK.py)
 
 > En este script mostraré cómo usar NLTK con un programa externo (Stanford POS-Tagger) para "etiquetar" 
 las palabras de una frase en español con mejores resultados que los logrados con los ejemplos anteriores.
@@ -362,7 +374,7 @@ las palabras de una frase en español con mejores resultados que los logrados co
 
 	$ python stanford-postaggerNLTK.py -u > stanford-postaggerNLTK_test.txt
 
-### 13. [simple-stanford-corenlp.py](https://github.com/sanxofon/basicnlp/blob/master/simple-stanford-corenlp.py)
+### 14. [simple-stanford-corenlp.py](https://github.com/sanxofon/basicnlp/blob/master/simple-stanford-corenlp.py)
 
 > En este script se muestra cómo usar el software Stanford CoreNLP. CoreNLP es un programa escrito en leguaje JAVA, sin embargo podemos usar CoreNLP desde Python usando un programa intermedio del tipo "wrapper".
 
@@ -372,7 +384,7 @@ las palabras de una frase en español con mejores resultados que los logrados co
 
 	$ python simple-stanford-corenlp.py -u > simple-stanford-corenlp_test.txt
 
-### 14. [medium-stanford-corenlp.py](https://github.com/sanxofon/basicnlp/blob/master/medium-stanford-corenlp.py)
+### 15. [medium-stanford-corenlp.py](https://github.com/sanxofon/basicnlp/blob/master/medium-stanford-corenlp.py)
 
 > En este script se muestra cómo usar la API del software Stanford CoreNLP para "anotar" textos en español,
 haciendo un us más avanzado de este poderoso sofware de procesamiento de lenguaje natural.
@@ -383,7 +395,7 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 
 	$ python medium-stanford-corenlp.py -u > medium-stanford-corenlp.xml
 
-### 15. [basicFreeling.py](https://github.com/sanxofon/basicnlp/blob/master/basicFreeling.py)
+### 16. [basicFreeling.py](https://github.com/sanxofon/basicnlp/blob/master/basicFreeling.py)
 
 > Tal vez el mejor software de NLP para el idioma españon es FREELING (en JAVA, como CoreNLP). Este script muestra cómo podemos analizar un texto con FREELING desde Python usando un wrapper.
 
@@ -423,6 +435,8 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	python simpleEncodingCP1252.py
 	echo Testing "simpleRegexUTF8"
 	python simpleRegexUTF8.py
+	echo Testing "mediumRegexUTF8"
+	python mediumRegexUTF8.py > "test/mediumRegexUTF8.txt"
 	echo Testing "argumentosSimple"
 	python argumentosSimple.py Santiago Chávez
 	python argumentosSimple.py "Santiago Chávez"
