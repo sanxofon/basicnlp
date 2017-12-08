@@ -10,7 +10,7 @@ sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
 import re
 cadena = u"""—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
 El pingüino Wenceslao hizo kilómetros bajo exhaustiva 
-lluvia y frío, añoraba a su querido cachorro."""
+	lluvia y frío, añoraba a su querido cachorro."""
 patrones = [
 	(ur"(\w)", u"Busca todos los caracteres de palabra"),
 	(ur"(\W)", u"Busca todos los caracteres que no son de palabra"),
@@ -37,7 +37,7 @@ for i,patron in enumerate(patrones):
 				m = filter(None, m) # Elimina los valores vacíos
 				print ii,"\t", "\t".join([re.sub(r'\n',r'\\n',re.sub(r'\t',r'\\t',x)) for x in m])
 			else:
-				print ii,"x\t", re.sub(r'\n',r'\\n',re.sub(r'\t',r'\\t',m))
+				print ii,"\t", re.sub(r'\n',r'\\n',re.sub(r'\t',r'\\t',m))
 	else:
 		print "\t"+u"No hubo coincidencias"
 print
