@@ -6,15 +6,13 @@
 import codecs,locale,sys
 sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
 # ------------------------------------------------------------
-
 # Importamos la librería de expresiones regulares (re)
 import re
+# Importamos la librería "argparse" que nos permite acceder de forma ordenada a los argumentos
+# además de generar un texto de ayuda cuando ejecutamos: "python argumentosParsed.py -h"
+import argparse
 
-# Definimos la cadena sobre la que vamos a trabajar
-# Usamos triples comillas para entrecomillar un texto con saltos de línea, tabs, etc.
-cadena = u"""—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
-El pingüino Wenceslao hizo kilómetros bajo exhaustiva 
-	lluvia y frío, añoraba a su querido cachorro."""
+
 
 # Definimos una lista de patrones RegEx
 # Cada elemento de la lista es un "tuple" de dos elementos
@@ -32,6 +30,25 @@ patrones = [
 	(ur"(\w+)\s+(?=(\w+))", u"Busca todos los pares de palabras (separadas por espacio) con lookahead"),
 	(ur"(\w+)(?=(?:([^\r\n\S]+)(\W*)(\w+))|([^\w\s]+)(\s+)?(\w+)?)", u"Busca pares de palabra/palabra o palabra/otro(s)/palabra, puede incluir caracteres o separadores entre la primera y la segunda palabra"),
 ]
+
+
+
+# Inicializamos el "parser" de argumentos con la descripción general
+parser = argparse.ArgumentParser(description=u"""
+Este programa permite ejecutar una expresión regular sobre un archivo de texto.
+La lista de patrones RegEx definidos es:"""+"\n".join([x[1] fox x in patrones])+"""
+""")
+parser.add_argument("-f", "--file", type=argparse.FileType('r'), required=True, help=u"Define el archivo de texto a procesar (REQUERIDO).")
+parser.add_argument("-n", "--newline", help=u"Rectificar saltos de línea de un texto.", action="store_true")
+parser.add_argument("-i", "--index", type=int, required=True, help=u"Define el índice de RegEx a ejecutar.")
+
+
+
+
+
+# Definimos la cadena sobre la que vamos a trabajar a partir del archvo de texto texto
+if args.file:
+	cadena = args.file.read().decode('utf-8')
 
 # Imprimimos la cadena definida tal cual
 print "\n",u"Cadena:",cadena
