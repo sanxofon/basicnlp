@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+# MAGICA CONFIGURACIÓN DE CODECS SALIDA ----------------------
+# FIX PARA WINDOWS CONSOLE, Usar: chcp 1252
+import codecs,locale,sys
+sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
+# ------------------------------------------------------------
 """ EJEMPLOS DE USO DESDE LA TERMINAL
 
 	Muestra la lista de palabras del "texto_original.txt":
@@ -11,9 +15,10 @@
 	>> python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 	
 	Separa todos los enunciados de un texto por lineas (variantes):
-	>> python limpiarTexto.py -f "texto1.txt" -n -u -m 1 -e -u > "texto1_enunciados.txt"
-	>> python limpiarTexto.py -f "texto2.txt" -n -u -m 1 -j -e -u -s "(\-\-)" -r "—" > "texto2_enunciados.txt"
+	>> python limpiarTexto.py -f "texto1.txt" -n -u -m 1 -e > "texto1_enunciados.txt"
+	>> python limpiarTexto.py -f "texto2.txt" -n -u -m 1 -j -e -s "(\-\-)" -r "—" > "texto2_enunciados.txt"
 
+python limpiarTexto.py -f .\test\txtFileRegEx_texto1.csv -s "\t(\w+)(?=\n\1(\t[^\n]+))" -r "\t\1\2" > .\test\txtFileRegEx_texto1x.csv
 """
 
 # Importa las librerías
@@ -61,7 +66,7 @@ if args.explode:
 	s = pattern.sub(r'\1\n\2',s)
 
 # USER REGEX search/replace
-if args.search:
+if args.search and args.replace:
 	arse = args.search
 	arre = args.replace
 	for i in range(len(arse)):
