@@ -1,0 +1,38 @@
+[
+  [
+    "(\\w)",
+    "Busca todos los caracteres de palabra"
+  ],
+  [
+    "(\\W)",
+    "Busca todos los caracteres que no son de palabra"
+  ],
+  [
+    "(\\s)",
+    "Busca todos los caracteres de espaciado"
+  ],
+  [
+    "(\\S)",
+    "Busca todos los caracteres que no son de espaciado"
+  ],
+  [
+    "(\\w+)",
+    "Busca todas las palabras"
+  ],
+  [
+    "(\\w+)\\s+(\\w+)",
+    "Busca pares de palabras separadas por un espacio"
+  ],
+  [
+    "([^\\s]+)\\s+([^\\s]+)",
+    "Busca dos grupos de caracteres que no sean espacios seguidos, separados por un espacio"
+  ],
+  [
+    "(\\w+)\\s+(?=(\\w+))",
+    "Busca todos los pares de palabras (separadas por espacio) con lookahead"
+  ],
+  [
+    "(\\w+)(?=(?:(\\s+)([^\\w\\s]+)?(\\w+))|([^\\w\\s]+)(\\s+)?(\\w+))",
+    "Busca pares de palabras, con o sin separador/signo o signo/separador entre ambas"
+  ]
+]
