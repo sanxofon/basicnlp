@@ -1,38 +1,47 @@
 [
-  [
-    "(\\w)",
-    "Busca todos los caracteres de palabra"
-  ],
-  [
-    "(\\W)",
-    "Busca todos los caracteres que no son de palabra"
-  ],
-  [
-    "(\\s)",
-    "Busca todos los caracteres de espaciado"
-  ],
-  [
-    "(\\S)",
-    "Busca todos los caracteres que no son de espaciado"
-  ],
-  [
-    "(\\w+)",
-    "Busca todas las palabras"
-  ],
-  [
-    "(\\w+)\\s+(\\w+)",
-    "Busca pares de palabras separadas por un espacio"
-  ],
-  [
-    "([^\\s]+)\\s+([^\\s]+)",
-    "Busca dos grupos de caracteres que no sean espacios seguidos, separados por un espacio"
-  ],
-  [
-    "(\\w+)\\s+(?=(\\w+))",
-    "Busca todos los pares de palabras (separadas por espacio) con lookahead"
-  ],
-  [
-    "(\\w+)(?=(?:(\\s+)([^\\w\\s]+)?(\\w+))|([^\\w\\s]+)(\\s+)?(\\w+))",
-    "Busca pares de palabras, con o sin separador/signo o signo/separador entre ambas"
-  ]
+  {
+    "s": "(\\w)",
+    "r": null,
+    "d": "Busca todos los caracteres de palabra"
+  },
+  {
+    "s": "(\\W)",
+    "r": null,
+    "d": "Busca todos los caracteres que no son de palabra"
+  },
+  {
+    "s": "(\\s)",
+    "r": null,
+    "d": "Busca todos los caracteres de espaciado"
+  },
+  {
+    "s": "(\\S)",
+    "r": null,
+    "d": "Busca todos los caracteres que no son de espaciado"
+  },
+  {
+    "s": "(\\w+)",
+    "r": null,
+    "d": "Busca todas las palabras"
+  },
+  {
+    "s": "(\\w+)\\s+(\\w+)",
+    "r": null,
+    "d": "Busca pares de palabras separadas por un espacio"
+  },
+  {
+    "s": "([^\\s]+)\\s+([^\\s]+)",
+    "r": null,
+    "d": "Busca dos grupos de caracteres que no sean espacios seguidos, separados por un espacio"
+  },
+  {
+    "s": "(\\w+)\\s+(?=(\\w+))",
+    "r": null,
+    "d": "Busca todos los pares de palabras (separadas por espacio) con lookahead"
+  },
+  {
+    "s": "(\\w+)(?=(?:(\\s+)([^\\w\\s]+)?(\\w+))|([^\\w\\s]+)(\\s+)?(\\w+))",
+    "r": null,
+    "d": "Busca pares de palabras, con o sin separador/signo o signo/separador entre ambas"
+  }
 ]

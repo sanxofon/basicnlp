@@ -29,22 +29,11 @@ rm .\test\txtFileRegEx_texto1_2gramx.csv .\test\txtFileRegEx_texto1_3gramx.csv .
 """
 
 
-# Definimos una lista de patrones RegEx
-# Cada elemento de la lista es una sublista de dos elementos
-# el primer elemento [0] es els patrón RegEx
-# el segundo elemento [1] es una descripción de lo que hace
-# patrones = [
-# 	(ur"(\w)",u"Busca todos los caracteres de palabra"),
-# 	(ur"(\W)",u"Busca todos los caracteres que no son de palabra"),
-# 	(ur"(\s)",u"Busca todos los caracteres de espaciado"),
-# 	(ur"(\S)",u"Busca todos los caracteres que no son de espaciado"),
-# 	(ur"(\w+)",u"Busca todas las palabras"),
-# 	(ur"(\w+)\s+(\w+)",u"Busca pares de palabras separadas por un espacio"),
-# 	(ur"([^\s]+)\s+([^\s]+)",u"Busca dos grupos de caracteres que no sean espacios seguidos, separados por un espacio"),
-# 	(ur"(\w+)\s+(?=(\w+))",u"Busca todos los pares de palabras (separadas por espacio) con lookahead"),
-# 	(ur"(\w+)(?=(?:(\s+)([^\w\s]+)?(\w+))|([^\w\s]+)(\s+)?(\w+))",u"Busca pares de palabras, con o sin separador/signo o signo/separador entre ambas"),
-# ]
 # Abre la lista de patrones definidos
+# Cada elemento de la lista es una sublista de tres elementos
+# 	- s: patrón RegEx de búsqueda
+# 	- r: patrón RegEx de reemplazo (o None en caso de que no hay reemplazo)
+# 	- d: descripción de lo que hace este patrón
 with open("patrones.json","r") as jsonfile:
 	patrones = json.load(jsonfile)
 
@@ -57,7 +46,7 @@ parser.add_argument("-l", "--lis", help=u"Muestra un listado con los patrones Re
 parser.add_argument("-v", "--ver", help=u"Verbose. Muestra más datos en la salida.", action="store_true")
 parser.add_argument("-s", "--search", help=u"Cadena de búsqueda REGEX definidas por el usuario.")
 parser.add_argument("-r", "--replace", help=u"Cadena de reemplazo REGEX definidas por el usuario.")
-parser.add_argument("-a", "--append", help=u"Descripción del REGEX para agregarlo a los patrones predefinidos.")
+parser.add_argument("-a", "--append", help=u"Descripción del REGEX de usuario para agregarlo a los patrones predefinidos.")
 parser.add_argument("-o", "--recursive", help=u"El reemplazo REGEX se aplicará recursivamente.", action="store_true")
 parser.add_argument("-u", "--utf", help=u"Forzar salida UTF-8.", action="store_true")
 args = parser.parse_args()
@@ -75,7 +64,7 @@ else:
 # Se recibió solucitud de listado de patrones RegEx
 if args.lis:
 	# Imprime una lista con los patrones definidos
-	print "La lista de patrones RegEx definidos es:\n\t"+"\n\t".join([str(i+1)+". "+x[1] for i,x in enumerate(patrones)])
+	print "La lista de patrones RegEx definidos es:\n\t"+"\n\t".join([str(i+1)+". "+p['d'] for i,p in enumerate(patrones)])
 
 # Se recibió archivo e índice de patrón RegEx
 elif args.fil:
@@ -90,28 +79,52 @@ elif args.fil:
 
 	# Define patron de busqueda y  reemplazo definido por el usuario
 	arse = None
+	arre = None
+	# Si recibimos índice de patrón, definimos a partir de eso
 	if args.ind:
-		# Si recibimos índice de patrón, definimos a partir de eso
 		indice = int(args.ind)-1
+		# Si el patrón tiene además un reemplazo o None
+		arre = patrones[indice]['r']
+
+	# Si recibimos un patrón de búsqueda definido por el usuario
 	elif args.search:
-		# Si recibimos un patrón de búsqueda definido por el usuario
 		indice = len(patrones)
+
+		# Si recibimos un patrón de reemplazo definido por el usuario
+		if args.replace:
+			arre = args.replace.decode('utf-8')
+
+		# Si recibimos "append" intentamos agregar el patrón, reemplazo (si existe) y descripción 
+		#	a la lista de patrones
 		if args.append:
-			a = args.append.decode('utf-8')
-			patrones.append((args.search.decode('utf-8'),a))
-			# Guardar cambios a la lista de patrones definidos
+			s = args.search.decode('utf-8') # Patrón de búsqueda
+			a = args.append.decode('utf-8') # Descripción
+			# Agregamos el patrón a la lista
+			patrones.append({"s":s,"r":arre,"d":a})
+			# Guardamos cambios a la lista de patrones definidos
 			with open("patrones.json","w") as jsonfile:
 				json.dump(patrones,jsonfile)
+
 			if args.ver:
 				# Imprimimos la descripción del patrón agregado
-				print u"\tPatrón agregado:",patrones[indice][1]
+				print u"\tPatrón agregado:",patrones[indice]['d']
+
+		# Caso contrario no guardamos nada pero agregamos temporalmente a la lista de patrones (en memoria)
 		else:
-			patrones.append((args.search.decode('utf-8'),u"Patrón definido por el usuario."))
-	else:
+			s = args.search.decode('utf-8')
+			a = u"Patrón definido por el usuario."
+			patrones.append(
+				{
+					"s":s,
+					"r":arre,
+					"d":a
+				}
+			)
+	else: # No re recibieron argumentos suficientes
 		sys.exit(u"No se recibió patrón de búsqueda o índice.\nPuedo mostrar más ayuda con:\n\tpython txtFileRegEx.py -h\nPuedo mostrar la lista de patrones RegEx definidos con:\n\tpython txtFileRegEx.py -l")
 
 	# Compila el patrón elegido
-	arse = re.compile(patrones[indice][0], re.UNICODE)
+	arse = re.compile(patrones[indice]['s'], re.UNICODE)
 
 	# Imprimimos la cadena definida tal cual
 	# if args.ver:
@@ -119,14 +132,12 @@ elif args.fil:
 
 	if args.ver:
 		# Imprimimos la descripción "patron[1]"
-		print u"\tDescripción:",patrones[indice][1]
+		print u"\tDescripción:",patrones[indice]['d']
 		# Imprimimos el patrón RegEx "patron[0]"
-		print u"\tPatrón:",patrones[indice][0],"\n"
+		print u"\tPatrón:",patrones[indice]['s'],"\n"
 
 	# Asigna el patrón de reemplazo si está definido por el usuario
-	arre = None
-	if args.replace:
-		arre = args.replace.decode('utf-8')
+	if arre is not None:
 		recursive = 0
 		if args.recursive:
 			recursive = 1
