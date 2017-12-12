@@ -131,27 +131,35 @@ elif args.fil:
 	# 	print "\n",u"Cadena:",cadena
 
 	if args.ver:
-		# Imprimimos la descripción "patron[1]"
+		# Imprimimos la descripción
 		print u"\tDescripción:",patrones[indice]['d']
-		# Imprimimos el patrón RegEx "patron[0]"
+		# Imprimimos el patrón RegEx
 		print u"\tPatrón:",patrones[indice]['s'],"\n"
 
-	# Asigna el patrón de reemplazo si está definido por el usuario
+	# Caso de que queremos buscar/reemplazar
 	if arre is not None:
+
+		# El reemplazo debe aplicarse recursivamente?
 		recursive = 0
 		if args.recursive:
 			recursive = 1
+
 		if args.ver:
 			# Imprimimos la descripción reemplazo
 			print u"\tPatrón de reemplazo:",arre,"\n"
+
+		# Este loop hace el reemplazo recursivo
 		cadenaMem = ""
 		while True:
 			cadena = arse.sub(arre,cadena)
 			if cadena == cadenaMem or recursive<1:
-				break
+				break # Detiene la recursión
 			cadenaMem = cadena
+
+		# Imprimimos cadena reemplazada y acabamos
 		print cadena
 
+	# Caso de que queremos sólo buscar
 	else:
 		# Usamos la función "findall" para encontrar todas la coincidencias en la cadena
 		# La variable "match" guardará la lista de todas las coincidencias encontradas
