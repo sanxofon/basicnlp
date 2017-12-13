@@ -108,3 +108,5 @@ test\.txt
 >>>>>>> master
 
 test\.py
+
+*.ods#

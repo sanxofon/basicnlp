@@ -26,6 +26,18 @@ python .\txtFileRegEx.py -u -f .\test\txtFileRegEx_texto1_4gramx.csv -s "([\t\n]
 python .\txtFileRegEx.py -u -f .\test\txtFileRegEx_texto1_5gramx.csv -s "([\t\n]\w+)\t{3}" -r "\1" -o > .\test\txtFileRegEx_texto1_5gram.csv
 rm .\test\txtFileRegEx_texto1_2gramx.csv .\test\txtFileRegEx_texto1_3gramx.csv .\test\txtFileRegEx_texto1_4gramx.csv .\test\txtFileRegEx_texto1_5gramx.csv
 
+	EJEMPLO LINUX:
+python txtFileRegEx.py -u -f test/texto1.txt -i 9 > test/txtFileRegEx_texto1_2gramx.csv
+python txtFileRegEx.py -u -f test/txtFileRegEx_texto1_2gramx.csv -s "\t(\w+)(?=\t*\n\1(\t[^\n]+))" -r "\t\1\2" > test/txtFileRegEx_texto1_3gramx.csv
+python txtFileRegEx.py -u -f test/txtFileRegEx_texto1_3gramx.csv -s "\t(\w+)(?=\t*\n[^\n]+\n\1(\t[^\n]+))" -r "\t\1\2" > test/txtFileRegEx_texto1_5gramx.csv
+python txtFileRegEx.py -u -f test/txtFileRegEx_texto1_5gramx.csv -s "(?:_|\\\n|\t|\W)+\t(\w+)\t+\n" -r "\n" > test/txtFileRegEx_texto1_4gramx.csv
+
+python txtFileRegEx.py -u -f test/txtFileRegEx_texto1_2gramx.csv -s "([\t\n]\w+)\t{3}" -r "\1" -o > test/txtFileRegEx_texto1_2gram.csv
+python txtFileRegEx.py -u -f test/txtFileRegEx_texto1_3gramx.csv -s "([\t\n]\w+)\t{3}" -r "\1" -o > test/txtFileRegEx_texto1_3gram.csv
+python txtFileRegEx.py -u -f test/txtFileRegEx_texto1_4gramx.csv -s "([\t\n]\w+)\t{3}" -r "\1" -o > test/txtFileRegEx_texto1_4gram.csv
+python txtFileRegEx.py -u -f test/txtFileRegEx_texto1_5gramx.csv -s "([\t\n]\w+)\t{3}" -r "\1" -o > test/txtFileRegEx_texto1_5gram.csv
+rm test/txtFileRegEx_texto1_2gramx.csv test/txtFileRegEx_texto1_3gramx.csv test/txtFileRegEx_texto1_4gramx.csv test/txtFileRegEx_texto1_5gramx.csv
+
 """
 
 
@@ -98,6 +110,7 @@ elif args.fil:
 		#	a la lista de patrones
 		if args.append:
 			s = args.search.decode('utf-8') # Patrón de búsqueda
+			# s = re.escape(args.search.decode('utf-8')) # Patrón de búsqueda
 			a = args.append.decode('utf-8') # Descripción
 			# Agregamos el patrón a la lista
 			patrones.append({"s":s,"r":arre,"d":a})
