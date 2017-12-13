@@ -39,11 +39,11 @@ with open("patrones.json","r") as jsonfile:
 
 # Inicializamos el "parser" de argumentos con la descripción general
 parser = argparse.ArgumentParser(description=u"Este programa permite ejecutar una expresión regular sobre un archivo de texto.")
+parser.add_argument("-l", "--lis", help=u"Muestra un listado con los patrones RegEx definidos.", action="store_true")
+parser.add_argument("-v", "--ver", help=u"Verbose. Muestra más datos en la salida.", action="store_true")
 parser.add_argument("-f", "--fil", type=argparse.FileType('r'), help=u"Define el archivo de texto a procesar.")
 parser.add_argument("-i", "--ind", type=int, help=u"Define el índice de RegEx a ejecutar.")
 parser.add_argument("-e", "--emp", help=u"Elimina resultados vacíos.", action="store_true")
-parser.add_argument("-l", "--lis", help=u"Muestra un listado con los patrones RegEx definidos.", action="store_true")
-parser.add_argument("-v", "--ver", help=u"Verbose. Muestra más datos en la salida.", action="store_true")
 parser.add_argument("-s", "--search", help=u"Cadena de búsqueda REGEX definidas por el usuario.")
 parser.add_argument("-r", "--replace", help=u"Cadena de reemplazo REGEX definidas por el usuario.")
 parser.add_argument("-a", "--append", help=u"Descripción del REGEX de usuario para agregarlo a los patrones predefinidos.")
