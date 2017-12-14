@@ -4,15 +4,15 @@
 
 > *ENGLISH READERS: This repo, README, code comments and examples are in spanish*
 
-En este REPO incluímos varios scripts básicos que sirven como introducción al uso de PYTHON para el Procesamiento de Lenguaje Natural.
+En este REPO incluimos varios scripts básicos que sirven como introducción al uso de PYTHON para el Procesamiento de Lenguaje Natural.
 
-Los archivos están ordenados como un curso y ampliamente comentados. En los comentarios dentro del código se explica como instalar, cofigurar y ejecutar las librerías desde python, siempre tomando en cuenta las consideraciones especiales para el idioma español, si bien se puede usar de guía para otros idioma.
+Los archivos están ordenados como un curso y ampliamente comentados. En los comentarios dentro del código se explica como instalar, configurar y ejecutar las librerías desde python, siempre tomando en cuenta las consideraciones especiales para el idioma español, si bien se puede usar de guía para otros idioma.
 
 #### En los comentarios del código de cada ejemplo encontrarás instrucciones detalladas para entender el código, además de guías paso a paso para descargar gratuitamente e instalar todos los programas que puedas necesitar en cada caso.
 
 ### Guías anexas
 
-El curso está acompañado por algunos artículos que puedes leer independientemente y aportan conocimientos necesarios para poder llevar a cabo el curso a través de los archivos incluídos:
+El curso está acompañado por algunos artículos que puedes leer independientemente y aportan conocimientos necesarios para poder llevar a cabo el curso a través de los archivos incluidos:
 
 1. **[El ABCii de la codificación de caracteres en un sistema digital](encoding/README.md)**
 1. **[En el principio fue la línea de comandos: Curso básico de uso de la terminal o consola.](terminal/README.md)**
@@ -101,7 +101,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 
 ### 6. [argumentosSimple.py](argumentosSimple.py)
 
-> Este programa muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", considerando la codificación. (Imposible de resolver en Windows 7)
+> Este programa muestra como recibir información del usuario al ejecutar el programa por medio de "argumentos", considerando la codificación. (Imposible de resolver en Windows 7)
 
 **Ejemplos de uso:**
 
@@ -114,7 +114,7 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 
 ### 7. [argumentosParsed.py](argumentosParsed.py)
 
-> Este programa también muestra como recibir informacion del usuario al ejecutar el programa por medio de "argumentos", pero usando la librería "argparse" que simplifica el proceso además de que provee un mensaje de ayuda a los usuarios.
+> Este programa también muestra como recibir información del usuario al ejecutar el programa por medio de "argumentos", pero usando la librería "argparse" que simplifica el proceso además de que provee un mensaje de ayuda a los usuarios.
 
 **Ayuda:**
 Para desplegar la ayuda en terminal ejecute:
@@ -193,7 +193,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 > Este script muestra los primeros pasos de uso de la librería "nltk" (Natural Language Toolkit) para procesamiento de lenguaje natural. Incluye instrucciones básicas de instalación, configuración y descarga de Corpora, Diccionarios, etc.
 > 
-> En los comentarios dentro del código se muestran los usos de los archivos incluídos:
+> En los comentarios dentro del código se muestran los usos de los archivos incluidos:
 
 > 1. get-pip.py
 > 1. nltk_packages.txt
@@ -234,7 +234,7 @@ las palabras de una frase en español con mejores resultados que los logrados co
 
 ### 14. [simple-stanford-corenlp.py](simple-stanford-corenlp.py)
 
-> En este script se muestra cómo usar el software Stanford CoreNLP. CoreNLP es un programa escrito en leguaje JAVA, sin embargo podemos usar CoreNLP desde Python usando un programa intermedio del tipo "wrapper".
+> En este script se muestra cómo usar el software Stanford CoreNLP. CoreNLP es un programa escrito en lenguaje JAVA, sin embargo podemos usar CoreNLP desde Python usando un programa intermedio del tipo "wrapper".
 
 **Ejemplos de uso:**
 
@@ -247,7 +247,7 @@ las palabras de una frase en español con mejores resultados que los logrados co
 ### 15. [medium-stanford-corenlp.py](medium-stanford-corenlp.py)
 
 > En este script se muestra cómo usar la API del software Stanford CoreNLP para "anotar" textos en español,
-haciendo un us más avanzado de este poderoso sofware de procesamiento de lenguaje natural.
+haciendo un us más avanzado de este poderoso software de procesamiento de lenguaje natural.
 
 **Ejemplos de uso:**
 
@@ -259,9 +259,9 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 
 ### 16. [basicFreeling.py](basicFreeling.py)
 
-> Tal vez el mejor software de NLP para el idioma españon es FREELING (en JAVA, como CoreNLP). Este script muestra cómo podemos analizar un texto con FREELING desde Python usando un wrapper.
+> Tal vez el mejor software de NLP para el idioma español es FREELING (en JAVA, como CoreNLP). Este script muestra cómo podemos analizar un texto con FREELING desde Python usando un wrapper.
 
-> Este script necesita del archivo incluído:
+> Este script necesita del archivo incluido:
 > 
 > 1. freelingwrapper.py
 
