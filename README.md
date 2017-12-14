@@ -67,12 +67,14 @@ En la carpeta **encoding/** escribí un pequeño texto que intenta explicar el p
 
 ### 3. [simpleEncodingUTF8.py](simpleEncodingUTF8.py) / [simpleEncodingCP1252.py](simpleEncodingCP1252.py)
 
-> El script **simpleEncodingUTF8.py** como trabajar con las distintas codificaciones de texto (UTF8, UNICODE, cp1250, etc.). Además muestra como "decodificar" y como detectar la codificación de las cadenas de texto.
+> El script **simpleEncodingUTF8.py** muestra cómo trabajar con las distintas codificaciones de texto (UTF8, UNICODE, cp1250, etc.). Además muestra como "decodificar" y cómo detectar la codificación de las cadenas de texto.
 El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF pero el archivo está guardado con codificación típica de windows-1252. Se pueden apreciar los errores que el mismo código genera.
 
 **Ejemplos de uso:**
 
 	$ python simpleEncodingUTF8.py
+
+| Puedes ver el resultado de la ejecución del archivo [acá](test/simpleEncodingUTF8.txt).
 
 ### 4. [simpleRegexUTF8.py](simpleRegexUTF8.py)
 
@@ -83,6 +85,8 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 **Ejemplos de uso:**
 
 	$ python simpleRegexUTF8.py
+
+| Puedes ver el resultado de la ejecución del archivo [acá](test/simpleRegexUTF8.txt).
 
 ### 5. [mediumRegexUTF8.py](mediumRegexUTF8.py)
 
@@ -104,6 +108,8 @@ El script **simpleEncodingCP1252.py** es una copia idéntica de la versión UTF 
 	$ python argumentosSimple.py Santiago Chávez
 	$ python argumentosSimple.py "Santiago Chávez"
 	$ python argumentosSimple.py "Santiago Chávez" utf8 > test.txt
+
+| Puedes ver el resultado de la ejecución del archivo [acá](test/argumentosSimple.txt).
 
 
 ### 7. [argumentosParsed.py](argumentosParsed.py)
@@ -139,6 +145,8 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python limpiarTexto.py -f "texto1.txt" -n -u -m 2 > "texto1_limpio.txt"
 	$ python limpiarTexto.py -f "texto2.txt" -n -u -m 4 -j -s "(\-\-)" -r "—" > "texto2_limpio.txt"
 
+| Puedes ver los resultados de la ejecución del archivo [acá](test/texto1_limpio.txt) y [acá](test/texto2_limpio.txt).
+
 ### 9. [contarPalabras.py](contarPalabras.py)
 
 > Este programa intenta contar la frecuencia de las palabras de un texto.
@@ -156,7 +164,9 @@ Para desplegar la ayuda en terminal ejecute:
 **Ejemplos de uso:**
 
 	$ python contarPalabras.py -f "texto2.txt" > "texto2_palabras.txt"
-	$ python contarPalabras.py -f "text1o.txt" -q -o af > "texto1_palabras.txt"
+	$ python contarPalabras.py -f "texto1.txt" -q -o af > "texto1_palabras.txt"
+
+| Puedes ver los resultados de la ejecución del archivo [acá](test/texto1_palabras.txt) y [acá](test/texto2_palabras.txt).
 
 ### 10. [contarCaracteres.py](contarCaracteres.py)
 
@@ -177,6 +187,8 @@ Para desplegar la ayuda en terminal ejecute:
 	$ python contarCaracteres.py -f "texto2.txt" > "texto2_caracteres.txt"
 	$ python contarCaracteres.py -f "text1o.txt" -q -o af > "texto1_caracteres.txt"
 
+| Puedes ver los resultados de la ejecución del archivo [acá](test/texto1_caracteres.txt) y [acá](test/texto2_caracteres.txt).
+
 ### 11. [basicNLTK.py](basicNLTK.py)
 
 > Este script muestra los primeros pasos de uso de la librería "nltk" (Natural Language Toolkit) para procesamiento de lenguaje natural. Incluye instrucciones básicas de instalación, configuración y descarga de Corpora, Diccionarios, etc.
@@ -193,6 +205,8 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python basicNLTK.py -u > basicNLTK_test.txt
 
+| Puedes ver el resultado de la ejecución del archivo [acá](test/basicNLTK_test.txt).
+
 ### 12. [mediumNLTK.py](mediumNLTK.py)
 
 > Este script muestra es una versión un poco más avanzada de uso de NLTK, utilizando el corpus CESS.
@@ -203,6 +217,8 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python mediumNLTK.py -u > mediumNLTK_test.txt
 
+| Puedes ver el resultado de la ejecución del archivo [acá](test/mediumNLTK_test.txt).
+
 ### 13. [stanford-postaggerNLTK.py](stanford-postaggerNLTK.py)
 
 > En este script mostraré cómo usar NLTK con un programa externo (Stanford POS-Tagger) para "etiquetar" 
@@ -212,7 +228,9 @@ las palabras de una frase en español con mejores resultados que los logrados co
 
 	$ python stanford-postaggerNLTK.py
 
-	$ python stanford-postaggerNLTK.py -u > stanford-postaggerNLTK_test.txt
+	$ python stanford-postaggerNLTK.py -u > stanford-postaggerNLTK.txt
+
+| Puedes ver el resultado de la ejecución del archivo [acá](test/stanford-postaggerNLTK.txt).
 
 ### 14. [simple-stanford-corenlp.py](simple-stanford-corenlp.py)
 
@@ -224,6 +242,8 @@ las palabras de una frase en español con mejores resultados que los logrados co
 
 	$ python simple-stanford-corenlp.py -u > simple-stanford-corenlp_test.txt
 
+| Puedes ver el resultado de la ejecución del archivo [acá](test/simple-stanford-corenlp_test.txt).
+
 ### 15. [medium-stanford-corenlp.py](medium-stanford-corenlp.py)
 
 > En este script se muestra cómo usar la API del software Stanford CoreNLP para "anotar" textos en español,
@@ -234,6 +254,8 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	$ python medium-stanford-corenlp.py
 
 	$ python medium-stanford-corenlp.py -u > medium-stanford-corenlp.xml
+
+| Puedes ver el resultado de la ejecución del archivo [acá](test/medium-stanford-corenlp.xml).
 
 ### 16. [basicFreeling.py](basicFreeling.py)
 
@@ -248,6 +270,8 @@ haciendo un us más avanzado de este poderoso sofware de procesamiento de lengua
 	$ python basicFreeling.py > test/basicFreeling.json
 	$ python basicFreeling.py -c /usr/share/freeling/config/es.cfg -l es -f test/texto1.txt > test/texto1_freeling.json
 	$ python basicFreeling.py -f test/texto2.txt > test/texto2_freeling.json
+
+| Puedes ver los resultados de la ejecución del archivo [acá](test/texto1_freeling.json) y [acá](test/texto2_freeling.json).
 
 ***
 
