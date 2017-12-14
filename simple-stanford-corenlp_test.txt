@@ -1,0 +1,74 @@
+Cadena:
+	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir la Universidad Nacional!
+
+TOK: [u'--', u'\xa1', u'Joven', u'"', u'emponzo\xf1ado', u'"', u'con', u'el', u'whisky', u',', u'qu\xe9', u'fin', u'...', u'te', u'aguarda', u'exhibir', u'la', u'Universidad', u'Nacional', u'!']
+
+POS: [(u'--', u'fg'), (u'\xa1', u'faa'), (u'Joven', u'np00000'), (u'"', u'fe'), (u'emponzo\xf1ado', u'vmp0000'), (u'"', u'fe'), (u'con', u'sp000'), (u'el', u'da0000'), (u'whisky', u'nc0s000'), (u',', u'fc'), (u'qu\xe9', u'pt000000'), (u'fin', u'nc0s000'), (u'...', u'fs'), (u'te', u'pp000000'), (u'aguarda', u'vmip000'), (u'exhibir', u'vmn0000'), (u'la', u'da0000'), (u'Universidad', u'np00000'), (u'Nacional', u'np00000'), (u'!', u'fat')]
+
+NER: [(u'--', u'O'), (u'\xa1', u'O'), (u'Joven', u'O'), (u'"', u'O'), (u'emponzo\xf1ado', u'O'), (u'"', u'O'), (u'con', u'O'), (u'el', u'O'), (u'whisky', u'O'), (u',', u'O'), (u'qu\xe9', u'O'), (u'fin', u'O'), (u'...', u'O'), (u'te', u'O'), (u'aguarda', u'O'), (u'exhibir', u'O'), (u'la', u'O'), (u'Universidad', u'ORG'), (u'Nacional', u'ORG'), (u'!', u'O')]
+
+COPAR:
+(ROOT
+
+  (sentence
+
+    (S
+
+      (S
+
+        (sp (fg --)
+
+          (prep (faa ¡))
+
+          (sn
+
+            (grup.nom (np00000 Joven))))
+
+        (grup.verb (fe ") (vmp0000 emponzoñado) (fe "))
+
+        (sp
+
+          (prep (sp000 con))
+
+          (sn
+
+            (spec (da0000 el))
+
+            (grup.nom (nc0s000 whisky)))))
+
+      (fc ,)
+
+      (S
+
+        (sadv
+
+          (grup.adv (pt000000 qué)))
+
+        (sn
+
+          (grup.nom (nc0s000 fin)))))
+
+    (fs ...)
+
+    (S
+
+      (sn
+
+        (grup.nom (pp000000 te)))
+
+      (grup.verb (vmip000 aguarda))
+
+      (S
+
+        (infinitiu (vmn0000 exhibir))
+
+        (sn
+
+          (spec (da0000 la))
+
+          (grup.nom
+
+            (grup.nom (np00000 Universidad) (np00000 Nacional))
+
+            (fat !)))))))
+

@@ -203,7 +203,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python basicNLTK.py
 
-	$ python basicNLTK.py -u > basicNLTK_test.txt
+	$ python basicNLTK.py -u > test/basicNLTK.txt
 
 | Puedes ver el resultado de la ejecución del archivo [acá](test/basicNLTK.txt).
 
@@ -215,7 +215,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python mediumNLTK.py
 
-	$ python mediumNLTK.py -u > mediumNLTK_test.txt
+	$ python mediumNLTK.py -u > test/mediumNLTK.txt
 
 | Puedes ver el resultado de la ejecución del archivo [acá](test/mediumNLTK.txt).
 
@@ -240,9 +240,9 @@ las palabras de una frase en español con mejores resultados que los logrados co
 
 	$ python simple-stanford-corenlp.py
 
-	$ python simple-stanford-corenlp.py -u > simple-stanford-corenlp_test.txt
+	$ python simple-stanford-corenlp.py -u > test/simple-stanford-corenlp.txt
 
-| Puedes ver el resultado de la ejecución del archivo [acá](test/simple-stanford-corenlp_test.txt).
+| Puedes ver el resultado de la ejecución del archivo [acá](test/simple-stanford-corenlp.txt).
 
 ### 15. [medium-stanford-corenlp.py](medium-stanford-corenlp.py)
 
