@@ -9,35 +9,66 @@ NER: [(u'--', u'O'), (u'\xa1', u'O'), (u'Joven', u'O'), (u'"', u'O'), (u'emponzo
 
 COPAR:
 (ROOT
+
   (sentence
+
     (S
+
       (S
+
         (sp (fg --)
+
           (prep (faa ¡))
+
           (sn
+
             (grup.nom (np00000 Joven))))
+
         (grup.verb (fe ") (vmp0000 emponzoñado) (fe "))
+
         (sp
+
           (prep (sp000 con))
+
           (sn
+
             (spec (da0000 el))
+
             (grup.nom (nc0s000 whisky)))))
+
       (fc ,)
+
       (S
+
         (sadv
+
           (grup.adv (pt000000 qué)))
+
         (sn
+
           (grup.nom (nc0s000 fin)))))
+
     (fs ...)
+
     (S
+
       (sn
+
         (grup.nom (pp000000 te)))
+
       (grup.verb (vmip000 aguarda))
+
       (S
+
         (infinitiu (vmn0000 exhibir))
+
         (sn
+
           (spec (da0000 la))
+
           (grup.nom
+
             (grup.nom (np00000 Universidad) (np00000 Nacional))
+
             (fat !)))))))
 

@@ -1,0 +1,29 @@
+>> RE.SEARCH
+Coincidencia en el índice 22, 28
+Grupos:
+	con
+	el
+
+>> RE.FINDALL
+Coincidencias:
+	con el
+	te aguarda
+Coincidencias Unicode:
+	con el
+	qué fin
+	te aguarda
+
+>> RE.SUB
+Original: 	—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
+Resultado: 	—¡Joven «emponzoñado» el con whisky, qué fin… aguarda te exhibir!
+Unicode: 	—¡Joven «emponzoñado» el con whisky, fin qué… aguarda te exhibir!
+
+>> RE.COMPILE
+search:
+	22 28
+findall:
+	con el
+	qué fin
+	te aguarda
+sub:
+	—¡Joven «emponzoñado» el con whisky, fin qué… aguarda te exhibir!

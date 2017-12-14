@@ -1,0 +1,48 @@
+>> IMPRIMIMOS CADENAS DE TEXTO NORMAL DIRECTAMENTE
+El veloz murciÃ©lago hindÃº comÃ­a feliz cardillo y kiwi.
+La cigÃ¼ena tocaba el saxofÃ³n detrÃ¡s del palenque de paja.
+El pingÃ¼ino Wenceslao hizo kilÃ³metros bajo exhaustiva lluvia y frÃ­o, aÃ±oraba a su querido cachorro.
+ExhÃ­banse politiquillos zafios,
+con orejas kilomÃ©tricas
+	y unas de gavilÃ¡n.
+â€”Â¡Joven Â«emponzoÃ±adoÂ» con el whisky, quÃ© finâ€¦ te aguarda exhibir!
+Ø¹Ù€ÙÙ‚ÙƒÙ„Ù…Ù†Ù‡ÙˆÙ‰
+\u0639\u0640\u0641\u0642\u0643\u0644\u0645\u0646\u0647\u0648\u0649
+á˜¹á™€á™á™‚á™ƒá™„á™…á™†á™‡á™ˆá™‰
+\u1639\u1640\u1641\u1642\u1643\u1644\u1645\u1646\u1647\u1648\u1649
+
+>> IMPRIMIMOS CADENAS DE TEXTO NORMAL DECODIFICADAS (UTF-8)
+El veloz murciélago hindú comía feliz cardillo y kiwi.
+La cigüena tocaba el saxofón detrás del palenque de paja.
+El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
+Exhíbanse politiquillos zafios,
+con orejas kilométricas
+	y unas de gavilán.
+—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
+عـفقكلمنهوى
+\u0639\u0640\u0641\u0642\u0643\u0644\u0645\u0646\u0647\u0648\u0649
+ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
+\u1639\u1640\u1641\u1642\u1643\u1644\u1645\u1646\u1647\u1648\u1649
+
+>> IMPRIMIMOS CADENAS DE TEXTO UNICODE
+El veloz murciélago hindú comía feliz cardillo y kiwi.
+La cigüena tocaba el saxofón detrás del palenque de paja.
+El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
+Exhíbanse politiquillos zafios,
+con orejas kilométricas
+	y unas de gavilán.
+—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
+عـفقكلمنهوى
+عـفقكلمنهوى
+ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
+ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
+
+>> IMPRIMIMOS CADENAS DE TEXTO RAW-UNICODE
+El veloz murciélago hindú comía feliz cardillo y kiwi.\nLa cigüena tocaba el saxofón detrás del palenque de paja.
+El pingüino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a su querido cachorro.
+Exhíbanse politiquillos zafios,\ncon orejas kilométricas\n\ty unas de gavilán.
+—¡Joven «emponzoñado» con el whisky, qué fin… te aguarda exhibir!
+عـفقكلمنهوى
+عـفقكلمنهوى
+ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ
+ᘹᙀᙁᙂᙃᙄᙅᙆᙇᙈᙉ

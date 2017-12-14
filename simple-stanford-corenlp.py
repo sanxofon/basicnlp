@@ -75,7 +75,7 @@ from stanfordcorenlp import StanfordCoreNLP
 # "cliente" para preguntarle cosas al sevidor
 # Acá debes reemplazar la ruta con la que corresponda en tu compu. Conviene adjudicarle la mitad de la memoria 
 # que tenga tu compu al programa ya que los procesos usan mucha memoria RAM
-nlp = StanfordCoreNLP(r'/home/jaci/git/corenlp/', lang='es', memory='2g')
+nlp = StanfordCoreNLP(r'../corenlp/', lang='es', memory='2g')
 
 # Hay 5 cosas simple que podemos preguntarle
 print
