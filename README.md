@@ -205,7 +205,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python basicNLTK.py -u > basicNLTK_test.txt
 
-| Puedes ver el resultado de la ejecución del archivo [acá](test/basicNLTK_test.txt).
+| Puedes ver el resultado de la ejecución del archivo [acá](test/basicNLTK.txt).
 
 ### 12. [mediumNLTK.py](mediumNLTK.py)
 
@@ -217,7 +217,7 @@ Para desplegar la ayuda en terminal ejecute:
 
 	$ python mediumNLTK.py -u > mediumNLTK_test.txt
 
-| Puedes ver el resultado de la ejecución del archivo [acá](test/mediumNLTK_test.txt).
+| Puedes ver el resultado de la ejecución del archivo [acá](test/mediumNLTK.txt).
 
 ### 13. [stanford-postaggerNLTK.py](stanford-postaggerNLTK.py)
 
@@ -271,7 +271,7 @@ haciendo un us más avanzado de este poderoso software de procesamiento de lengu
 	$ python basicFreeling.py -c /usr/share/freeling/config/es.cfg -l es -f test/texto1.txt > test/texto1_freeling.json
 	$ python basicFreeling.py -f test/texto2.txt > test/texto2_freeling.json
 
-| Puedes ver los resultados de la ejecución del archivo [acá](test/texto1_freeling.json) y [acá](test/texto2_freeling.json).
+| Puedes ver los resultados de la ejecución del archivo [acá](test/basicFreeling.json), [acá](test/texto1_freeling.json) y [acá](test/texto2_freeling.json).
 
 ***
 
