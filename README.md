@@ -20,7 +20,7 @@ El curso está acompañado por algunos artículos que puedes leer independientem
 1. **[Curso rápido de expresiones regulares en español](regexbasico/README.md)**
 	1. [Regex CheatSheet - Guía rápida de expresiones regulares](regexbasico/cheatsheet.md)
 
-**¿Dudas? ¿Comentarios? Contáctamen por twitter: [@sanxofon](https://twitter.com/sanxofon)**
+**¿Dudas? ¿Comentarios? Contáctenmen por tuirer: [@sanxofon](https://twitter.com/sanxofon)**
 
 ***
 
