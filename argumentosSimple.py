@@ -41,4 +41,4 @@ for i in range(len(argumentos)):
 		print "\t",i+1,".",argumentos[i].encode('utf-8')
 	else:
 		# De lo contrario imprimimos tal cual
-		print "\t",i+1,".",argumentos[i]
+		print "\t",i+1,".",argumentos[i].encode(sys.stdin.encoding)
