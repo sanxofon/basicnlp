@@ -32,13 +32,30 @@ Ejemplos de uso:
 	$ python basicFreeling.py > test/basicFreeling.json
 Podemos enviar parámetros y realizar el análisis sobre un archivo de texto, este otro
 ejemplo puede demorar algo de tiempo si el texto es muy largo pero resulta ser sorprendentemente rápido.
+
+VERSION LINUX
 	$ python basicFreeling.py
 		-c /usr/share/freeling/config/es.cfg
 		-l es -f test/texto1.txt 
 		> test/texto1_freeling.json
 	$ python basicFreeling.py -f test/texto2.txt > test/texto2_freeling.json
 
+VERSION WINDOWS
+	$ python basicFreeling.py
+		-c C:\freeling\data\config\es.cfg
+		-l es -f test/texto1.txt 
+		> test/texto1_freeling.json
+	$ python basicFreeling.py -f test/texto2.txt > test/texto2_freeling.json
+
+
+
 """
+# MAGICA CONFIGURACIÓN DE CODECS SALIDA ----------------------
+# FIX PARA WINDOWS CONSOLE, Usar: chcp 1252
+import codecs,locale,sys
+sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
+#--------------------------------------------------------------------------------
+import os
 # Importamos el wrapper de Freeling
 from freelingwrapper import Analyzer
 
@@ -55,7 +72,10 @@ if args.cfg:
 	config_file = args.cfg;
 else:
 	# Todos las configuraciones, seleccion de idioma y formato de salida se hacen en el archivo "es.cfg"
-	config_file = '/usr/share/freeling/config/es.cfg'
+	if os.name == 'nt':
+		config_file = 'C:\\s\\freeling\\data\\config\\es.cfg'
+	else:
+		config_file = '/usr/share/freeling/config/es.cfg'
 if args.lang:
 	lang = args.lang;
 else:
@@ -79,4 +99,4 @@ analyzer = Analyzer(config=config_file, lang=lang)
 output = analyzer.run(text)
 
 # Imprimimos la salida
-print(output)
+print(output.decode('utf-8'))

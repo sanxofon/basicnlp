@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os
 import logging,re
 from subprocess import check_output, CalledProcessError, Popen, PIPE
 
@@ -8,7 +11,10 @@ logger = logging.getLogger(__name__)
 
 def find_binary():
     try:
-        return check_output(['which', 'analyze']).split()[0]
+        if os.name == 'nt':
+            return check_output(['which', 'analyzer.bat']).split()[0]
+        else:
+            return check_output(['which', 'analyze']).split()[0]
     except (CalledProcessError, KeyError):
         return None
 
