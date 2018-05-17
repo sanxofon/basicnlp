@@ -132,7 +132,7 @@ Modificador|Desc|Ejemplo|Match
 Lookaround|Desc|Ejemplo|Match
 | ----- | ----- | ----- | ----- |
 (?=…)|Positive lookahead|(?=\d{10})\d{5}|01234 in **01234**56789
-(?|Positive lookbehind|(?<=\d)cat|cat in 1**cat**
 (?!…)|Negative lookahead|(?!theatre)the\w+|theme
-(?|Negative lookbehind|\w{3}(?<!mon)ster|Munster
+(?<=...)|Positive lookbehind|(?<=\d)cat|cat in 1**cat**
+(?<!|Negative lookbehind|\w{3}(?<!mon)ster|Munster
 
