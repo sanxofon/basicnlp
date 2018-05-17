@@ -134,5 +134,5 @@ Lookaround|Desc|Ejemplo|Match
 (?=…)|Positive lookahead|(?=\d{10})\d{5}|01234 in **01234**56789
 (?!…)|Negative lookahead|(?!theatre)the\w+|theme
 (?<=...)|Positive lookbehind|(?<=\d)cat|cat in 1**cat**
-(?<!|Negative lookbehind|\w{3}(?<!mon)ster|Munster
+(?<!...)|Negative lookbehind|\w{3}(?<!mon)ster|Munster
 
